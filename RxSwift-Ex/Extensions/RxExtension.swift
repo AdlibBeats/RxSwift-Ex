@@ -61,20 +61,20 @@ extension Array where Element == Disposable {
     }
 }
 
-extension SharedSequenceConvertibleType where Self.SharingStrategy == RxCocoa.DriverSharingStrategy {
-    func drive(_ relays: RxCocoa.BehaviorRelay<Self.E>...) -> [Disposable] {
+extension SharedSequenceConvertibleType where SharingStrategy == DriverSharingStrategy {
+    func drive(_ relays: BehaviorRelay<Element>...) -> [Disposable] {
         relays.map { drive($0) }
     }
 
-    func drive(_ relays: RxCocoa.BehaviorRelay<Self.E?>...) -> [Disposable] {
+    func drive(_ relays: BehaviorRelay<Element?>...) -> [Disposable] {
         relays.map { drive($0) }
     }
     
-    func drive<O>(_ observers: O...) -> [Disposable] where O : RxSwift.ObserverType, O.E == Self.E {
+    func drive<Observer: ObserverType>(_ observers: Observer...) -> [Disposable] where Observer.Element == Element {
         observers.map { drive($0) }
     }
     
-    func drive<O>(_ observers: O...) -> [Disposable] where O : RxSwift.ObserverType, O.E == Self.E? {
+    func drive<Observer: ObserverType>(_ observers: Observer...) -> [Disposable] where Observer.Element == Element? {
         observers.map { drive($0) }
     }
 }

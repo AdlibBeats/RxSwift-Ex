@@ -12,14 +12,14 @@ import Alamofire
 extension WKWebView {
     enum Resource {
         case local(String, FileType = .html)
-        case network(String, Anchor = nil, HTTPHeaders = [:])
+        case network(String, Anchor = "", HTTPHeaders = [:])
     }
     
     enum FileType: String {
         case html
     }
     
-    typealias Anchor = String?
+    typealias Anchor = String
     typealias Request = URLRequest?
     
     static func makeRequest(_ resource: Resource) -> Request {
@@ -30,9 +30,9 @@ extension WKWebView {
                 ofType: fileType.rawValue) else { return nil }
             return URLRequest(url: URL(fileURLWithPath: path))
         case .network(let resource, let anchor, let headers):
-            guard let url = URL(string: "\(resource)#\(anchor ?? "")") else { return nil }
+            guard let url = URL(string: "\(resource)#\(anchor)") else { return nil }
             var request = URLRequest(url: url)
-            request.allHTTPHeaderFields = headers
+            request.allHTTPHeaderFields = headers.dictionary
             return request
         }
     }
