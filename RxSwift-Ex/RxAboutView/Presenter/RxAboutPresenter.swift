@@ -28,19 +28,15 @@ final class RxAboutPresenter: RxAboutPresenterProtocol {
     func transform(input: Input) -> Output {
         disposedBag ~ [
             interactor.appVersionRelay ~> model.appVersion,
-            input.tipsTapEvent
-                .map({ .tips })
-                .asDriver(onErrorJustReturn: .none) ~> router.present,
-            Observable
-                .merge(
-                    input.userAgreementTapEvent.map { [model] in
-                        .web(model.userAgreementResource.value, model.webUserAgreementTitle.value )
-                    },
-                    input.privacyPolicyTapEvent.map { [model] in
-                        .web(model.privacyPolicyResource.value, model.webPrivacyPolicyTitle.value )
-                    }
-                )
-                .asDriver(onErrorJustReturn: .none) ~> router.push,
+            input.tipsTapEvent.map { .tips } ~> router.present,
+            Observable.merge(
+                input.userAgreementTapEvent.map { [model] in
+                    .web(model.userAgreementResource.value, model.webUserAgreementTitle.value )
+                },
+                input.privacyPolicyTapEvent.map { [model] in
+                    .web(model.privacyPolicyResource.value, model.webPrivacyPolicyTitle.value )
+                }
+            ) ~> router.push,
         ]
         
         return Output(

@@ -6,6 +6,7 @@
 //  Copyright © 2020 ru.proarttherapy. All rights reserved.
 //
 
+import RxBinding
 import RxSwift
 import RxCocoa
 import RealmSwift
@@ -65,13 +66,11 @@ final class EntityService: EntityServiceProtocol {
                 //else create realm data (first run)
                 let appVersion = AppVersion()
                 appVersion.version = version
-                appVersionRelay.accept(appVersion)
                 
-                Observable
-                    .from(object: appVersion)
-                    .asDriver(onErrorJustReturn: appVersion)
-                    .drive(realm.rx.add())
-                    .disposed(by: disposedBag)
+                disposedBag ~ [
+                    Observable.from(object: appVersion) ~> realm.rx.add(),
+                    Observable.from(object: appVersion) ~> appVersionRelay
+                ]
             })
             .disposed(by: disposedBag)
     }
