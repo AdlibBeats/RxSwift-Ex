@@ -64,8 +64,7 @@ final class EntityService: EntityServiceProtocol {
                 }
                 
                 //else create realm data (first run)
-                let appVersion = AppVersion()
-                appVersion.version = version
+                let appVersion = AppVersion().then { $0.version = version }
                 
                 disposedBag ~ [
                     Observable.from(object: appVersion) ~> realm.rx.add(),

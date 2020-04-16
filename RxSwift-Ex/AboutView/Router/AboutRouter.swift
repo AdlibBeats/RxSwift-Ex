@@ -13,5 +13,7 @@ protocol AboutRouterProtocol: class {
 }
 
 final class AboutRouter: AboutRouterProtocol {
+    weak var transitionHandler: TransitionHandler?
+    
     
 }

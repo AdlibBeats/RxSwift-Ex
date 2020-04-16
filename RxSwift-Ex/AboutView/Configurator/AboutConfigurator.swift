@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+protocol AboutConfiguratorProtocol: class {
+    
+}
+
+final class AboutConfigurator: AboutConfiguratorProtocol {
+    
+}

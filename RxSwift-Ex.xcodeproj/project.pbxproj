@@ -21,6 +21,7 @@
 		49624C852448E25E009660D3 /* AboutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C842448E25E009660D3 /* AboutInteractor.swift */; };
 		49624C872448E26B009660D3 /* AboutRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C862448E26B009660D3 /* AboutRouter.swift */; };
 		49624C892448E27A009660D3 /* AboutConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C882448E27A009660D3 /* AboutConfigurator.swift */; };
+		49624C8C2448FE2F009660D3 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C8B2448FE2F009660D3 /* Router.swift */; };
 		4965E27D234620000042E4B9 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965E27C234620000042E4B9 /* StringExtensions.swift */; };
 		4965E28A234623EA0042E4B9 /* ABOUT_TOKENS_en.html in Resources */ = {isa = PBXBuildFile; fileRef = 4965E283234623EA0042E4B9 /* ABOUT_TOKENS_en.html */; };
 		4965E28B234623EA0042E4B9 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 4965E284234623EA0042E4B9 /* Style.css */; };
@@ -53,6 +54,7 @@
 		49624C842448E25E009660D3 /* AboutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutInteractor.swift; sourceTree = "<group>"; };
 		49624C862448E26B009660D3 /* AboutRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRouter.swift; sourceTree = "<group>"; };
 		49624C882448E27A009660D3 /* AboutConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutConfigurator.swift; sourceTree = "<group>"; };
+		49624C8B2448FE2F009660D3 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		4965E27C234620000042E4B9 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		4965E283234623EA0042E4B9 /* ABOUT_TOKENS_en.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ABOUT_TOKENS_en.html; sourceTree = "<group>"; };
 		4965E284234623EA0042E4B9 /* Style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
@@ -281,6 +283,21 @@
 			path = Configurator;
 			sourceTree = "<group>";
 		};
+		49624C8A2448FE1B009660D3 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				49624C8B2448FE2F009660D3 /* Router.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		49624C8D2448FF84009660D3 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		4965E27723461BF60042E4B9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +360,8 @@
 				4965E27723461BF60042E4B9 /* Extensions */,
 				49A6D9D5235EEEF100EE512B /* ViewControllers */,
 				49F0AEBD244731AA00222DCF /* Entity */,
+				49624C8A2448FE1B009660D3 /* Base */,
+				49624C8D2448FF84009660D3 /* Modules */,
 				49624C742448B11D009660D3 /* AboutView */,
 				494557652355CE0800942B4F /* RxAboutView */,
 				49624C68244876C7009660D3 /* CitiesListView */,
@@ -511,6 +530,7 @@
 				4965E27D234620000042E4B9 /* StringExtensions.swift in Sources */,
 				49624C892448E27A009660D3 /* AboutConfigurator.swift in Sources */,
 				49E3D55C2345F9D000861760 /* AppDelegate.swift in Sources */,
+				49624C8C2448FE2F009660D3 /* Router.swift in Sources */,
 				49624C6324483CCC009660D3 /* RxAboutRouter.swift in Sources */,
 				49259CE0244762880001C15C /* RxAboutInteractor.swift in Sources */,
 				49624C732448AD75009660D3 /* MainViewController.swift in Sources */,

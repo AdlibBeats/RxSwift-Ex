@@ -10,7 +10,6 @@ import UIKit
 import RxBinding
 import RxSwift
 import RxCocoa
-import Then
 import Align
 
 final class RxAboutViewController: UIViewController {
