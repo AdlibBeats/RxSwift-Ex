@@ -13,6 +13,7 @@
 		494557702355CF4C00942B4F /* AboutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4945576F2355CF4C00942B4F /* AboutModel.swift */; };
 		49624C6324483CCC009660D3 /* AboutRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C6224483CCC009660D3 /* AboutRouter.swift */; };
 		49624C6624484554009660D3 /* AboutConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C6524484554009660D3 /* AboutConfigurator.swift */; };
+		49624C7124487799009660D3 /* CitiesListView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49624C7024487799009660D3 /* CitiesListView.storyboard */; };
 		4965E27D234620000042E4B9 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965E27C234620000042E4B9 /* StringExtensions.swift */; };
 		4965E28A234623EA0042E4B9 /* ABOUT_TOKENS_en.html in Resources */ = {isa = PBXBuildFile; fileRef = 4965E283234623EA0042E4B9 /* ABOUT_TOKENS_en.html */; };
 		4965E28B234623EA0042E4B9 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 4965E284234623EA0042E4B9 /* Style.css */; };
@@ -37,6 +38,7 @@
 		4945576F2355CF4C00942B4F /* AboutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutModel.swift; sourceTree = "<group>"; };
 		49624C6224483CCC009660D3 /* AboutRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRouter.swift; sourceTree = "<group>"; };
 		49624C6524484554009660D3 /* AboutConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutConfigurator.swift; sourceTree = "<group>"; };
+		49624C7024487799009660D3 /* CitiesListView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CitiesListView.storyboard; sourceTree = "<group>"; };
 		4965E27C234620000042E4B9 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		4965E283234623EA0042E4B9 /* ABOUT_TOKENS_en.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ABOUT_TOKENS_en.html; sourceTree = "<group>"; };
 		4965E284234623EA0042E4B9 /* Style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
@@ -148,6 +150,62 @@
 			path = Configurator;
 			sourceTree = "<group>";
 		};
+		49624C68244876C7009660D3 /* CitiesListView */ = {
+			isa = PBXGroup;
+			children = (
+				49624C69244876E9009660D3 /* Configurator */,
+				49624C6A244876F5009660D3 /* Router */,
+				49624C6E2448771E009660D3 /* Interactor */,
+				49624C6D24487718009660D3 /* Model */,
+				49624C6C24487711009660D3 /* Presenter */,
+				49624C6B2448770B009660D3 /* View */,
+			);
+			path = CitiesListView;
+			sourceTree = "<group>";
+		};
+		49624C69244876E9009660D3 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		49624C6A244876F5009660D3 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		49624C6B2448770B009660D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49624C7024487799009660D3 /* CitiesListView.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		49624C6C24487711009660D3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		49624C6D24487718009660D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		49624C6E2448771E009660D3 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		4965E27723461BF60042E4B9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +269,7 @@
 				49A6D9D5235EEEF100EE512B /* ViewControllers */,
 				49F0AEBD244731AA00222DCF /* Entity */,
 				494557652355CE0800942B4F /* AboutView */,
+				49624C68244876C7009660D3 /* CitiesListView */,
 				49E3D5612345F9D000861760 /* Main.storyboard */,
 				49E3D5662345F9D100861760 /* LaunchScreen.storyboard */,
 				49E3D5692345F9D100861760 /* Info.plist */,
@@ -305,6 +364,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49624C7124487799009660D3 /* CitiesListView.storyboard in Resources */,
 				49E3D5682345F9D100861760 /* LaunchScreen.storyboard in Resources */,
 				49E3D5652345F9D100861760 /* Assets.xcassets in Resources */,
 				49E3D5632345F9D000861760 /* Main.storyboard in Resources */,
