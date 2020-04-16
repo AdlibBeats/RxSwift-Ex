@@ -42,15 +42,17 @@ extension AboutRouter {
         case tips
         case web(WKWebView.Resource, String?)
         case none
-        
-        var makeViewController: UIViewController? {
-            switch self {
-            case .tips:
-                return nil /* TODO: create TipsViewController */
-            case .web(let resource, let title):
-                return WKWebViewController(with: resource, title: title)
-            default: return nil
-            }
+    }
+}
+
+fileprivate extension AboutRouter.State {
+    var makeViewController: UIViewController? {
+        switch self {
+        case .tips:
+            return nil /* TODO: create TipsViewController */
+        case .web(let resource, let title):
+            return WKWebViewController(with: resource, title: title)
+        default: return nil
         }
     }
 }
