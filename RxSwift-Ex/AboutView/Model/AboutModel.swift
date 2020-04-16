@@ -15,7 +15,7 @@ struct AboutModel {
     let privacyPolicyResource = BehaviorRelay<WKWebView.Resource>(value: .network("https://google.com/"))
     let navBarTitle = BehaviorRelay<String>(value: "О приложении")
     let title = BehaviorRelay<String>(value: "КАЛЕНДАРЬ БЕРЕМЕННОСТИ")
-    let description = BehaviorRelay<String>(value: "Рекомендации  профессиональных врачей для каждой недели беременности")
+    let description = BehaviorRelay<String>(value: "Рекомендации профессиональных врачей для каждой недели беременности")
     let tipsTitle = BehaviorRelay<String>(value: "Подсказки")
     let userAgreementTitle = BehaviorRelay<String>(value: "Пользовательское соглашение")
     let privacyPolicyTitle = BehaviorRelay<String>(value: "Политика конфиденциальности")
