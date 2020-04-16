@@ -29,7 +29,7 @@ final class EntityService: EntityServiceProtocol {
         do {
             realm = try Realm()
         } catch {
-            fatalError(error.localizedDescription)
+            fatalError("init(with objects:) has not been implemented. Error: \(error.localizedDescription)")
         }
         
         objects.forEach {

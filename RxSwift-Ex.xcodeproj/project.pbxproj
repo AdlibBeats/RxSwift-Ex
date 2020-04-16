@@ -25,7 +25,6 @@
 		49E3D5632345F9D000861760 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E3D5612345F9D000861760 /* Main.storyboard */; };
 		49E3D5652345F9D100861760 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49E3D5642345F9D100861760 /* Assets.xcassets */; };
 		49E3D5682345F9D100861760 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E3D5662345F9D100861760 /* LaunchScreen.storyboard */; };
-		49F0AEBC24471A3600222DCF /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0AEBB24471A3600222DCF /* Transformer.swift */; };
 		49F0AEBF244731B900222DCF /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0AEBE244731B900222DCF /* AppVersion.swift */; };
 		49F0AEC224473A0600222DCF /* EntityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0AEC124473A0600222DCF /* EntityService.swift */; };
 		8DD178AC9051091E38397AA3 /* Pods_RxSwift_Ex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6EBFFC426AB77CC1B11F8BF /* Pods_RxSwift_Ex.framework */; };
@@ -52,7 +51,6 @@
 		49E3D5642345F9D100861760 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49E3D5672345F9D100861760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49E3D5692345F9D100861760 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		49F0AEBB24471A3600222DCF /* Transformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; };
 		49F0AEBE244731B900222DCF /* AppVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
 		49F0AEC124473A0600222DCF /* EntityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityService.swift; sourceTree = "<group>"; };
 		C6EBFFC426AB77CC1B11F8BF /* Pods_RxSwift_Ex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwift_Ex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,7 +215,6 @@
 				49E3D5662345F9D100861760 /* LaunchScreen.storyboard */,
 				49E3D5692345F9D100861760 /* Info.plist */,
 				49E3D55B2345F9D000861760 /* AppDelegate.swift */,
-				49F0AEBB24471A3600222DCF /* Transformer.swift */,
 			);
 			path = "RxSwift-Ex";
 			sourceTree = "<group>";
@@ -367,7 +364,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49F0AEBC24471A3600222DCF /* Transformer.swift in Sources */,
 				49F0AEC224473A0600222DCF /* EntityService.swift in Sources */,
 				49E3D5602345F9D000861760 /* AboutViewController.swift in Sources */,
 				49F0AEBF244731B900222DCF /* AppVersion.swift in Sources */,

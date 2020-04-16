@@ -22,10 +22,12 @@ final class WKWebViewController: UIViewController {
         self.title = title
     }
     
+    @available(*, unavailable) required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        guard let request = WKWebView.makeRequest(resource) else { return }
         
         view.backgroundColor = .white
         
@@ -33,11 +35,11 @@ final class WKWebViewController: UIViewController {
             $0.edges(.left, .top, .right).pinToSuperview()
             $0.edges(.bottom).pinToSafeArea(of: self)
         }
+        
+        guard let request = WKWebView.makeRequest(resource) else { return }
         webView.load(request)
         webView.navigationDelegate = self
     }
-    
-    @available(*, unavailable) required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 }
 
 extension WKWebViewController: WKNavigationDelegate {
