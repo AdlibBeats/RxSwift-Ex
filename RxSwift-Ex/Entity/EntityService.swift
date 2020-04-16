@@ -14,6 +14,7 @@ import RxRealm
 
 protocol EntityServiceProtocol: class {
     var appVersionRelay: BehaviorRelay<AppVersion?> { get }
+    func makeAppVersion() -> AppVersion
 }
 
 final class EntityService: EntityServiceProtocol {
@@ -74,7 +75,7 @@ final class EntityService: EntityServiceProtocol {
             .disposed(by: disposedBag)
     }
     
-    func makeAppVersion(version: String = "3.0.0") -> AppVersion {
+    func makeAppVersion() -> AppVersion {
         //if realm data object not empty
         if let appVersion = realm.objects(AppVersion.self).last {
             return appVersion
@@ -82,7 +83,7 @@ final class EntityService: EntityServiceProtocol {
         
         //else create realm data (first run)
         let appVersion = AppVersion()
-        appVersion.version = version
+        appVersion.version = "3.0.0"
         
         do {
             try realm.write {

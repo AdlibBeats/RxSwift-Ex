@@ -75,7 +75,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ozM-Bq-xk6">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="53"/>
                                                         <subviews>
-                                                            <view alpha="0.15000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="op3-ng-mEe">
+                                                            <view userInteractionEnabled="NO" alpha="0.15000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="op3-ng-mEe">
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
@@ -89,7 +89,7 @@
                                                                     <constraint firstAttribute="height" constant="13" id="W7M-h4-Mn7"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V8q-TX-bOB">
+                                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V8q-TX-bOB">
                                                                 <rect key="frame" x="0.0" y="0.0" width="327" height="53"/>
                                                                 <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                 <state key="normal" title="Подсказки">
@@ -119,7 +119,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j14-hD-yrq">
                                                         <rect key="frame" x="0.0" y="53" width="375" height="53"/>
                                                         <subviews>
-                                                            <view alpha="0.15000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2FZ-F9-nfv">
+                                                            <view userInteractionEnabled="NO" alpha="0.15000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2FZ-F9-nfv">
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
@@ -133,7 +133,7 @@
                                                                     <constraint firstAttribute="height" constant="13" id="sVU-FX-y2h"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBg-C9-bHD">
+                                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBg-C9-bHD">
                                                                 <rect key="frame" x="0.0" y="0.0" width="327" height="53"/>
                                                                 <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                 <state key="normal" title="Политика конфиденциальности">
@@ -163,7 +163,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFU-Gu-5q6">
                                                         <rect key="frame" x="0.0" y="106" width="375" height="53"/>
                                                         <subviews>
-                                                            <view alpha="0.15000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KT0-LL-bAS">
+                                                            <view userInteractionEnabled="NO" alpha="0.15000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KT0-LL-bAS">
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
@@ -177,7 +177,7 @@
                                                                     <constraint firstAttribute="width" constant="8" id="keT-IG-9SN"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2A-ip-nJX">
+                                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2A-ip-nJX">
                                                                 <rect key="frame" x="0.0" y="0.0" width="327" height="53"/>
                                                                 <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                 <state key="normal" title="Пользовательское соглашение">

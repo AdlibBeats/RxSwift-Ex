@@ -294,6 +294,9 @@
 		49624C8D2448FF84009660D3 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				49624C68244876C7009660D3 /* CitiesListView */,
+				494557652355CE0800942B4F /* RxAboutView */,
+				49624C742448B11D009660D3 /* AboutView */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -362,9 +365,6 @@
 				49F0AEBD244731AA00222DCF /* Entity */,
 				49624C8A2448FE1B009660D3 /* Base */,
 				49624C8D2448FF84009660D3 /* Modules */,
-				49624C742448B11D009660D3 /* AboutView */,
-				494557652355CE0800942B4F /* RxAboutView */,
-				49624C68244876C7009660D3 /* CitiesListView */,
 				49E3D5612345F9D000861760 /* Main.storyboard */,
 				49624C722448AD75009660D3 /* MainViewController.swift */,
 				49E3D5662345F9D100861760 /* LaunchScreen.storyboard */,

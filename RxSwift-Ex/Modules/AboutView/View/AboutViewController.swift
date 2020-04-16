@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol AboutViewControllerProtocol {
+protocol AboutViewControllerProtocol: class {
     func didSetNavBarTitle(_ newValue: String)
     func didSetTitle(_ newValue: String)
     func didSetDescription(_ newValue: String)
@@ -26,24 +26,32 @@ final class AboutViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    var presenter: AboutPresenterProtocol!
+    private let configurator: AboutConfiguratorProtocol = AboutConfigurator()
+    
+    var presenter: AboutPresenterOutput!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configurator.configure(with: self)
+        presenter.didLoad()
         
+        view.backgroundColor = .white
+        navigationItem.backBarButtonItem = UIBarButtonItem().then {
+            $0.tintColor = .init(red: 0.937, green: 0.565, blue: 0.729, alpha: 1)
+        }
     }
     
     @IBAction func tipsDidTap(_ sender: UITapGestureRecognizer) {
-        
+        presenter.tipsDidTap()
     }
     
     @IBAction func privacyPolicyDidTap(_ sender: UITapGestureRecognizer) {
-        
+        presenter.privacyPolicyDidTap()
     }
     
     @IBAction func userAgreementDidTap(_ sender: UITapGestureRecognizer) {
-        
+        presenter.userAgreementDidTap()
     }
 }
 

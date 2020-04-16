@@ -19,11 +19,14 @@ protocol RxAboutPresenterProtocol: class {
 }
 
 final class RxAboutPresenter: RxAboutPresenterProtocol {
+    typealias Router = RxAboutRouterProtocol
+    typealias Interactor = RxAboutInteractorProtocol
+    
     private var model = RxAboutModel()
     private let disposedBag = DisposeBag()
     
-    var router: RxAboutRouterProtocol!
-    var interactor: RxAboutInteractorProtocol!
+    var router: Router!
+    var interactor: Interactor!
     
     func transform(input: Input) -> Output {
         disposedBag ~ [

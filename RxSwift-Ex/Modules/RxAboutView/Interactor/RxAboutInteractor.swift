@@ -14,12 +14,14 @@ protocol RxAboutInteractorProtocol: class {
 }
 
 final class RxAboutInteractor: RxAboutInteractorProtocol {
-    private weak var presenter: RxAboutPresenterProtocol!
+    typealias Presenter = RxAboutPresenterProtocol
+    
+    private weak var presenter: Presenter!
     
     private let entityService: EntityServiceProtocol = EntityService(with: .rx, objects: .appVersion)
     private let disposeBag = DisposeBag()
     
-    required init(presenter: RxAboutPresenterProtocol) {
+    required init(presenter: Presenter) {
         self.presenter = presenter
     }
     
