@@ -6,6 +6,9 @@
 //  Copyright © 2020 ru.proarttherapy. All rights reserved.
 //
 
+import RxBinding
+import RxSwift
+import RxCocoa
 import Align
 import WebKit
 import Alamofire
@@ -35,19 +38,28 @@ final class WKWebViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
         
-        view.addSubview(webView) {
-            $0.edges(.left, .top, .right).pinToSuperview()
-            $0.edges(.bottom).pinToSafeArea(of: self)
+        webView.navigationDelegate = self
+        
+        func setConstraints() {
+            view.addSubview(webView) {
+                $0.edges(.left, .top, .right).pinToSuperview()
+                $0.edges(.bottom).pinToSafeArea(of: self)
+            }
         }
         
-        guard let request = WKWebView.makeRequest(resource) else { return }
-        webView.load(request)
-        webView.navigationDelegate = self
+        func bind() {
+            Observable.just(resource) ~> webView.rx.load ~ disposeBag
+        }
+        
+        setConstraints()
+        bind()
     }
 }
 

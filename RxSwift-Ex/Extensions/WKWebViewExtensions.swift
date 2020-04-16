@@ -10,6 +10,10 @@ import WebKit
 import Alamofire
 
 extension WKWebView {
+    enum WKWebViewError: Error {
+        case invalidRequest
+    }
+    
     enum Resource {
         case local(String, FileType = .html)
         case network(String, Anchor = "", HTTPHeaders = [:])
@@ -20,17 +24,17 @@ extension WKWebView {
     }
     
     typealias Anchor = String
-    typealias Request = URLRequest?
+    typealias Request = URLRequest
     
-    static func makeRequest(_ resource: Resource) -> Request {
+    static func makeRequest(_ resource: Resource) throws -> Request {
         switch resource {
         case .local(let resource, let fileType):
             guard let path = Bundle.main.path(
                 forResource: resource,
-                ofType: fileType.rawValue) else { return nil }
+                ofType: fileType.rawValue) else { throw WKWebViewError.invalidRequest }
             return URLRequest(url: URL(fileURLWithPath: path))
         case .network(let resource, let anchor, let headers):
-            guard let url = URL(string: "\(resource)#\(anchor)") else { return nil }
+            guard let url = URL(string: "\(resource)#\(anchor)") else { throw WKWebViewError.invalidRequest }
             var request = URLRequest(url: url)
             request.allHTTPHeaderFields = headers.dictionary
             return request

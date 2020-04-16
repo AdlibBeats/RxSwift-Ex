@@ -10,6 +10,7 @@
 
 import RxSwift
 import RxCocoa
+import WebKit
 
 extension Reactive where Base : UITextField {
     var textColor: Binder<UIColor?> {
@@ -59,6 +60,18 @@ extension Reactive where Base : UIViewController {
     var title: Binder<String> {
         Binder(base) { viewController, value in
             viewController.title = value
+        }
+    }
+}
+
+extension Reactive where Base : WKWebView {
+    var load: Binder<WKWebView.Resource> {
+        Binder(base) { webView, value in
+            do {
+                webView.load(try WKWebView.makeRequest(value))
+            } catch {
+                print(error.localizedDescription)
+            }
         }
     }
 }
