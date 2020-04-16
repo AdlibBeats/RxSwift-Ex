@@ -13,11 +13,11 @@ protocol AboutInteractorProtocol: class {
     var appVersionRelay: BehaviorRelay<AppVersion?> { get }
 }
 
-class AboutInteractor: AboutInteractorProtocol {
-    weak var presenter: AboutPresenterProtocol!
-    let entityService: EntityServiceProtocol = EntityService(with: .appVersion)
-    let disposeBag = DisposeBag()
-    let appVersionRelay = BehaviorRelay<AppVersion?>(value: nil)
+final class AboutInteractor: AboutInteractorProtocol {
+    private weak var presenter: AboutPresenterProtocol!
+    
+    private let entityService: EntityServiceProtocol = EntityService(with: .appVersion)
+    private let disposeBag = DisposeBag()
     
     required init(presenter: AboutPresenterProtocol) {
         self.presenter = presenter
@@ -27,4 +27,6 @@ class AboutInteractor: AboutInteractorProtocol {
             .drive(appVersionRelay)
             .disposed(by: disposeBag)
     }
+    
+    let appVersionRelay = BehaviorRelay<AppVersion?>(value: nil)
 }

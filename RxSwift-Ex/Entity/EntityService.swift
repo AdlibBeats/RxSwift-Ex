@@ -23,8 +23,6 @@ final class EntityService: EntityServiceProtocol {
     private let realm: Realm
     private let disposedBag = DisposeBag()
     
-    let appVersionRelay = BehaviorRelay<AppVersion?>(value: nil)
-    
     init(with objects: RealmObject...) {
         do {
             realm = try Realm()
@@ -38,6 +36,8 @@ final class EntityService: EntityServiceProtocol {
             }
         }
     }
+    
+    let appVersionRelay = BehaviorRelay<AppVersion?>(value: nil)
     
     private func makeAppVersion(version: String = "3.0.0") {
         let objects = realm.objects(AppVersion.self)

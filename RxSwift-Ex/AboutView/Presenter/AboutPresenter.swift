@@ -20,13 +20,14 @@ final class AboutPresenter: AboutPresenterProtocol {
     private var model = AboutModel()
     private let disposedBag = DisposeBag()
     
-    weak var view: AboutViewProtocol!
-    var router: AboutRouterProtocol!
-    var interactor: AboutInteractorProtocol!
+    private weak var view: AboutViewProtocol!
     
     required init(view: AboutViewProtocol) {
         self.view = view
     }
+    
+    var router: AboutRouterProtocol!
+    var interactor: AboutInteractorProtocol!
     
     func transform(input: Input) -> Output {
         input.tipsTapEvent

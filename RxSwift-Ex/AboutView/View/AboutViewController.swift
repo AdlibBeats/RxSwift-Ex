@@ -24,8 +24,10 @@ final class AboutViewController: UIViewController, AboutViewProtocol {
     @IBOutlet weak var descriptionLabel: UILabel!
     
     private let disposeBag = DisposeBag()
+    
     var presenter: AboutPresenterProtocol!
-    let configurator: AboutConfiguratorProtocol = AboutConfigurator()
+    
+    private let configurator: AboutConfiguratorProtocol = AboutConfigurator()
     
     override func viewDidLoad() {
         super.viewDidLoad()

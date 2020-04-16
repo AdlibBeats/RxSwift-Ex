@@ -15,9 +15,9 @@ protocol AboutRouterProtocol: class {
     var push: Binder<AboutRouter.State> { get }
 }
 
-class AboutRouter: AboutRouterProtocol {
-    weak var viewController: AboutViewController!
-    weak var navigationController: UINavigationController!
+final class AboutRouter: AboutRouterProtocol {
+    private weak var viewController: AboutViewController!
+    private weak var navigationController: UINavigationController!
     
     init(viewController: AboutViewController) {
         self.viewController = viewController

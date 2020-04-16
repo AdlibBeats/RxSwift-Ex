@@ -12,7 +12,7 @@ protocol AboutConfiguratorProtocol: class {
     func configure(with viewController: AboutViewController)
 }
 
-class AboutConfigurator: AboutConfiguratorProtocol {
+final class AboutConfigurator: AboutConfiguratorProtocol {
     func configure(with viewController: AboutViewController) {
         let presenter = AboutPresenter(view: viewController)
         let interactor = AboutInteractor(presenter: presenter)
