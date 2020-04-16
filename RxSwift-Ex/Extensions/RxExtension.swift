@@ -55,6 +55,14 @@ extension Reactive where Base : UIView {
     }
 }
 
+extension Reactive where Base : UIViewController {
+    var title: Binder<String?> {
+        Binder(base) { viewController, value in
+            viewController.title = value
+        }
+    }
+}
+
 extension Array where Element == Disposable {
     func elementsDisposed(by disposeBag: DisposeBag) {
         forEach { $0.disposed(by: disposeBag) }

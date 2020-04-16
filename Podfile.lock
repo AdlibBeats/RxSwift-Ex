@@ -9,6 +9,11 @@ PODS:
   - Moya/RxSwift (14.0.0):
     - Moya/Core
     - RxSwift (~> 5.0)
+  - Realm (4.4.0):
+    - Realm/Headers (= 4.4.0)
+  - Realm/Headers (4.4.0)
+  - RealmSwift (4.4.0):
+    - Realm (= 4.4.0)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -22,6 +27,9 @@ PODS:
   - RxGesture (3.0.2):
     - RxCocoa (~> 5.1)
     - RxSwift (~> 5.1)
+  - RxRealm (2.0.0):
+    - RealmSwift (~> 4.0)
+    - RxSwift (~> 5.0)
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
@@ -34,6 +42,7 @@ DEPENDENCIES:
   - RxDataSources
   - RxFeedback
   - RxGesture
+  - RxRealm
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -42,10 +51,13 @@ SPEC REPOS:
     - Align
     - Differentiator
     - Moya
+    - Realm
+    - RealmSwift
     - RxCocoa
     - RxDataSources
     - RxFeedback
     - RxGesture
+    - RxRealm
     - RxRelay
     - RxSwift
 
@@ -55,13 +67,16 @@ SPEC CHECKSUMS:
   Align: e52659c1eda1e52aa470e3a69e36ce5fbac7f475
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  Realm: e125f464884cda953ebefe70c671b75b03b81b9b
+  RealmSwift: 33656a42bd300959a081fc13347376bc478071af
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxFeedback: 4260d8dad5bba28b182c0b9ff5bce68c260de183
   RxGesture: d6bd7447ca3a596c7a9702a6a2b6a2bb5d8bae54
+  RxRealm: 900f5c7e6f0a2d6527b56eaf7283f3035ec1e8ba
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
-PODFILE CHECKSUM: 1f4bfa485e518f99d49b35cca069226c1695a71c
+PODFILE CHECKSUM: eb5e02d92024a9c5874c09b0340f284155c2c68f
 
 COCOAPODS: 1.9.1

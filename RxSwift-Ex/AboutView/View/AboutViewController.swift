@@ -11,76 +11,67 @@ import RxSwift
 import RxCocoa
 import WebKit
 
-final class AboutViewController: UIViewController {
+protocol AboutViewProtocol: class {
+    
+}
+
+final class AboutViewController: UIViewController, AboutViewProtocol {
     @IBOutlet weak var tipsButton: UIButton!
     @IBOutlet weak var userAgreementButton: UIButton!
     @IBOutlet weak var privacyPolicyButton: UIButton!
+    @IBOutlet weak var appVersionLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     private let disposeBag = DisposeBag()
-    private let viewModel = AboutViewModel()
+    var presenter: AboutPresenterProtocol!
+    let configurator: AboutConfiguratorProtocol = AboutConfigurator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        guard let navigationController = self.navigationController else { return }
+        configurator.configure(with: self)
+        
+        navigationItem.backBarButtonItem = .init(title: "", style: .plain, target: nil, action: nil)
         
         func bind() {
-            let output = viewModel.transform(
-                input: AboutViewModel.Input(
+            let output = presenter.transform(
+                input: AboutPresenter.Input(
                     tipsTapEvent: tipsButton.rx.tap,
                     userAgreementTapEvent: userAgreementButton.rx.tap,
                     privacyPolicyTapEvent: privacyPolicyButton.rx.tap
                 )
             )
             
-            output.present
-                .map({ $0.makeViewController })
-                .drive(rx.present)
+            output.navBarTitle
+                .drive(rx.title)
                 .disposed(by: disposeBag)
             
-            output.push
-                .map({ $0.makeViewController })
-                .drive(navigationController.rx.push)
+            output.title
+                .drive(titleLabel.rx.text)
+                .disposed(by: disposeBag)
+            
+            output.description
+                .drive(descriptionLabel.rx.text)
+                .disposed(by: disposeBag)
+            
+            output.tipsTitle
+                .drive(tipsButton.rx.title(for: .normal))
+                .disposed(by: disposeBag)
+            
+            output.userAgreementTitle
+                .drive(userAgreementButton.rx.title(for: .normal))
+                .disposed(by: disposeBag)
+            
+            output.privacyPolicyTitle
+                .drive(privacyPolicyButton.rx.title(for: .normal))
+                .disposed(by: disposeBag)
+            
+            output.appVersion
+                .drive(appVersionLabel.rx.text)
                 .disposed(by: disposeBag)
         }
         
         bind()
-    }
-}
-
-extension AboutViewController {
-    enum Router {
-        case tips
-        case web(WKWebView.Resource, String?)
-        case none
-        
-        var makeViewController: UIViewController? {
-            switch self {
-            case .tips:
-                return nil /* TODO: create TipsViewController */
-            case .web(let resource, let title):
-                return WKWebViewController(with: resource, title: title)
-            default: return nil
-            }
-        }
-    }
-}
-
-private extension Reactive where Base : UIViewController {
-    var present: Binder<UIViewController?> {
-        Binder(base) { viewController, value in
-            guard let source = value else { return }
-            viewController.present(source, animated: true)
-        }
-    }
-}
-
-private extension Reactive where Base : UINavigationController {
-    var push: Binder<UIViewController?> {
-        Binder(base) { navigationController, value in
-            guard let source = value else { return }
-            navigationController.pushViewController(source, animated: true)
-        }
     }
 }
