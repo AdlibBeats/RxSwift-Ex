@@ -9,10 +9,13 @@
 import Align
 import WebKit
 import Alamofire
+import Then
 
 final class WKWebViewController: UIViewController {
     private let resource: WKWebView.Resource
-    private let webView = WKWebView()
+    private let webView = WKWebView().then {
+        $0.backgroundColor = .white
+    }
     
     init(with resource: WKWebView.Resource, title: String? = nil) {
         self.resource = resource

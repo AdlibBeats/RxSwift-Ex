@@ -33,6 +33,7 @@ PODS:
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
+  - Then (2.6.0)
 
 DEPENDENCIES:
   - AlamofireImage
@@ -43,6 +44,7 @@ DEPENDENCIES:
   - RxFeedback
   - RxGesture
   - RxRealm
+  - Then
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -60,6 +62,7 @@ SPEC REPOS:
     - RxRealm
     - RxRelay
     - RxSwift
+    - Then
 
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
@@ -76,7 +79,8 @@ SPEC CHECKSUMS:
   RxRealm: 900f5c7e6f0a2d6527b56eaf7283f3035ec1e8ba
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
 
-PODFILE CHECKSUM: eb5e02d92024a9c5874c09b0340f284155c2c68f
+PODFILE CHECKSUM: 95821cfcfa233caef1ef37d1c1d682255705ae3a
 
 COCOAPODS: 1.9.1

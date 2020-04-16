@@ -12,6 +12,8 @@ def shared_pods
   pod 'RxFeedback'
   pod 'RxGesture'
   pod 'RxRealm'
+  
+  pod 'Then'
   pod 'Align'
 end
 
