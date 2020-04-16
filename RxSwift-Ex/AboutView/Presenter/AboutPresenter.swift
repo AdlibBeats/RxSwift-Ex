@@ -39,36 +39,29 @@ final class AboutPresenter: AboutPresenterProtocol {
         Observable
             .merge(
                 input.userAgreementTapEvent.map { [model] in
-                    .web(model.userAgreementResource, model.webUserAgreementTitle )
+                    .web(model.userAgreementResource.value, model.webUserAgreementTitle.value )
                 },
                 input.privacyPolicyTapEvent.map { [model] in
-                    .web(model.privacyPolicyResource, model.webPrivacyPolicyTitle )
+                    .web(model.privacyPolicyResource.value, model.webPrivacyPolicyTitle.value )
                 }
             )
             .asDriver(onErrorJustReturn: .none)
             .drive(router.push)
             .disposed(by: disposedBag)
         
+        interactor.appVersionRelay
+            .asDriver()
+            .drive(model.appVersion)
+            .disposed(by: disposedBag)
+        
         return Output(
-            navBarTitle: Observable
-                .just(model.navBarTitle)
-                .asDriver(onErrorJustReturn: ""),
-            title: Observable
-                .just(model.title)
-                .asDriver(onErrorJustReturn: ""),
-            description: Observable
-                .just(model.description)
-                .asDriver(onErrorJustReturn: ""),
-            tipsTitle: Observable
-                .just(model.tipsTitle)
-                .asDriver(onErrorJustReturn: ""),
-            userAgreementTitle: Observable
-                .just(model.userAgreementTitle)
-                .asDriver(onErrorJustReturn: ""),
-            privacyPolicyTitle: Observable
-                .just(model.privacyPolicyTitle)
-                .asDriver(onErrorJustReturn: ""),
-            appVersion: interactor.appVersionRelay
+            navBarTitle: model.navBarTitle.asDriver(),
+            title: model.title.asDriver(),
+            description: model.description.asDriver(),
+            tipsTitle: model.tipsTitle.asDriver(),
+            userAgreementTitle: model.userAgreementTitle.asDriver(),
+            privacyPolicyTitle: model.privacyPolicyTitle.asDriver(),
+            appVersion: model.appVersion
                 .compactMap({ $0?.version })
                 .asDriver(onErrorJustReturn: "")
         )
