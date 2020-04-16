@@ -60,14 +60,11 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbg-hv-d65">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Рекомендации профессиональных врачей для каждой недели беременности" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbg-hv-d65">
                                                 <rect key="frame" x="40" y="247" width="295" height="61"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" priority="999" constant="295" id="3KR-PV-APj"/>
                                                 </constraints>
-                                                <string key="text">Рекомендации  профессиональных 
-врачей для каждой 
-недели беременности</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -115,6 +112,9 @@
                                                             <constraint firstItem="CtL-Bi-gxO" firstAttribute="centerY" secondItem="ozM-Bq-xk6" secondAttribute="centerY" id="yZ8-Kg-uqi"/>
                                                             <constraint firstItem="CtL-Bi-gxO" firstAttribute="leading" secondItem="V8q-TX-bOB" secondAttribute="trailing" constant="20" id="yrR-xo-hSr"/>
                                                         </constraints>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="Nh2-UZ-wmL" appends="YES" id="ocM-U4-OZ8"/>
+                                                        </connections>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j14-hD-yrq">
                                                         <rect key="frame" x="0.0" y="53" width="375" height="53"/>
@@ -156,6 +156,9 @@
                                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="P9U-RJ-Wez" secondAttribute="bottom" id="mRJ-Wz-0Bu"/>
                                                             <constraint firstItem="P9U-RJ-Wez" firstAttribute="centerY" secondItem="j14-hD-yrq" secondAttribute="centerY" id="sd3-Xk-2JS"/>
                                                         </constraints>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="XPY-NH-186" appends="YES" id="2vv-fR-AoC"/>
+                                                        </connections>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFU-Gu-5q6">
                                                         <rect key="frame" x="0.0" y="106" width="375" height="53"/>
@@ -197,6 +200,9 @@
                                                             <constraint firstItem="KT0-LL-bAS" firstAttribute="leading" secondItem="gFU-Gu-5q6" secondAttribute="leading" id="r6c-2s-n5n"/>
                                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="bYg-xq-jrM" secondAttribute="bottom" id="vPn-95-V36"/>
                                                         </constraints>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="RY6-bK-nsb" appends="YES" id="juF-pU-qbE"/>
+                                                        </connections>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
@@ -207,14 +213,13 @@
                                                 </constraints>
                                             </stackView>
                                             <view alpha="0.15000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o00-NA-g16">
-                                                <rect key="frame" x="0.0" y="572" width="375" height="1"/>
+                                                <rect key="frame" x="0.0" y="573" width="375" height="1"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="vlb-HP-8Pg"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IRu-3B-w8P" secondAttribute="trailing" id="2Qt-Oe-bD6"/>
                                             <constraint firstItem="W7T-By-3yo" firstAttribute="centerX" secondItem="mXV-eg-Z45" secondAttribute="centerX" id="3jo-zM-X2E"/>
@@ -235,7 +240,7 @@
                                             <constraint firstItem="W7T-By-3yo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mXV-eg-Z45" secondAttribute="leading" id="edK-mJ-adX"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="W7T-By-3yo" secondAttribute="trailing" id="kaS-Kq-hm1"/>
                                             <constraint firstAttribute="bottom" secondItem="clw-K7-JxT" secondAttribute="bottom" id="ths-qP-95U"/>
-                                            <constraint firstItem="o00-NA-g16" firstAttribute="bottom" secondItem="clw-K7-JxT" secondAttribute="bottom" constant="-1" id="thx-5L-urK"/>
+                                            <constraint firstItem="o00-NA-g16" firstAttribute="bottom" secondItem="clw-K7-JxT" secondAttribute="bottom" id="thx-5L-urK"/>
                                             <constraint firstItem="clw-K7-JxT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mXV-eg-Z45" secondAttribute="leading" id="yoV-kr-Wfe"/>
                                             <constraint firstItem="clw-K7-JxT" firstAttribute="centerX" secondItem="mXV-eg-Z45" secondAttribute="centerX" id="z1V-91-P6r"/>
                                         </constraints>
@@ -275,8 +280,23 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cVq-Y2-Z2R" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="RY6-bK-nsb">
+                    <connections>
+                        <action selector="userAgreementDidTap:" destination="2e2-KP-dN9" id="EaD-GI-aHI"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="XPY-NH-186">
+                    <connections>
+                        <action selector="privacyPolicyDidTap:" destination="2e2-KP-dN9" id="8gC-eu-YRh"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Nh2-UZ-wmL">
+                    <connections>
+                        <action selector="tipsDidTap:" destination="2e2-KP-dN9" id="efM-iT-e9V"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="135.9375"/>
+            <point key="canvasLocation" x="1052" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WJ9-LA-vu6">
@@ -290,7 +310,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="2e2-KP-dN9" kind="relationship" relationship="rootViewController" id="Bzc-Mz-G60"/>
+                        <segue destination="2e2-KP-dN9" kind="relationship" relationship="rootViewController" id="j2o-OP-2Zc"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s9d-Wg-wTp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		49259CE0244762880001C15C /* AboutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49259CDF244762880001C15C /* AboutInteractor.swift */; };
+		49259CE0244762880001C15C /* RxAboutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49259CDF244762880001C15C /* RxAboutInteractor.swift */; };
 		494557642355CE0400942B4F /* AboutView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494557632355CE0400942B4F /* AboutView.storyboard */; };
-		494557682355CE4F00942B4F /* AboutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494557672355CE4F00942B4F /* AboutPresenter.swift */; };
-		494557702355CF4C00942B4F /* AboutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4945576F2355CF4C00942B4F /* AboutModel.swift */; };
-		49624C6324483CCC009660D3 /* AboutRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C6224483CCC009660D3 /* AboutRouter.swift */; };
-		49624C6624484554009660D3 /* AboutConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C6524484554009660D3 /* AboutConfigurator.swift */; };
+		494557682355CE4F00942B4F /* RxAboutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494557672355CE4F00942B4F /* RxAboutPresenter.swift */; };
+		494557702355CF4C00942B4F /* RxAboutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4945576F2355CF4C00942B4F /* RxAboutModel.swift */; };
+		49624C6324483CCC009660D3 /* RxAboutRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C6224483CCC009660D3 /* RxAboutRouter.swift */; };
+		49624C6624484554009660D3 /* RxAboutConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C6524484554009660D3 /* RxAboutConfigurator.swift */; };
 		49624C7124487799009660D3 /* CitiesListView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49624C7024487799009660D3 /* CitiesListView.storyboard */; };
+		49624C732448AD75009660D3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C722448AD75009660D3 /* MainViewController.swift */; };
+		49624C772448B13A009660D3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C762448B13A009660D3 /* AboutViewController.swift */; };
+		49624C812448E243009660D3 /* AboutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C802448E243009660D3 /* AboutPresenter.swift */; };
+		49624C832448E24F009660D3 /* AboutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C822448E24F009660D3 /* AboutModel.swift */; };
+		49624C852448E25E009660D3 /* AboutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C842448E25E009660D3 /* AboutInteractor.swift */; };
+		49624C872448E26B009660D3 /* AboutRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C862448E26B009660D3 /* AboutRouter.swift */; };
+		49624C892448E27A009660D3 /* AboutConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C882448E27A009660D3 /* AboutConfigurator.swift */; };
 		4965E27D234620000042E4B9 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965E27C234620000042E4B9 /* StringExtensions.swift */; };
 		4965E28A234623EA0042E4B9 /* ABOUT_TOKENS_en.html in Resources */ = {isa = PBXBuildFile; fileRef = 4965E283234623EA0042E4B9 /* ABOUT_TOKENS_en.html */; };
 		4965E28B234623EA0042E4B9 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 4965E284234623EA0042E4B9 /* Style.css */; };
@@ -22,7 +29,7 @@
 		49C675FB2446F0BF002D8FF1 /* RxExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C675FA2446F0BF002D8FF1 /* RxExtension.swift */; };
 		49C675FD2446F41E002D8FF1 /* WKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C675FC2446F41E002D8FF1 /* WKWebViewController.swift */; };
 		49E3D55C2345F9D000861760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3D55B2345F9D000861760 /* AppDelegate.swift */; };
-		49E3D5602345F9D000861760 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3D55F2345F9D000861760 /* AboutViewController.swift */; };
+		49E3D5602345F9D000861760 /* RxAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3D55F2345F9D000861760 /* RxAboutViewController.swift */; };
 		49E3D5632345F9D000861760 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E3D5612345F9D000861760 /* Main.storyboard */; };
 		49E3D5652345F9D100861760 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49E3D5642345F9D100861760 /* Assets.xcassets */; };
 		49E3D5682345F9D100861760 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E3D5662345F9D100861760 /* LaunchScreen.storyboard */; };
@@ -32,13 +39,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		49259CDF244762880001C15C /* AboutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutInteractor.swift; sourceTree = "<group>"; };
+		49259CDF244762880001C15C /* RxAboutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAboutInteractor.swift; sourceTree = "<group>"; };
 		494557632355CE0400942B4F /* AboutView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutView.storyboard; sourceTree = "<group>"; };
-		494557672355CE4F00942B4F /* AboutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPresenter.swift; sourceTree = "<group>"; };
-		4945576F2355CF4C00942B4F /* AboutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutModel.swift; sourceTree = "<group>"; };
-		49624C6224483CCC009660D3 /* AboutRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRouter.swift; sourceTree = "<group>"; };
-		49624C6524484554009660D3 /* AboutConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutConfigurator.swift; sourceTree = "<group>"; };
+		494557672355CE4F00942B4F /* RxAboutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAboutPresenter.swift; sourceTree = "<group>"; };
+		4945576F2355CF4C00942B4F /* RxAboutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAboutModel.swift; sourceTree = "<group>"; };
+		49624C6224483CCC009660D3 /* RxAboutRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAboutRouter.swift; sourceTree = "<group>"; };
+		49624C6524484554009660D3 /* RxAboutConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAboutConfigurator.swift; sourceTree = "<group>"; };
 		49624C7024487799009660D3 /* CitiesListView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CitiesListView.storyboard; sourceTree = "<group>"; };
+		49624C722448AD75009660D3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		49624C762448B13A009660D3 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		49624C802448E243009660D3 /* AboutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPresenter.swift; sourceTree = "<group>"; };
+		49624C822448E24F009660D3 /* AboutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutModel.swift; sourceTree = "<group>"; };
+		49624C842448E25E009660D3 /* AboutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutInteractor.swift; sourceTree = "<group>"; };
+		49624C862448E26B009660D3 /* AboutRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRouter.swift; sourceTree = "<group>"; };
+		49624C882448E27A009660D3 /* AboutConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutConfigurator.swift; sourceTree = "<group>"; };
 		4965E27C234620000042E4B9 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		4965E283234623EA0042E4B9 /* ABOUT_TOKENS_en.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ABOUT_TOKENS_en.html; sourceTree = "<group>"; };
 		4965E284234623EA0042E4B9 /* Style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
@@ -48,7 +62,7 @@
 		49C675FC2446F41E002D8FF1 /* WKWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewController.swift; sourceTree = "<group>"; };
 		49E3D5582345F9D000861760 /* RxSwift-Ex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxSwift-Ex.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E3D55B2345F9D000861760 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		49E3D55F2345F9D000861760 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		49E3D55F2345F9D000861760 /* RxAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAboutViewController.swift; sourceTree = "<group>"; };
 		49E3D5622345F9D000861760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49E3D5642345F9D100861760 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49E3D5672345F9D100861760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -83,7 +97,7 @@
 		49259CDE2447625E0001C15C /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				49259CDF244762880001C15C /* AboutInteractor.swift */,
+				49259CDF244762880001C15C /* RxAboutInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -91,12 +105,12 @@
 		49259CE1244762AB0001C15C /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				49624C6224483CCC009660D3 /* AboutRouter.swift */,
+				49624C6224483CCC009660D3 /* RxAboutRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
 		};
-		494557652355CE0800942B4F /* AboutView */ = {
+		494557652355CE0800942B4F /* RxAboutView */ = {
 			isa = PBXGroup;
 			children = (
 				49624C642448453F009660D3 /* Configurator */,
@@ -106,7 +120,7 @@
 				4945576D2355CEF300942B4F /* Presenter */,
 				4945576C2355CEEC00942B4F /* View */,
 			);
-			path = AboutView;
+			path = RxAboutView;
 			sourceTree = "<group>";
 		};
 		494557662355CE1400942B4F /* WKWebViewController */ = {
@@ -120,8 +134,7 @@
 		4945576C2355CEEC00942B4F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				494557632355CE0400942B4F /* AboutView.storyboard */,
-				49E3D55F2345F9D000861760 /* AboutViewController.swift */,
+				49E3D55F2345F9D000861760 /* RxAboutViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -129,7 +142,7 @@
 		4945576D2355CEF300942B4F /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				494557672355CE4F00942B4F /* AboutPresenter.swift */,
+				494557672355CE4F00942B4F /* RxAboutPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -137,7 +150,7 @@
 		4945576E2355CEFB00942B4F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4945576F2355CF4C00942B4F /* AboutModel.swift */,
+				4945576F2355CF4C00942B4F /* RxAboutModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -145,7 +158,7 @@
 		49624C642448453F009660D3 /* Configurator */ = {
 			isa = PBXGroup;
 			children = (
-				49624C6524484554009660D3 /* AboutConfigurator.swift */,
+				49624C6524484554009660D3 /* RxAboutConfigurator.swift */,
 			);
 			path = Configurator;
 			sourceTree = "<group>";
@@ -204,6 +217,68 @@
 			children = (
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		49624C742448B11D009660D3 /* AboutView */ = {
+			isa = PBXGroup;
+			children = (
+				49624C7C2448B1AE009660D3 /* Configurator */,
+				49624C7B2448B1A8009660D3 /* Router */,
+				49624C7A2448B1A1009660D3 /* Interactor */,
+				49624C792448B19B009660D3 /* Model */,
+				49624C782448B194009660D3 /* Presenter */,
+				49624C752448B127009660D3 /* View */,
+			);
+			path = AboutView;
+			sourceTree = "<group>";
+		};
+		49624C752448B127009660D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				494557632355CE0400942B4F /* AboutView.storyboard */,
+				49624C762448B13A009660D3 /* AboutViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		49624C782448B194009660D3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				49624C802448E243009660D3 /* AboutPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		49624C792448B19B009660D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				49624C822448E24F009660D3 /* AboutModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		49624C7A2448B1A1009660D3 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				49624C842448E25E009660D3 /* AboutInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		49624C7B2448B1A8009660D3 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				49624C862448E26B009660D3 /* AboutRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		49624C7C2448B1AE009660D3 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				49624C882448E27A009660D3 /* AboutConfigurator.swift */,
+			);
+			path = Configurator;
 			sourceTree = "<group>";
 		};
 		4965E27723461BF60042E4B9 /* Extensions */ = {
@@ -268,9 +343,11 @@
 				4965E27723461BF60042E4B9 /* Extensions */,
 				49A6D9D5235EEEF100EE512B /* ViewControllers */,
 				49F0AEBD244731AA00222DCF /* Entity */,
-				494557652355CE0800942B4F /* AboutView */,
+				49624C742448B11D009660D3 /* AboutView */,
+				494557652355CE0800942B4F /* RxAboutView */,
 				49624C68244876C7009660D3 /* CitiesListView */,
 				49E3D5612345F9D000861760 /* Main.storyboard */,
+				49624C722448AD75009660D3 /* MainViewController.swift */,
 				49E3D5662345F9D100861760 /* LaunchScreen.storyboard */,
 				49E3D5692345F9D100861760 /* Info.plist */,
 				49E3D55B2345F9D000861760 /* AppDelegate.swift */,
@@ -424,19 +501,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49624C872448E26B009660D3 /* AboutRouter.swift in Sources */,
 				49F0AEC224473A0600222DCF /* EntityService.swift in Sources */,
-				49E3D5602345F9D000861760 /* AboutViewController.swift in Sources */,
+				49E3D5602345F9D000861760 /* RxAboutViewController.swift in Sources */,
+				49624C812448E243009660D3 /* AboutPresenter.swift in Sources */,
 				49F0AEBF244731B900222DCF /* AppVersion.swift in Sources */,
+				49624C832448E24F009660D3 /* AboutModel.swift in Sources */,
+				49624C772448B13A009660D3 /* AboutViewController.swift in Sources */,
 				4965E27D234620000042E4B9 /* StringExtensions.swift in Sources */,
+				49624C892448E27A009660D3 /* AboutConfigurator.swift in Sources */,
 				49E3D55C2345F9D000861760 /* AppDelegate.swift in Sources */,
-				49624C6324483CCC009660D3 /* AboutRouter.swift in Sources */,
-				49259CE0244762880001C15C /* AboutInteractor.swift in Sources */,
-				494557702355CF4C00942B4F /* AboutModel.swift in Sources */,
+				49624C6324483CCC009660D3 /* RxAboutRouter.swift in Sources */,
+				49259CE0244762880001C15C /* RxAboutInteractor.swift in Sources */,
+				49624C732448AD75009660D3 /* MainViewController.swift in Sources */,
+				494557702355CF4C00942B4F /* RxAboutModel.swift in Sources */,
+				49624C852448E25E009660D3 /* AboutInteractor.swift in Sources */,
 				49C675FD2446F41E002D8FF1 /* WKWebViewController.swift in Sources */,
 				4965E291234625D90042E4B9 /* WKWebViewExtensions.swift in Sources */,
 				49C675FB2446F0BF002D8FF1 /* RxExtension.swift in Sources */,
-				49624C6624484554009660D3 /* AboutConfigurator.swift in Sources */,
-				494557682355CE4F00942B4F /* AboutPresenter.swift in Sources */,
+				49624C6624484554009660D3 /* RxAboutConfigurator.swift in Sources */,
+				494557682355CE4F00942B4F /* RxAboutPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

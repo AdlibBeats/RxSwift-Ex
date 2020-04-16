@@ -4,9 +4,12 @@ use_frameworks!
 inhibit_all_warnings!
 
 def shared_pods
+  pod 'Swinject'
+  
   pod 'Moya/RxSwift'
   pod 'AlamofireImage'
 
+  pod 'RxBinding'
   pod 'RxCocoa'
   pod 'RxDataSources'
   pod 'RxFeedback'

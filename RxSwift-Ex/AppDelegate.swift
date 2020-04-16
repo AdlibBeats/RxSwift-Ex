@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  RxSwift-Ex
 //
-//  Created by Andrew on 30/07/2019.
-//  Copyright © 2019 ru.proarttherapy. All rights reserved.
+//  Created by Andrew on 16/04/2020.
+//  Copyright © 2020 ru.proarttherapy. All rights reserved.
 //
 
 import UIKit

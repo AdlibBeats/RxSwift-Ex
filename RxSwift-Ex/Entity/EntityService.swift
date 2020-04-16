@@ -16,6 +16,11 @@ protocol EntityServiceProtocol: class {
 }
 
 final class EntityService: EntityServiceProtocol {
+    enum Architecture {
+        case normal
+        case rx
+    }
+    
     enum RealmObject {
         case appVersion
     }
@@ -23,27 +28,29 @@ final class EntityService: EntityServiceProtocol {
     private let realm: Realm
     private let disposedBag = DisposeBag()
     
-    init(with objects: RealmObject...) {
+    init(with architecture: Architecture, objects: RealmObject...) {
         do {
             realm = try Realm()
         } catch {
             fatalError("init(with objects:) has not been implemented. Error: \(error.localizedDescription)")
         }
         
-        objects.forEach {
-            switch $0 {
-            case .appVersion: makeAppVersion()
+        switch architecture {
+        case .rx:
+            objects.forEach {
+                switch $0 {
+                case .appVersion: rxMakeAppVersion()
+                }
             }
+        default: break
         }
     }
     
     let appVersionRelay = BehaviorRelay<AppVersion?>(value: nil)
     
-    private func makeAppVersion(version: String = "3.0.0") {
-        let objects = realm.objects(AppVersion.self)
-        
+    private func rxMakeAppVersion(version: String = "3.0.0") {
         Observable
-            .collection(from: objects)
+            .collection(from: realm.objects(AppVersion.self))
             .map({ $0.last })
             .asDriver(onErrorJustReturn: nil)
             .drive(onNext: { [realm, appVersionRelay, disposedBag] in
@@ -67,5 +74,26 @@ final class EntityService: EntityServiceProtocol {
                     .disposed(by: disposedBag)
             })
             .disposed(by: disposedBag)
+    }
+    
+    func makeAppVersion(version: String = "3.0.0") -> AppVersion {
+        //if realm data object not empty
+        if let appVersion = realm.objects(AppVersion.self).last {
+            return appVersion
+        }
+        
+        //else create realm data (first run)
+        let appVersion = AppVersion()
+        appVersion.version = version
+        
+        do {
+            try realm.write {
+                realm.add(appVersion)
+            }
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+        
+        return appVersion
     }
 }

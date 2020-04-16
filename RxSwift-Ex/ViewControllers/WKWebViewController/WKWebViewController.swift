@@ -15,6 +15,12 @@ final class WKWebViewController: UIViewController {
     private let resource: WKWebView.Resource
     private let webView = WKWebView().then {
         $0.backgroundColor = .white
+        
+        $0.scrollView.showsVerticalScrollIndicator = false
+        $0.scrollView.showsHorizontalScrollIndicator = false
+        $0.scrollView.bouncesZoom = false
+        $0.scrollView.alwaysBounceVertical = true
+        $0.scrollView.clipsToBounds = true
     }
     
     init(with resource: WKWebView.Resource, title: String? = nil) {

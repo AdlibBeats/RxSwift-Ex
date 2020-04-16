@@ -56,7 +56,7 @@ extension Reactive where Base : UIView {
 }
 
 extension Reactive where Base : UIViewController {
-    var title: Binder<String?> {
+    var title: Binder<String> {
         Binder(base) { viewController, value in
             viewController.title = value
         }
