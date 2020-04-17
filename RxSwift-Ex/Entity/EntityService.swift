@@ -39,7 +39,9 @@ final class EntityService: EntityServiceProtocol {
         }
     }
     
-    let appVersionRelay = BehaviorRelay<AppVersion>(value: .init())
+    let appVersionRelay = BehaviorRelay<AppVersion>(
+        value: AppVersion().with { $0.version = "..." }
+    )
     
     private func rxMakeAppVersion() {
         let appVersionObserver = AnyObserver<Object>() { [appVersionRelay] in
@@ -49,6 +51,7 @@ final class EntityService: EntityServiceProtocol {
         
         Observable
             .collection(from: realm.objects(AppVersion.self))
+            .delay(.seconds(2), scheduler: MainScheduler.asyncInstance) //TEST will give app version after 2 seconds
             .map({ $0.last })
             .asDriver(onErrorJustReturn: nil)
             .drive(onNext: { [realm, disposedBag] in
@@ -56,7 +59,7 @@ final class EntityService: EntityServiceProtocol {
                 
                 guard let appVersion = $0 else {
                     //else create realm data (first run)
-                    Observable.from(object: AppVersion().with { $0.version = "3.0.0" } ) ~>
+                    Observable.from(object: AppVersion().with { $0.version = "3.0.0" }) ~>
                         [realm.rx.add(), appVersionObserver] ~ disposedBag
                     return
                 }
@@ -68,6 +71,8 @@ final class EntityService: EntityServiceProtocol {
     }
     
     func makeAppVersion() -> AppVersion {
+        //TEST Realm
+        
         //if realm data object not empty
         if let appVersion = realm.objects(AppVersion.self).last {
             return appVersion

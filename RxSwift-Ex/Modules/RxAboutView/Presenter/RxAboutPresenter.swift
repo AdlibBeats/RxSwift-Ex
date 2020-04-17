@@ -52,7 +52,8 @@ final class RxAboutPresenter: RxAboutPresenterProtocol {
             userAgreementTitle: model.userAgreementTitle.asDriver(),
             privacyPolicyTitle: model.privacyPolicyTitle.asDriver(),
             appVersion: model.appVersion
-                .map({ "Версия \($0.version)" })
+                .compactMap({ $0?.version })
+                .map({ "Версия \($0)" })
                 .asDriver(onErrorJustReturn: "")
         )
     }
