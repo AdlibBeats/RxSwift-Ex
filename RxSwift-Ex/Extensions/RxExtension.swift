@@ -54,6 +54,10 @@ extension Reactive where Base : UIView {
             view.endEditing(value)
         }
     }
+    
+    var tap: Observable<Void> {
+        tapGesture().when(.recognized).map { _ in }
+    }
 }
 
 extension Reactive where Base : UIViewController {

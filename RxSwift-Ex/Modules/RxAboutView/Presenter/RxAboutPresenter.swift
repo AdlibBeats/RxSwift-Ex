@@ -32,12 +32,16 @@ final class RxAboutPresenter: RxAboutPresenterProtocol {
         interactor.appVersionRelay ~> model.appVersion ~
         input.tipsTapEvent.map { .tips } ~> router.present ~
         Observable.merge(
-            input.userAgreementTapEvent.map { [model] in
-                .web(model.userAgreementResource.value, model.webUserAgreementTitle.value )
-            },
-            input.privacyPolicyTapEvent.map { [model] in
-                .web(model.privacyPolicyResource.value, model.webPrivacyPolicyTitle.value )
-            }
+            input.userAgreementTapEvent.withLatestFrom(Observable.combineLatest(
+                    model.userAgreementResource,
+                    model.webUserAgreementTitle
+                )
+            ).map { .web($0, $1) },
+            input.privacyPolicyTapEvent.withLatestFrom(Observable.combineLatest(
+                    model.privacyPolicyResource,
+                    model.webPrivacyPolicyTitle
+                )
+            ).map { .web($0, $1) }
         ) ~> router.push ~ disposedBag
         
         return Output(
@@ -56,9 +60,9 @@ final class RxAboutPresenter: RxAboutPresenterProtocol {
 
 extension RxAboutPresenter {
     struct Input {
-        let tipsTapEvent: ControlEvent<Void>
-        let userAgreementTapEvent: ControlEvent<Void>
-        let privacyPolicyTapEvent: ControlEvent<Void>
+        let tipsTapEvent: Observable<Void>
+        let userAgreementTapEvent: Observable<Void>
+        let privacyPolicyTapEvent: Observable<Void>
     }
 
     struct Output {

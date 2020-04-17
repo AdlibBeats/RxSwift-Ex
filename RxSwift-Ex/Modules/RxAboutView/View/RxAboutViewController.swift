@@ -25,26 +25,26 @@ final class RxAboutViewController: UIViewController {
             $0.clipsToBounds = true
         }
         
-        private let button = UIButton().then {
-            $0.titleLabel?.font = .systemFont(ofSize: 15)
-            $0.setTitleColor(.white, for: .normal)
-            $0.contentHorizontalAlignment = .left
-            $0.titleEdgeInsets = .init(top: 0, left: 20, bottom: 0, right: 0)
+        private let label = UILabel().then {
+            $0.font = .systemFont(ofSize: 15)
+            $0.textColor = .white
         }
         
         init() {
             super.init(frame: .zero)
             
-            addSubview(separatorView, rightArrowImageView, button) {
+            addSubview(separatorView, rightArrowImageView, label) {
                 $0.edges(.left, .top, .right).pinToSuperview()
                 $0.height.set(1)
                 
                 $1.edges(.right).pinToSuperview(insets: .init(top: 0, left: 0, bottom: 0, right: 20))
                 $1.centerY.alignWithSuperview()
-                $1.size.set(.init(width: 8, height: 13))
                 $1.edges(.top, .bottom).pinToSuperview(insets: .zero, relation: .greaterThanOrEqual)
+                $1.size.set(.init(width: 8, height: 13))
                 
-                $2.edges(.bottom, .left, .top).pinToSuperview()
+                $2.edges(.left).pinToSuperview(insets: .init(top: 0, left: 20, bottom: 0, right: 0))
+                $2.centerY.alignWithSuperview()
+                $2.edges(.top, .bottom).pinToSuperview(insets: .zero, relation: .greaterThanOrEqual)
                 $2.right.align(with: $1.left - 20)
             }
         }
@@ -53,12 +53,8 @@ final class RxAboutViewController: UIViewController {
             fatalError("init(coder:) has not been implemented")
         }
         
-        var tap: ControlEvent<Void> {
-            button.rx.tap
-        }
-        
-        func title(for controlState: UIControl.State = []) -> Binder<String?> {
-            button.rx.title(for: controlState)
+        var text: Binder<String?> {
+            label.rx.text
         }
     }
     
@@ -211,18 +207,18 @@ final class RxAboutViewController: UIViewController {
         func bind() {
             let output = presenter.transform(
                 input: RxAboutPresenter.Input(
-                    tipsTapEvent: tipsButton.tap,
-                    userAgreementTapEvent: userAgreementButton.tap,
-                    privacyPolicyTapEvent: privacyPolicyButton.tap
+                    tipsTapEvent: tipsButton.rx.tap,
+                    userAgreementTapEvent: userAgreementButton.rx.tap,
+                    privacyPolicyTapEvent: privacyPolicyButton.rx.tap
                 )
             )
             
             output.navBarTitle ~> rx.title ~
             output.title ~> titleLabel.rx.text ~
             output.description ~> descriptionLabel.rx.text ~
-            output.tipsTitle ~> tipsButton.title(for: .normal) ~
-            output.userAgreementTitle ~> userAgreementButton.title(for: .normal) ~
-            output.privacyPolicyTitle ~> privacyPolicyButton.title(for: .normal) ~
+            output.tipsTitle ~> tipsButton.text ~
+            output.userAgreementTitle ~> userAgreementButton.text ~
+            output.privacyPolicyTitle ~> privacyPolicyButton.text ~
             output.appVersion ~> appVersionLabel.rx.text ~ disposeBag
         }
         

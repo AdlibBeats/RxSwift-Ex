@@ -8,6 +8,7 @@
 
 import UIKit
 import Then
+import RxGesture
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
