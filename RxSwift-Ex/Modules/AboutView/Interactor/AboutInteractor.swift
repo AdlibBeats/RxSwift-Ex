@@ -8,14 +8,6 @@
 
 import Foundation
 
-protocol AboutInteractorInput: class {
-    func makeAppVersion()
-}
-
-protocol AboutInteractorOutput: class {
-    func didSetAppVersion(_ newValue: AppVersion)
-}
-
 final class AboutInteractor {
     typealias Presenter = AboutInteractorOutput
     

@@ -8,23 +8,6 @@
 
 import UIKit
 
-protocol AboutViewInput: class {
-    func didSetNavBarTitle(_ newValue: String)
-    func didSetTitle(_ newValue: String)
-    func didSetDescription(_ newValue: String)
-    func didSetTipsTitle(_ newValue: String)
-    func didSetUserAgreementTitle(_ newValue: String)
-    func didSetPrivacyPolicyTitle(_ newValue: String)
-    func didSetAppVersion(_ newValue: String)
-}
-
-protocol AboutViewOutput: class {
-    func didLoad()
-    func tipsDidTap()
-    func privacyPolicyDidTap()
-    func userAgreementDidTap()
-}
-
 final class AboutViewController: UIViewController {
     @IBOutlet weak var tipsButton: UIButton!
     @IBOutlet weak var userAgreementButton: UIButton!

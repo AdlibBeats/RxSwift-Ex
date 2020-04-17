@@ -26,6 +26,11 @@
 		4965E28B234623EA0042E4B9 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 4965E284234623EA0042E4B9 /* Style.css */; };
 		4965E28C234623EA0042E4B9 /* ABOUT_TOKENS_ru.html in Resources */ = {isa = PBXBuildFile; fileRef = 4965E285234623EA0042E4B9 /* ABOUT_TOKENS_ru.html */; };
 		4965E291234625D90042E4B9 /* WKWebViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965E290234625D90042E4B9 /* WKWebViewExtensions.swift */; };
+		49BCF8472449F7FF0094363B /* AboutInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BCF8462449F7FF0094363B /* AboutInteractorInput.swift */; };
+		49BCF8492449F81C0094363B /* AboutInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BCF8482449F81C0094363B /* AboutInteractorOutput.swift */; };
+		49BCF84B2449F84C0094363B /* AboutRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BCF84A2449F84C0094363B /* AboutRouterInput.swift */; };
+		49BCF84D2449F8B00094363B /* AboutViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BCF84C2449F8B00094363B /* AboutViewOutput.swift */; };
+		49BCF84F2449F8C70094363B /* AboutViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BCF84E2449F8C70094363B /* AboutViewInput.swift */; };
 		49C675FB2446F0BF002D8FF1 /* RxExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C675FA2446F0BF002D8FF1 /* RxExtension.swift */; };
 		49C675FD2446F41E002D8FF1 /* WKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C675FC2446F41E002D8FF1 /* WKWebViewController.swift */; };
 		49E3D55C2345F9D000861760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3D55B2345F9D000861760 /* AppDelegate.swift */; };
@@ -58,6 +63,11 @@
 		4965E284234623EA0042E4B9 /* Style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
 		4965E285234623EA0042E4B9 /* ABOUT_TOKENS_ru.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ABOUT_TOKENS_ru.html; sourceTree = "<group>"; };
 		4965E290234625D90042E4B9 /* WKWebViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewExtensions.swift; sourceTree = "<group>"; };
+		49BCF8462449F7FF0094363B /* AboutInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutInteractorInput.swift; sourceTree = "<group>"; };
+		49BCF8482449F81C0094363B /* AboutInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutInteractorOutput.swift; sourceTree = "<group>"; };
+		49BCF84A2449F84C0094363B /* AboutRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRouterInput.swift; sourceTree = "<group>"; };
+		49BCF84C2449F8B00094363B /* AboutViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewOutput.swift; sourceTree = "<group>"; };
+		49BCF84E2449F8C70094363B /* AboutViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewInput.swift; sourceTree = "<group>"; };
 		49C675FA2446F0BF002D8FF1 /* RxExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxExtension.swift; sourceTree = "<group>"; };
 		49C675FC2446F41E002D8FF1 /* WKWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewController.swift; sourceTree = "<group>"; };
 		49E3D5582345F9D000861760 /* RxSwift-Ex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxSwift-Ex.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,8 +244,10 @@
 		49624C752448B127009660D3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				494557632355CE0400942B4F /* AboutView.storyboard */,
+				49BCF84E2449F8C70094363B /* AboutViewInput.swift */,
+				49BCF84C2449F8B00094363B /* AboutViewOutput.swift */,
 				49624C762448B13A009660D3 /* AboutViewController.swift */,
+				494557632355CE0400942B4F /* AboutView.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -251,6 +263,8 @@
 		49624C7A2448B1A1009660D3 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				49BCF8462449F7FF0094363B /* AboutInteractorInput.swift */,
+				49BCF8482449F81C0094363B /* AboutInteractorOutput.swift */,
 				49624C842448E25E009660D3 /* AboutInteractor.swift */,
 			);
 			path = Interactor;
@@ -259,6 +273,7 @@
 		49624C7B2448B1A8009660D3 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				49BCF84A2449F84C0094363B /* AboutRouterInput.swift */,
 				49624C862448E26B009660D3 /* AboutRouter.swift */,
 			);
 			path = Router;
@@ -511,17 +526,21 @@
 			files = (
 				49624C872448E26B009660D3 /* AboutRouter.swift in Sources */,
 				49F0AEC224473A0600222DCF /* EntityService.swift in Sources */,
+				49BCF8472449F7FF0094363B /* AboutInteractorInput.swift in Sources */,
 				49E3D5602345F9D000861760 /* RxAboutViewController.swift in Sources */,
 				49624C812448E243009660D3 /* AboutPresenter.swift in Sources */,
 				49F0AEBF244731B900222DCF /* AppVersion.swift in Sources */,
 				49624C772448B13A009660D3 /* AboutViewController.swift in Sources */,
 				4965E27D234620000042E4B9 /* StringExtensions.swift in Sources */,
 				49624C892448E27A009660D3 /* AboutConfigurator.swift in Sources */,
+				49BCF84B2449F84C0094363B /* AboutRouterInput.swift in Sources */,
 				49E3D55C2345F9D000861760 /* AppDelegate.swift in Sources */,
 				49624C8C2448FE2F009660D3 /* Router.swift in Sources */,
 				49624C6324483CCC009660D3 /* RxAboutRouter.swift in Sources */,
 				49259CE0244762880001C15C /* RxAboutInteractor.swift in Sources */,
 				49624C732448AD75009660D3 /* MainViewController.swift in Sources */,
+				49BCF84D2449F8B00094363B /* AboutViewOutput.swift in Sources */,
+				49BCF84F2449F8C70094363B /* AboutViewInput.swift in Sources */,
 				494557702355CF4C00942B4F /* RxAboutModel.swift in Sources */,
 				49624C852448E25E009660D3 /* AboutInteractor.swift in Sources */,
 				49C675FD2446F41E002D8FF1 /* WKWebViewController.swift in Sources */,
@@ -529,6 +548,7 @@
 				49C675FB2446F0BF002D8FF1 /* RxExtension.swift in Sources */,
 				49624C6624484554009660D3 /* RxAboutConfigurator.swift in Sources */,
 				494557682355CE4F00942B4F /* RxAboutPresenter.swift in Sources */,
+				49BCF8492449F81C0094363B /* AboutInteractorOutput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

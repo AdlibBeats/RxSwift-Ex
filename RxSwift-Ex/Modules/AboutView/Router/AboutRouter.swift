@@ -9,12 +9,6 @@
 import Foundation
 import WebKit
 
-protocol AboutRouterInput: class {
-    func presentTipsModule()
-    func pushUserAgreementModule(with resource: WKWebView.Resource, title: String?)
-    func pushPrivacyPolicyModule(with resource: WKWebView.Resource, title: String?)
-}
-
 final class AboutRouter {
     weak var transitionHandler: TransitionHandler?
 }
