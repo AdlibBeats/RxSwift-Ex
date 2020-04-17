@@ -53,8 +53,9 @@ final class RxAboutViewController: UIViewController {
             fatalError("init(coder:) has not been implemented")
         }
         
-        var text: Binder<String?> {
-            label.rx.text
+        var text: String? {
+            get { label.text }
+            set { label.text = newValue }
         }
     }
     
@@ -216,13 +217,21 @@ final class RxAboutViewController: UIViewController {
             output.navBarTitle ~> rx.title ~
             output.title ~> titleLabel.rx.text ~
             output.description ~> descriptionLabel.rx.text ~
-            output.tipsTitle ~> tipsButton.text ~
-            output.userAgreementTitle ~> userAgreementButton.text ~
-            output.privacyPolicyTitle ~> privacyPolicyButton.text ~
+            output.tipsTitle ~> tipsButton.rx.text ~
+            output.userAgreementTitle ~> userAgreementButton.rx.text ~
+            output.privacyPolicyTitle ~> privacyPolicyButton.rx.text ~
             output.appVersion ~> appVersionLabel.rx.text ~ disposeBag
         }
         
         setConstraints()
         bind()
+    }
+}
+
+private extension Reactive where Base : RxAboutViewController.MenuButton {
+    var text: Binder<String?> {
+        Binder(base) { button, value in
+            button.text = value
+        }
     }
 }
