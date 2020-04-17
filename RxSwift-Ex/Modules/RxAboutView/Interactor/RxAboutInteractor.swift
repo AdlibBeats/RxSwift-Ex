@@ -18,7 +18,7 @@ final class RxAboutInteractor: RxAboutInteractorProtocol {
     
     private weak var presenter: Presenter!
     
-    private let entityService: EntityServiceProtocol = EntityService(with: .rx, objects: .appVersion)
+    private let entityService: EntityServiceProtocol = EntityService(with: .appVersion)
     private let disposeBag = DisposeBag()
     
     required init(presenter: Presenter) {

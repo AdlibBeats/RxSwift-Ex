@@ -17,7 +17,7 @@ final class AboutInteractor {
     
     private weak var presenter: Presenter!
     
-    private let entityService: EntityServiceProtocol = EntityService(with: .normal)
+    private let entityService: EntityServiceProtocol = EntityService()
     
     required init(presenter: Presenter) {
         self.presenter = presenter

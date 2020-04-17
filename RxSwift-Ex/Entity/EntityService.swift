@@ -18,11 +18,6 @@ protocol EntityServiceProtocol: class {
 }
 
 final class EntityService: EntityServiceProtocol {
-    enum Architecture {
-        case normal
-        case rx
-    }
-    
     enum RealmObject {
         case appVersion
     }
@@ -30,21 +25,17 @@ final class EntityService: EntityServiceProtocol {
     private let realm: Realm
     private let disposedBag = DisposeBag()
     
-    init(with architecture: Architecture, objects: RealmObject...) {
+    init(with objects: RealmObject...) {
         do {
             realm = try Realm()
         } catch {
             fatalError("init(with objects:) has not been implemented. Error: \(error.localizedDescription)")
         }
         
-        switch architecture {
-        case .rx:
-            objects.forEach {
-                switch $0 {
-                case .appVersion: rxMakeAppVersion()
-                }
+        objects.forEach {
+            switch $0 {
+            case .appVersion: rxMakeAppVersion()
             }
-        default: break
         }
     }
     
@@ -78,9 +69,7 @@ final class EntityService: EntityServiceProtocol {
         }
         
         //else create realm data (first run)
-        let appVersion = AppVersion()
-        appVersion.version = "3.0.0"
-        
+        let appVersion = AppVersion().with { $0.version = "3.0.0" }
         do {
             try realm.write {
                 realm.add(appVersion)
