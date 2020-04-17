@@ -41,7 +41,6 @@ extension RxAboutRouter {
     enum State {
         case tips
         case web(WKWebView.Resource, String?)
-        case none
     }
 }
 
@@ -52,7 +51,6 @@ fileprivate extension RxAboutRouter.State {
             return nil /* TODO: create TipsViewController */
         case .web(let resource, let title):
             return WKWebViewController(with: resource, title: title)
-        default: return nil
         }
     }
 }
