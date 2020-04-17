@@ -179,7 +179,6 @@
 				49624C69244876E9009660D3 /* Configurator */,
 				49624C6A244876F5009660D3 /* Router */,
 				49624C6E2448771E009660D3 /* Interactor */,
-				49624C6D24487718009660D3 /* Model */,
 				49624C6C24487711009660D3 /* Presenter */,
 				49624C6B2448770B009660D3 /* View */,
 			);
@@ -213,13 +212,6 @@
 			children = (
 			);
 			path = Presenter;
-			sourceTree = "<group>";
-		};
-		49624C6D24487718009660D3 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		49624C6E2448771E009660D3 /* Interactor */ = {
