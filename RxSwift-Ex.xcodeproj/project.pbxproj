@@ -17,7 +17,6 @@
 		49624C732448AD75009660D3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C722448AD75009660D3 /* MainViewController.swift */; };
 		49624C772448B13A009660D3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C762448B13A009660D3 /* AboutViewController.swift */; };
 		49624C812448E243009660D3 /* AboutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C802448E243009660D3 /* AboutPresenter.swift */; };
-		49624C832448E24F009660D3 /* AboutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C822448E24F009660D3 /* AboutModel.swift */; };
 		49624C852448E25E009660D3 /* AboutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C842448E25E009660D3 /* AboutInteractor.swift */; };
 		49624C872448E26B009660D3 /* AboutRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C862448E26B009660D3 /* AboutRouter.swift */; };
 		49624C892448E27A009660D3 /* AboutConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C882448E27A009660D3 /* AboutConfigurator.swift */; };
@@ -50,7 +49,6 @@
 		49624C722448AD75009660D3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		49624C762448B13A009660D3 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		49624C802448E243009660D3 /* AboutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPresenter.swift; sourceTree = "<group>"; };
-		49624C822448E24F009660D3 /* AboutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutModel.swift; sourceTree = "<group>"; };
 		49624C842448E25E009660D3 /* AboutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutInteractor.swift; sourceTree = "<group>"; };
 		49624C862448E26B009660D3 /* AboutRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRouter.swift; sourceTree = "<group>"; };
 		49624C882448E27A009660D3 /* AboutConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutConfigurator.swift; sourceTree = "<group>"; };
@@ -227,7 +225,6 @@
 				49624C7C2448B1AE009660D3 /* Configurator */,
 				49624C7B2448B1A8009660D3 /* Router */,
 				49624C7A2448B1A1009660D3 /* Interactor */,
-				49624C792448B19B009660D3 /* Model */,
 				49624C782448B194009660D3 /* Presenter */,
 				49624C752448B127009660D3 /* View */,
 			);
@@ -249,14 +246,6 @@
 				49624C802448E243009660D3 /* AboutPresenter.swift */,
 			);
 			path = Presenter;
-			sourceTree = "<group>";
-		};
-		49624C792448B19B009660D3 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				49624C822448E24F009660D3 /* AboutModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		49624C7A2448B1A1009660D3 /* Interactor */ = {
@@ -525,7 +514,6 @@
 				49E3D5602345F9D000861760 /* RxAboutViewController.swift in Sources */,
 				49624C812448E243009660D3 /* AboutPresenter.swift in Sources */,
 				49F0AEBF244731B900222DCF /* AppVersion.swift in Sources */,
-				49624C832448E24F009660D3 /* AboutModel.swift in Sources */,
 				49624C772448B13A009660D3 /* AboutViewController.swift in Sources */,
 				4965E27D234620000042E4B9 /* StringExtensions.swift in Sources */,
 				49624C892448E27A009660D3 /* AboutConfigurator.swift in Sources */,

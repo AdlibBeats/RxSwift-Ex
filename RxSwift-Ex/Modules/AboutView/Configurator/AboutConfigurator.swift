@@ -18,7 +18,7 @@ final class AboutConfigurator: AboutConfiguratorProtocol {
         let interactor = AboutInteractor(presenter: presenter)
         let router = AboutRouter()
         
-        viewController.presenter = presenter
+        viewController.output = presenter
         router.transitionHandler = viewController
         presenter.interactor = interactor
         presenter.router = router

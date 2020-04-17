@@ -8,12 +8,16 @@
 
 import Foundation
 
-protocol AboutInteractorProtocol: class {
+protocol AboutInteractorInput: class {
     func makeAppVersion()
 }
 
+protocol AboutInteractorOutput: class {
+    func didSetAppVersion(_ newValue: AppVersion)
+}
+
 final class AboutInteractor {
-    typealias Presenter = AboutPresenterInput
+    typealias Presenter = AboutInteractorOutput
     
     private weak var presenter: Presenter!
     
@@ -24,7 +28,8 @@ final class AboutInteractor {
     }
 }
 
-extension AboutInteractor: AboutInteractorProtocol {
+//MARK: AboutInteractorInput
+extension AboutInteractor: AboutInteractorInput {
     func makeAppVersion() {
         presenter.didSetAppVersion(entityService.makeAppVersion())
     }

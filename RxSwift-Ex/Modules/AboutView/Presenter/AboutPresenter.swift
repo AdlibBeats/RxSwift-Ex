@@ -6,43 +6,35 @@
 //  Copyright © 2020 ru.proarttherapy. All rights reserved.
 //
 
-import Foundation
-
-protocol AboutPresenterOutput: class {
-    func didLoad()
-    func tipsDidTap()
-    func privacyPolicyDidTap()
-    func userAgreementDidTap()
-}
-
-protocol AboutPresenterInput: class {
-    func didSetAppVersion(_ newValue: AppVersion)
-}
+import WebKit
 
 final class AboutPresenter {
-    typealias View = AboutViewControllerProtocol
-    typealias Interactor = AboutInteractorProtocol
-    typealias Router = AboutRouterProtocol
+    typealias View = AboutViewInput
+    typealias Interactor = AboutInteractorInput
+    typealias Router = AboutRouterInput
     
     private weak var view: View!
     var interactor: Interactor!
     var router: Router!
-
-    private var model = AboutModel()
     
     required init(view: View) {
         self.view = view
         
-        self.view.didSetNavBarTitle(model.navBarTitle)
-        self.view.didSetTitle(model.title)
-        self.view.didSetDescription(model.description)
-        self.view.didSetTipsTitle(model.tipsTitle)
-        self.view.didSetUserAgreementTitle(model.userAgreementTitle)
-        self.view.didSetPrivacyPolicyTitle(model.privacyPolicyTitle)
+        prepareView()
+    }
+    
+    private func prepareView() {
+        view.didSetNavBarTitle("О приложении")
+        view.didSetTitle("КАЛЕНДАРЬ БЕРЕМЕННОСТИ")
+        view.didSetDescription("Рекомендации профессиональных врачей для каждой недели беременности")
+        view.didSetTipsTitle("Подсказки")
+        view.didSetUserAgreementTitle("Пользовательское соглашение")
+        view.didSetPrivacyPolicyTitle("Политика конфиденциальности")
     }
 }
 
-extension AboutPresenter: AboutPresenterOutput {
+// MARK: AboutPresenterOutput
+extension AboutPresenter: AboutViewOutput {
     func didLoad() {
         interactor?.makeAppVersion()
     }
@@ -53,23 +45,22 @@ extension AboutPresenter: AboutPresenterOutput {
     
     func privacyPolicyDidTap() {
         router?.pushPrivacyPolicyModule(
-            with: model.privacyPolicyResource,
-            title: model.webPrivacyPolicyTitle
+            with: WKWebView.Resource.network("https://google.com/"),
+            title: "Полит. конфиденциальности"
         )
     }
     
     func userAgreementDidTap() {
         router?.pushUserAgreementModule(
-            with: model.userAgreementResource,
-            title: model.webUserAgreementTitle
+            with: WKWebView.Resource.local("ABOUT_TOKENS_\("ru")", .html),
+            title: "Польз. соглашение"
         )
     }
 }
 
-extension AboutPresenter: AboutPresenterInput {
+// MARK: AboutInteractorOutput
+extension AboutPresenter: AboutInteractorOutput {
     func didSetAppVersion(_ newValue: AppVersion) {
-        model.appVersion = newValue
-        
-        view.didSetAppVersion("Версия \(model.appVersion.version)")
+        view.didSetAppVersion("Версия \(newValue.version)")
     }
 }

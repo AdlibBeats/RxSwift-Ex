@@ -9,15 +9,18 @@
 import Foundation
 import WebKit
 
-protocol AboutRouterProtocol: class {
+protocol AboutRouterInput: class {
     func presentTipsModule()
     func pushUserAgreementModule(with resource: WKWebView.Resource, title: String?)
     func pushPrivacyPolicyModule(with resource: WKWebView.Resource, title: String?)
 }
 
-final class AboutRouter: AboutRouterProtocol {
+final class AboutRouter {
     weak var transitionHandler: TransitionHandler?
-    
+}
+
+// MARK: AboutRouterInput
+extension AboutRouter: AboutRouterInput {
     func presentTipsModule() {
         //TODO: Present Tips
     }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol AboutViewControllerProtocol: class {
+protocol AboutViewInput: class {
     func didSetNavBarTitle(_ newValue: String)
     func didSetTitle(_ newValue: String)
     func didSetDescription(_ newValue: String)
@@ -16,6 +16,13 @@ protocol AboutViewControllerProtocol: class {
     func didSetUserAgreementTitle(_ newValue: String)
     func didSetPrivacyPolicyTitle(_ newValue: String)
     func didSetAppVersion(_ newValue: String)
+}
+
+protocol AboutViewOutput: class {
+    func didLoad()
+    func tipsDidTap()
+    func privacyPolicyDidTap()
+    func userAgreementDidTap()
 }
 
 final class AboutViewController: UIViewController {
@@ -28,13 +35,13 @@ final class AboutViewController: UIViewController {
     
     private let configurator: AboutConfiguratorProtocol = AboutConfigurator()
     
-    var presenter: AboutPresenterOutput!
+    var output: AboutViewOutput!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configurator.configure(with: self)
-        presenter.didLoad()
+        output.didLoad()
         
         view.backgroundColor = .white
         navigationItem.backBarButtonItem = UIBarButtonItem().then {
@@ -43,19 +50,20 @@ final class AboutViewController: UIViewController {
     }
     
     @IBAction func tipsDidTap(_ sender: UITapGestureRecognizer) {
-        presenter.tipsDidTap()
+        output.tipsDidTap()
     }
     
     @IBAction func privacyPolicyDidTap(_ sender: UITapGestureRecognizer) {
-        presenter.privacyPolicyDidTap()
+        output.privacyPolicyDidTap()
     }
     
     @IBAction func userAgreementDidTap(_ sender: UITapGestureRecognizer) {
-        presenter.userAgreementDidTap()
+        output.userAgreementDidTap()
     }
 }
 
-extension AboutViewController: AboutViewControllerProtocol {
+// MARK: AboutViewInput
+extension AboutViewController: AboutViewInput {
     func didSetNavBarTitle(_ newValue: String) {
         title = newValue
     }
