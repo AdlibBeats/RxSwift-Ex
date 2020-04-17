@@ -15,7 +15,7 @@ def shared_pods
   pod 'RxFeedback'
   pod 'RxGesture'
   pod 'RxRealm'
-  pod "RxRealmDataSources"
+#  pod "RxRealmDataSources"
   pod 'RxReachability'
   pod 'RxLocalizer'
   pod 'RxUIAlert'
