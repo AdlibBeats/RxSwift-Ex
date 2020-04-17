@@ -41,23 +41,28 @@ final class EntityService: EntityServiceProtocol {
     
     let appVersionRelay = BehaviorRelay<AppVersion>(value: .init())
     
-    private func rxMakeAppVersion(appVersion: AppVersion = AppVersion().with { $0.version = "3.0.0" }) {
+    private func rxMakeAppVersion() {
+        let appVersionObserver = AnyObserver<Object>() { [appVersionRelay] in
+            guard let appVersion = $0.element as? AppVersion else { return }
+            appVersionRelay.accept(appVersion)
+        }
+        
         Observable
             .collection(from: realm.objects(AppVersion.self))
             .map({ $0.last })
             .asDriver(onErrorJustReturn: nil)
-            .drive(onNext: { [realm, appVersionRelay, disposedBag] in
+            .drive(onNext: { [realm, disposedBag] in
                 //TEST Realm
                 
-                //if realm data object not empty
-                if let appVersion = $0 {
-                    appVersionRelay.accept(appVersion)
+                guard let appVersion = $0 else {
+                    //else create realm data (first run)
+                    Observable.from(object: AppVersion().with { $0.version = "3.0.0" } ) ~>
+                        [realm.rx.add(), appVersionObserver] ~ disposedBag
                     return
                 }
                 
-                //else create realm data (first run)
-                Observable.from(object: appVersion) ~> realm.rx.add() ~
-                Observable.from(object: appVersion) ~> appVersionRelay ~ disposedBag
+                //if realm data object not empty
+                appVersionObserver.on(.next(appVersion))
             })
             .disposed(by: disposedBag)
     }
