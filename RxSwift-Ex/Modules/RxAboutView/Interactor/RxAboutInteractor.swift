@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 protocol RxAboutInteractorProtocol: class {
-    var appVersionRelay: BehaviorRelay<AppVersion?> { get }
+    var appVersionRelay: BehaviorRelay<AppVersion> { get }
 }
 
 final class RxAboutInteractor: RxAboutInteractorProtocol {
@@ -25,7 +25,7 @@ final class RxAboutInteractor: RxAboutInteractorProtocol {
         self.presenter = presenter
     }
     
-    var appVersionRelay: BehaviorRelay<AppVersion?> {
+    var appVersionRelay: BehaviorRelay<AppVersion> {
         entityService.appVersionRelay
     }
 }

@@ -13,7 +13,7 @@ import RealmSwift
 import RxRealm
 
 protocol EntityServiceProtocol: class {
-    var appVersionRelay: BehaviorRelay<AppVersion?> { get }
+    var appVersionRelay: BehaviorRelay<AppVersion> { get }
     func makeAppVersion() -> AppVersion
 }
 
@@ -48,9 +48,9 @@ final class EntityService: EntityServiceProtocol {
         }
     }
     
-    let appVersionRelay = BehaviorRelay<AppVersion?>(value: nil)
+    let appVersionRelay = BehaviorRelay<AppVersion>(value: .init())
     
-    private func rxMakeAppVersion(version: String = "3.0.0") {
+    private func rxMakeAppVersion(appVersion: AppVersion = AppVersion().with { $0.version = "3.0.0" }) {
         Observable
             .collection(from: realm.objects(AppVersion.self))
             .map({ $0.last })
@@ -65,12 +65,8 @@ final class EntityService: EntityServiceProtocol {
                 }
                 
                 //else create realm data (first run)
-                let appVersion = AppVersion().then { $0.version = version }
-                
-                disposedBag ~ [
-                    Observable.from(object: appVersion) ~> realm.rx.add(),
-                    Observable.from(object: appVersion) ~> appVersionRelay
-                ]
+                Observable.from(object: appVersion) ~> realm.rx.add() ~
+                Observable.from(object: appVersion) ~> appVersionRelay ~ disposedBag
             })
             .disposed(by: disposedBag)
     }

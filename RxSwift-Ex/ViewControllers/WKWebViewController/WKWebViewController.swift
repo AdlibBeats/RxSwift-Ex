@@ -15,7 +15,8 @@ import Alamofire
 import Then
 
 final class WKWebViewController: UIViewController {
-    private let resource: WKWebView.Resource
+    private let resource: BehaviorRelay<WKWebView.Resource>
+    
     private let webView = WKWebView().then {
         $0.backgroundColor = .white
         
@@ -27,7 +28,7 @@ final class WKWebViewController: UIViewController {
     }
     
     init(with resource: WKWebView.Resource, title: String? = nil) {
-        self.resource = resource
+        self.resource = .init(value: resource)
         
         super.init(nibName: nil, bundle: nil)
         
@@ -55,7 +56,7 @@ final class WKWebViewController: UIViewController {
         }
         
         func bind() {
-            Observable.just(resource) ~> webView.rx.load ~ disposeBag
+            resource ~> webView.rx.load ~ disposeBag
         }
         
         setConstraints()

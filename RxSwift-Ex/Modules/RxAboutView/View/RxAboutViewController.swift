@@ -217,15 +217,13 @@ final class RxAboutViewController: UIViewController {
                 )
             )
             
-            disposeBag ~ [
-                output.navBarTitle ~> rx.title,
-                output.title ~> titleLabel.rx.text,
-                output.description ~> descriptionLabel.rx.text,
-                output.tipsTitle ~> tipsButton.title(for: .normal),
-                output.userAgreementTitle ~> userAgreementButton.title(for: .normal),
-                output.privacyPolicyTitle ~> privacyPolicyButton.title(for: .normal),
-                output.appVersion ~> appVersionLabel.rx.text
-            ]
+            output.navBarTitle ~> rx.title ~
+            output.title ~> titleLabel.rx.text ~
+            output.description ~> descriptionLabel.rx.text ~
+            output.tipsTitle ~> tipsButton.title(for: .normal) ~
+            output.userAgreementTitle ~> userAgreementButton.title(for: .normal) ~
+            output.privacyPolicyTitle ~> privacyPolicyButton.title(for: .normal) ~
+            output.appVersion ~> appVersionLabel.rx.text ~ disposeBag
         }
         
         setConstraints()

@@ -10,7 +10,7 @@ import WebKit
 import RxCocoa
 
 struct RxAboutModel {
-    let appVersion = BehaviorRelay<AppVersion?>(value: nil)
+    let appVersion = BehaviorRelay<AppVersion>(value: .init())
     let userAgreementResource = BehaviorRelay<WKWebView.Resource>(value: .local("ABOUT_TOKENS_\("ru")", .html))
     let privacyPolicyResource = BehaviorRelay<WKWebView.Resource>(value: .network("https://google.com/"))
     let navBarTitle = BehaviorRelay<String>(value: "О приложении")

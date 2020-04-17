@@ -29,18 +29,16 @@ final class RxAboutPresenter: RxAboutPresenterProtocol {
     var interactor: Interactor!
     
     func transform(input: Input) -> Output {
-        disposedBag ~ [
-            interactor.appVersionRelay ~> model.appVersion,
-            input.tipsTapEvent.map { .tips } ~> router.present,
-            Observable.merge(
-                input.userAgreementTapEvent.map { [model] in
-                    .web(model.userAgreementResource.value, model.webUserAgreementTitle.value )
-                },
-                input.privacyPolicyTapEvent.map { [model] in
-                    .web(model.privacyPolicyResource.value, model.webPrivacyPolicyTitle.value )
-                }
-            ) ~> router.push,
-        ]
+        interactor.appVersionRelay ~> model.appVersion ~
+        input.tipsTapEvent.map { .tips } ~> router.present ~
+        Observable.merge(
+            input.userAgreementTapEvent.map { [model] in
+                .web(model.userAgreementResource.value, model.webUserAgreementTitle.value )
+            },
+            input.privacyPolicyTapEvent.map { [model] in
+                .web(model.privacyPolicyResource.value, model.webPrivacyPolicyTitle.value )
+            }
+        ) ~> router.push ~ disposedBag
         
         return Output(
             navBarTitle: model.navBarTitle.asDriver(),
@@ -50,8 +48,7 @@ final class RxAboutPresenter: RxAboutPresenterProtocol {
             userAgreementTitle: model.userAgreementTitle.asDriver(),
             privacyPolicyTitle: model.privacyPolicyTitle.asDriver(),
             appVersion: model.appVersion
-                .compactMap({ $0?.version })
-                .map({ "Версия \($0)" })
+                .map({ "Версия \($0.version)" })
                 .asDriver(onErrorJustReturn: "")
         )
     }
