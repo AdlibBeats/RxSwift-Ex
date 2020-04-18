@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ContactsListInteractorOutput: class {
-    func didSetContacts(_ contacts: ContactsPresenter)
+    func didSetContacts(_ contacts: [ContactPresenter])
 }

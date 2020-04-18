@@ -23,11 +23,9 @@ final class ContactsListInteractor {
 extension ContactsListInteractor: ContactsListInteractorInput {
     func makeContacts() {
         presenter.didSetContacts(
-            ContactsPresenter(
-                list: entityService.makeContacts().list.toArray().map {
-                    ContactPresenter(name: $0.name, phone: $0.phone)
-                }
-            )
+            entityService.makeContacts().list.toArray().map {
+                ContactPresenter(name: $0.name, phone: $0.phone)
+            }
         )
     }
 }

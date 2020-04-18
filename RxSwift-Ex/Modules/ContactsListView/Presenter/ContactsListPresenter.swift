@@ -26,7 +26,7 @@ final class ContactsListPresenter {
     var interactor: Interactor!
     var router: Router!
     
-    private var contacts = ContactsPresenter(list: []) {
+    private var contacts: [ContactPresenter] = [] {
         willSet {
             view.reload()
         }
@@ -44,7 +44,7 @@ final class ContactsListPresenter {
 }
 
 extension ContactsListPresenter: ContactsListViewOutput {
-    var contactsList: [ContactPresenter] { contacts.list }
+    var contactsList: [ContactPresenter] { contacts }
     
     func didLoad() {
         interactor.makeContacts()
@@ -56,7 +56,7 @@ extension ContactsListPresenter: ContactsListViewOutput {
 }
 
 extension ContactsListPresenter: ContactsListInteractorOutput {
-    func didSetContacts(_ contacts: ContactsPresenter) {
+    func didSetContacts(_ contacts: [ContactPresenter]) {
         self.contacts = contacts
     }
 }
