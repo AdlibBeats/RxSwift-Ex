@@ -15,7 +15,7 @@ final class AboutInteractor {
     
     private let entityService: EntityServiceProtocol = EntityService()
     
-    required init(presenter: Presenter) {
+    required init(with presenter: Presenter) {
         self.presenter = presenter
     }
 }

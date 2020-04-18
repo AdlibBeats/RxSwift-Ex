@@ -14,7 +14,9 @@ import RxRealm
 
 protocol EntityServiceProtocol: class {
     var appVersionRelay: BehaviorRelay<AppVersion> { get }
+    
     func makeAppVersion() -> AppVersion
+    func makeContacts() -> Contacts
 }
 
 final class EntityService: EntityServiceProtocol {
@@ -89,5 +91,42 @@ final class EntityService: EntityServiceProtocol {
         }
         
         return appVersion
+    }
+    
+    func makeContacts() -> Contacts {
+        //TEST Realm
+        
+        //if realm data object not empty
+        if let contacts = realm.objects(Contacts.self).last {
+            return contacts
+        }
+        
+        //else create realm data (first run)
+        let contacts = Contacts().with {
+            [
+                Contact().with {
+                    $0.name = "Andrew"
+                    $0.phone = "555 5412"
+                },
+                Contact().with {
+                    $0.name = "Max"
+                    $0.phone = "555 1196"
+                },
+                Contact().with {
+                    $0.name = "Tod"
+                    $0.phone = "555 3747"
+                }
+            ].forEach($0.list.append)
+        }
+        
+        do {
+            try realm.write {
+                realm.add(contacts)
+            }
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+        
+        return contacts
     }
 }

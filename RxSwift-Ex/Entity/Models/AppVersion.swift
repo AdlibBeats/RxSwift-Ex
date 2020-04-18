@@ -8,6 +8,6 @@
 
 import RealmSwift
  
-open class AppVersion: Object {
-    @objc dynamic open var version = ""
+class AppVersion: Object {
+    @objc dynamic var version = ""
 }

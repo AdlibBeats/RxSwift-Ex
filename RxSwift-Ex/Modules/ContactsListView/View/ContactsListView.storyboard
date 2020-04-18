@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u9t-Sz-jWi">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -43,21 +43,36 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="135.9375"/>
         </scene>
-        <!--View Controller-->
+        <!--Contacts List View Controller-->
         <scene sceneID="jPp-Ta-jpF">
             <objects>
-                <viewController storyboardIdentifier="CitiesViewController" id="u9t-Sz-jWi" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContactsListViewController" id="u9t-Sz-jWi" customClass="ContactsListViewController" customModule="RxSwift_Ex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oSZ-TH-076">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NVa-jL-kiS">
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NVa-jL-kiS" firstAttribute="top" secondItem="jLt-vy-HaZ" secondAttribute="top" id="3CX-T7-yyr"/>
+                            <constraint firstAttribute="trailing" secondItem="NVa-jL-kiS" secondAttribute="trailing" id="59Y-vf-5na"/>
+                            <constraint firstItem="NVa-jL-kiS" firstAttribute="leading" secondItem="oSZ-TH-076" secondAttribute="leading" id="94v-No-6YP"/>
+                            <constraint firstItem="jLt-vy-HaZ" firstAttribute="bottom" secondItem="NVa-jL-kiS" secondAttribute="bottom" id="Ier-U5-GO3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="jLt-vy-HaZ"/>
                     </view>
                     <navigationItem key="navigationItem" id="RvF-Kl-pPB"/>
+                    <connections>
+                        <outlet property="tableView" destination="NVa-jL-kiS" id="6Bg-nY-bGh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmD-Dm-5aD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044" y="136"/>
+            <point key="canvasLocation" x="1265" y="135"/>
         </scene>
     </scenes>
 </document>

@@ -58,8 +58,9 @@ fileprivate extension RxAboutRouter.State {
 private extension Reactive where Base : UIViewController {
     var present: Binder<RxAboutRouter.State> {
         Binder(base) { viewController, value in
-            guard let source = value.makeViewController else { return }
-            viewController.present(source, animated: true)
+            value.makeViewController.flatMap {
+                viewController.present($0, animated: true)
+            }
         }
     }
 }
@@ -67,8 +68,9 @@ private extension Reactive where Base : UIViewController {
 private extension Reactive where Base : UINavigationController {
     var push: Binder<RxAboutRouter.State> {
         Binder(base) { navigationController, value in
-            guard let source = value.makeViewController else { return }
-            navigationController.pushViewController(source, animated: true)
+            value.makeViewController.flatMap {
+                navigationController.pushViewController($0, animated: true)
+            }
         }
     }
 }

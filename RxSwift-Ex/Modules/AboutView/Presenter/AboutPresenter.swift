@@ -17,7 +17,7 @@ final class AboutPresenter {
     var interactor: Interactor!
     var router: Router!
     
-    required init(view: View) {
+    required init(with view: View) {
         self.view = view
         
         prepareView()
