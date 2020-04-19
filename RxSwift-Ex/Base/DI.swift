@@ -11,7 +11,7 @@ import SwinjectStoryboard
 
 extension ObjectScope {
     static let servicesScope = ObjectScope(storageFactory: PermanentStorage.init)
-    static let viewControllerScope = ObjectScope(storageFactory: PermanentStorage.init)
+    static let viewControllersScope = ObjectScope(storageFactory: PermanentStorage.init)
 }
 
 extension Container {
@@ -36,7 +36,7 @@ extension Container {
                 
                 return navigationController
             })
-            .inObjectScope(.viewControllerScope)
+            .inObjectScope(.viewControllersScope)
         
         return container
     }()
