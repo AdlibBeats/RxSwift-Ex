@@ -15,7 +15,7 @@ final class ContactsListInteractor {
 //MARK: ContactsListInteractorInput
 extension ContactsListInteractor: ContactsListInteractorInput {
     func makeContacts() {
-        let entityService = Container.shared.resolve(EntityServiceProtocol.self)!
+        guard let entityService = Container.shared.resolve(EntityServiceProtocol.self) else { return }
         output.didSetContacts(
             entityService.makeContacts().list.toArray().map {
                 ContactModel(name: $0.name, phone: $0.phone)

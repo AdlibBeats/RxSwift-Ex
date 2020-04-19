@@ -4,7 +4,8 @@ use_frameworks!
 inhibit_all_warnings!
 
 def shared_pods
-  pod 'Swinject'
+  pod 'Swinject', '2.6.0'
+  pod 'SwinjectStoryboard'
   
   pod 'Moya/RxSwift'
   pod 'AlamofireImage'

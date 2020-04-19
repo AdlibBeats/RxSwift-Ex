@@ -7,17 +7,22 @@
 //
 
 import UIKit
+import Swinject
 
 final class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let aboutViewController = UINavigationController(
-            rootViewController: RxAboutViewController()
-        )
+        appendAboutViewController()
+    }
+    
+    private func appendAboutViewController() {
+        guard let viewController = Container.shared.resolve(
+            UINavigationController.self,
+            name: "RxAboutNavigationView"
+        ) else { return }
         
-        aboutViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 1)
-        
-        viewControllers?.append(aboutViewController)
+        viewController.tabBarItem = .init(tabBarSystemItem: .more, tag: 1)
+        viewControllers?.append(viewController)
     }
 }

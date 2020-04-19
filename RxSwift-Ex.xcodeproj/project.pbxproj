@@ -45,7 +45,6 @@
 		495CBDDF244C69AB005AEA7D /* ContactView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 495CBDDE244C69AB005AEA7D /* ContactView.storyboard */; };
 		495CBDE1244C6B9E005AEA7D /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CBDE0244C6B9E005AEA7D /* ContactViewController.swift */; };
 		49624C6324483CCC009660D3 /* RxAboutRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C6224483CCC009660D3 /* RxAboutRouter.swift */; };
-		49624C6624484554009660D3 /* RxAboutConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C6524484554009660D3 /* RxAboutConfigurator.swift */; };
 		49624C7124487799009660D3 /* ContactsListView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49624C7024487799009660D3 /* ContactsListView.storyboard */; };
 		49624C732448AD75009660D3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C722448AD75009660D3 /* MainViewController.swift */; };
 		49624C772448B13A009660D3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C762448B13A009660D3 /* AboutViewController.swift */; };
@@ -115,7 +114,6 @@
 		495CBDDE244C69AB005AEA7D /* ContactView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContactView.storyboard; sourceTree = "<group>"; };
 		495CBDE0244C6B9E005AEA7D /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		49624C6224483CCC009660D3 /* RxAboutRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAboutRouter.swift; sourceTree = "<group>"; };
-		49624C6524484554009660D3 /* RxAboutConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAboutConfigurator.swift; sourceTree = "<group>"; };
 		49624C7024487799009660D3 /* ContactsListView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContactsListView.storyboard; sourceTree = "<group>"; };
 		49624C722448AD75009660D3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		49624C762448B13A009660D3 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -199,7 +197,6 @@
 		494557652355CE0800942B4F /* RxAboutView */ = {
 			isa = PBXGroup;
 			children = (
-				49624C642448453F009660D3 /* Configurator */,
 				49259CE1244762AB0001C15C /* Router */,
 				49259CDE2447625E0001C15C /* Interactor */,
 				4945576E2355CEFB00942B4F /* Model */,
@@ -299,14 +296,6 @@
 				4920382B244CA81E001FB093 /* ContactAssembly.swift */,
 			);
 			path = Assembly;
-			sourceTree = "<group>";
-		};
-		49624C642448453F009660D3 /* Configurator */ = {
-			isa = PBXGroup;
-			children = (
-				49624C6524484554009660D3 /* RxAboutConfigurator.swift */,
-			);
-			path = Configurator;
 			sourceTree = "<group>";
 		};
 		49624C68244876C7009660D3 /* ContactsListView */ = {
@@ -723,7 +712,6 @@
 				4965E291234625D90042E4B9 /* WKWebViewExtensions.swift in Sources */,
 				4920383C244CC7A7001FB093 /* DI.swift in Sources */,
 				49C675FB2446F0BF002D8FF1 /* RxExtension.swift in Sources */,
-				49624C6624484554009660D3 /* RxAboutConfigurator.swift in Sources */,
 				492F9992244B7C7E00395A45 /* ContactsListInteractorOutput.swift in Sources */,
 				49203828244C9B5B001FB093 /* ContactRouterInput.swift in Sources */,
 				492F998E244B7AA100395A45 /* ContactsListInteractor.swift in Sources */,

@@ -15,7 +15,7 @@ final class AboutInteractor {
 //MARK: AboutInteractorInput
 extension AboutInteractor: AboutInteractorInput {
     func makeAppVersion() {
-        let entityService = Container.shared.resolve(EntityServiceProtocol.self)!
+        guard let entityService = Container.shared.resolve(EntityServiceProtocol.self) else { return }
         output.didSetAppVersion(entityService.makeAppVersion())
     }
 }

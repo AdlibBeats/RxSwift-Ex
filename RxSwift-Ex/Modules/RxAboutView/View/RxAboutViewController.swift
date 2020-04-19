@@ -117,13 +117,10 @@ final class RxAboutViewController: UIViewController {
     
     var presenter: RxAboutPresenterProtocol!
     
-    private let configurator: RxAboutConfiguratorProtocol = RxAboutConfigurator()
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        configurator.configure(with: self)
         
         view.backgroundColor = .white
         navigationItem.backBarButtonItem = UIBarButtonItem().then {

@@ -19,7 +19,7 @@ final class RxAboutRouter {
     private weak var viewController: RxAboutViewController!
     private weak var navigationController: UINavigationController!
     
-    init(viewController: RxAboutViewController) {
+    init(with viewController: RxAboutViewController) {
         self.viewController = viewController
         
         guard let navigationController = viewController.navigationController else {

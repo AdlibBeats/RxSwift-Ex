@@ -7,9 +7,11 @@
 //
 
 import Swinject
+import SwinjectStoryboard
 
 extension ObjectScope {
-    static let custom = ObjectScope(storageFactory: PermanentStorage.init)
+    static let servicesScope = ObjectScope(storageFactory: PermanentStorage.init)
+    static let viewControllerScope = ObjectScope(storageFactory: PermanentStorage.init)
 }
 
 extension Container {
@@ -18,12 +20,24 @@ extension Container {
         
         container
             .register(EntityServiceProtocol.self, factory: { _ in EntityService() })
-            .inObjectScope(.custom)
+            .inObjectScope(.servicesScope)
+        
+        container
+            .register(UINavigationController.self, name: "RxAboutNavigationView", factory: { r in
+                let viewController = RxAboutViewController()
+                let navigationController = UINavigationController(rootViewController: viewController)
+                let presenter = RxAboutPresenter()
+                let interactor = RxAboutInteractor(with: r.resolve(EntityServiceProtocol.self)!)
+                let router = RxAboutRouter(with: viewController)
+                
+                viewController.presenter = presenter
+                presenter.interactor = interactor
+                presenter.router = router
+                
+                return navigationController
+            })
+            .inObjectScope(.viewControllerScope)
         
         return container
     }()
-    
-    func reset() {
-        resetObjectScope(.custom)
-    }
 }

@@ -15,15 +15,14 @@ protocol RxAboutInteractorProtocol: class {
 }
 
 final class RxAboutInteractor: RxAboutInteractorProtocol {
-    private let container: Container
+    private let entityService: EntityServiceProtocol
     private let disposeBag = DisposeBag()
     
-    required init(container: Container) {
-        self.container = container
+    required init(with entityService: EntityServiceProtocol) {
+        self.entityService = entityService
     }
     
     var appVersion: Observable<AppVersion> {
-        let entityService = container.resolve(EntityServiceProtocol.self)!
-        return entityService.fetchAppVersion() //.observeOn(MainScheduler.instance) //Realm accessed from incorrect thread.
+        entityService.fetchAppVersion() //.observeOn(MainScheduler.instance) //Realm accessed from incorrect thread.
     }
 }
