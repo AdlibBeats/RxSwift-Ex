@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct ContactPresenter {
+struct ContactModel {
     let name: String
     let phone: String
 }
 
-struct ContactsPresenter {
-    let list: [ContactPresenter]
+struct ContactsModel {
+    let list: [ContactModel]
 }
 
 final class ContactsListPresenter {
@@ -26,7 +26,7 @@ final class ContactsListPresenter {
     var interactor: Interactor!
     var router: Router!
     
-    private var contacts: [ContactPresenter] = [] {
+    private var contacts: [ContactModel] = [] {
         willSet {
             view.reload()
         }
@@ -34,19 +34,16 @@ final class ContactsListPresenter {
     
     required init(with view: View) {
         self.view = view
-        
-        prepareView()
-    }
-    
-    private func prepareView() {
-        view.didSetNavBarTitle("Контакты")
     }
 }
 
+//MARK: ContactsListViewOutput
 extension ContactsListPresenter: ContactsListViewOutput {
-    var contactsList: [ContactPresenter] { contacts }
+    var contactsList: [ContactModel] { contacts }
     
     func didLoad() {
+        view.didSetNavBarTitle("Контакты")
+        
         interactor.makeContacts()
     }
     
@@ -55,8 +52,9 @@ extension ContactsListPresenter: ContactsListViewOutput {
     }
 }
 
+//MARK: ContactsListInteractorOutput
 extension ContactsListPresenter: ContactsListInteractorOutput {
-    func didSetContacts(_ contacts: [ContactPresenter]) {
+    func didSetContacts(_ contacts: [ContactModel]) {
         self.contacts = contacts
     }
 }

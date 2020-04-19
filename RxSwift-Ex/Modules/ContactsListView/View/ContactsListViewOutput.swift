@@ -9,7 +9,7 @@
 import Foundation
 
 protocol ContactsListViewOutput: class {
-    var contactsList: [ContactPresenter] { get }
+    var contactsList: [ContactModel] { get }
     
     func didLoad()
     func didSelect(_ index: Int)

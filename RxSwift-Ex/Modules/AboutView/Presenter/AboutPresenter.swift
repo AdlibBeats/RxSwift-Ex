@@ -19,23 +19,19 @@ final class AboutPresenter {
     
     required init(with view: View) {
         self.view = view
-        
-        prepareView()
     }
-    
-    private func prepareView() {
+}
+
+// MARK: AboutViewOutput
+extension AboutPresenter: AboutViewOutput {
+    func didLoad() {
         view.didSetNavBarTitle("О приложении")
         view.didSetTitle("КАЛЕНДАРЬ БЕРЕМЕННОСТИ")
         view.didSetDescription("Рекомендации профессиональных врачей для каждой недели беременности")
         view.didSetTipsTitle("Подсказки")
         view.didSetUserAgreementTitle("Пользовательское соглашение")
         view.didSetPrivacyPolicyTitle("Политика конфиденциальности")
-    }
-}
-
-// MARK: AboutPresenterOutput
-extension AboutPresenter: AboutViewOutput {
-    func didLoad() {
+        
         interactor?.makeAppVersion()
     }
     

@@ -15,7 +15,7 @@ protocol RxAboutRouterProtocol: class {
     var push: Binder<RxAboutRouter.State> { get }
 }
 
-final class RxAboutRouter: RxAboutRouterProtocol {
+final class RxAboutRouter {
     private weak var viewController: RxAboutViewController!
     private weak var navigationController: UINavigationController!
     
@@ -27,6 +27,13 @@ final class RxAboutRouter: RxAboutRouterProtocol {
         }
         self.navigationController = navigationController
     }
+}
+
+extension RxAboutRouter: RxAboutRouterProtocol {
+    enum State {
+        case tips
+        case web(WKWebView.Resource, String?)
+    }
     
     var present: Binder<State> {
         viewController.rx.present
@@ -34,13 +41,6 @@ final class RxAboutRouter: RxAboutRouterProtocol {
 
     var push: Binder<State> {
         navigationController.rx.push
-    }
-}
-
-extension RxAboutRouter {
-    enum State {
-        case tips
-        case web(WKWebView.Resource, String?)
     }
 }
 

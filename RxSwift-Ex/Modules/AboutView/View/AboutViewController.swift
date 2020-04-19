@@ -26,7 +26,6 @@ final class AboutViewController: UIViewController {
         configurator.configure(with: self)
         output.didLoad()
         
-        view.backgroundColor = .white
         navigationItem.backBarButtonItem = UIBarButtonItem().then {
             $0.tintColor = .init(red: 0.937, green: 0.565, blue: 0.729, alpha: 1)
         }

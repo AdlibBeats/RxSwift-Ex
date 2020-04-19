@@ -29,7 +29,7 @@ final class RxAboutPresenter: RxAboutPresenterProtocol {
     var interactor: Interactor!
     
     func transform(input: Input) -> Output {
-        interactor.appVersionRelay ~> model.appVersion ~
+        interactor.appVersion ~> model.appVersion ~
         input.tipsTapEvent.map { .tips } ~> router.present ~
         Observable.merge(
             input.userAgreementTapEvent.withLatestFrom(Observable.combineLatest(
@@ -52,8 +52,7 @@ final class RxAboutPresenter: RxAboutPresenterProtocol {
             userAgreementTitle: model.userAgreementTitle.asDriver(),
             privacyPolicyTitle: model.privacyPolicyTitle.asDriver(),
             appVersion: model.appVersion
-                .compactMap({ $0?.version })
-                .map({ "Версия \($0)" })
+                .map({ "Версия \($0.version)" })
                 .asDriver(onErrorJustReturn: "")
         )
     }

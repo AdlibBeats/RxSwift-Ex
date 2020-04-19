@@ -6,25 +6,28 @@
 //  Copyright © 2020 ru.proarttherapy. All rights reserved.
 //
 
-import Foundation
+import Swinject
 
 final class ContactsListInteractor {
     typealias Presenter = ContactsListInteractorOutput
     
     private weak var presenter: Presenter!
     
-    private let entityService: EntityServiceProtocol = EntityService()
+    private let container: Container
     
-    required init(with presenter: Presenter) {
+    required init(with presenter: Presenter, container: Container) {
         self.presenter = presenter
+        self.container = container
     }
 }
 
+//MARK: ContactsListInteractorInput
 extension ContactsListInteractor: ContactsListInteractorInput {
     func makeContacts() {
+        let entityService = container.resolve(EntityServiceProtocol.self)!
         presenter.didSetContacts(
             entityService.makeContacts().list.toArray().map {
-                ContactPresenter(name: $0.name, phone: $0.phone)
+                ContactModel(name: $0.name, phone: $0.phone)
             }
         )
     }

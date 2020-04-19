@@ -6,7 +6,7 @@
 //  Copyright © 2020 ru.proarttherapy. All rights reserved.
 //
 
-import Foundation
+import Swinject
 
 protocol RxAboutConfiguratorProtocol: class {
     func configure(with viewController: RxAboutViewController)
@@ -15,7 +15,7 @@ protocol RxAboutConfiguratorProtocol: class {
 final class RxAboutConfigurator: RxAboutConfiguratorProtocol {
     func configure(with viewController: RxAboutViewController) {
         let presenter = RxAboutPresenter()
-        let interactor = RxAboutInteractor(presenter: presenter)
+        let interactor = RxAboutInteractor(presenter: presenter, container: Container.shared)
         let router = RxAboutRouter(viewController: viewController)
         
         viewController.presenter = presenter

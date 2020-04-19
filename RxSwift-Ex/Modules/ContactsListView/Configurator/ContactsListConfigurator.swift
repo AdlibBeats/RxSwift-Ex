@@ -6,7 +6,7 @@
 //  Copyright © 2020 ru.proarttherapy. All rights reserved.
 //
 
-import Foundation
+import Swinject
 
 protocol ContactsListConfiguratorProtocol: class {
     func configure(with viewController: ContactsListViewController)
@@ -15,7 +15,7 @@ protocol ContactsListConfiguratorProtocol: class {
 final class ContactsListConfigurator: ContactsListConfiguratorProtocol {
     func configure(with viewController: ContactsListViewController) {
         let presenter = ContactsListPresenter(with: viewController)
-        let interactor = ContactsListInteractor(with: presenter)
+        let interactor = ContactsListInteractor(with: presenter, container: Container.shared)
         let router = ContactsListRouter()
         
         viewController.output = presenter

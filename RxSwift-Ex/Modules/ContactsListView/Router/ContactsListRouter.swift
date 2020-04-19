@@ -6,21 +6,19 @@
 //  Copyright © 2020 ru.proarttherapy. All rights reserved.
 //
 
-import Foundation
-
-import Foundation
+import UIKit
 import WebKit
+import Swinject
 
 final class ContactsListRouter {
     weak var transitionHandler: TransitionHandler?
 }
 
-// MARK: AboutRouterInput
+// MARK: ContactsListRouterInput
 extension ContactsListRouter: ContactsListRouterInput {
-    func pushContactModule(with contact: ContactPresenter) {
-        transitionHandler?.pushModule(
-            UIViewController(), //ContactViewController
-            animated: true
-        )
+    func pushContactModule(with contact: ContactModel) {
+        let module = Assembly.createModule(ContactModule.self, output: nil)
+        transitionHandler?.pushModule(module.view, animated: true)
+        module.input?.didSetContact(contact)
     }
 }

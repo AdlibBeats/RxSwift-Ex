@@ -8,9 +8,10 @@
 
 import RxSwift
 import RxCocoa
+import Swinject
 
 protocol RxAboutInteractorProtocol: class {
-    var appVersionRelay: BehaviorRelay<AppVersion> { get }
+    var appVersion: Observable<AppVersion> { get }
 }
 
 final class RxAboutInteractor: RxAboutInteractorProtocol {
@@ -18,14 +19,16 @@ final class RxAboutInteractor: RxAboutInteractorProtocol {
     
     private weak var presenter: Presenter!
     
-    private let entityService: EntityServiceProtocol = EntityService(with: .appVersion)
+    private let container: Container
     private let disposeBag = DisposeBag()
     
-    required init(presenter: Presenter) {
+    required init(presenter: Presenter, container: Container) {
         self.presenter = presenter
+        self.container = container
     }
     
-    var appVersionRelay: BehaviorRelay<AppVersion> {
-        entityService.appVersionRelay
+    var appVersion: Observable<AppVersion> {
+        let entityService = container.resolve(EntityServiceProtocol.self)!
+        return entityService.fetchAppVersion() //.observeOn(MainScheduler.instance) //Realm accessed from incorrect thread.
     }
 }

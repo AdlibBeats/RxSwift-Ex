@@ -6,7 +6,7 @@
 //  Copyright © 2020 ru.proarttherapy. All rights reserved.
 //
 
-import Foundation
+import Swinject
 
 protocol AboutConfiguratorProtocol: class {
     func configure(with viewController: AboutViewController)
@@ -15,7 +15,7 @@ protocol AboutConfiguratorProtocol: class {
 final class AboutConfigurator: AboutConfiguratorProtocol {
     func configure(with viewController: AboutViewController) {
         let presenter = AboutPresenter(with: viewController)
-        let interactor = AboutInteractor(with: presenter)
+        let interactor = AboutInteractor(with: presenter, container: Container.shared)
         let router = AboutRouter()
         
         viewController.output = presenter

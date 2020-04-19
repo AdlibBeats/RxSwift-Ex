@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49203822244C9AD6001FB093 /* ContactPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49203821244C9AD6001FB093 /* ContactPresenter.swift */; };
+		49203824244C9AEA001FB093 /* ContactInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49203823244C9AEA001FB093 /* ContactInteractor.swift */; };
+		49203826244C9AFC001FB093 /* ContactRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49203825244C9AFC001FB093 /* ContactRouter.swift */; };
+		49203828244C9B5B001FB093 /* ContactRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49203827244C9B5B001FB093 /* ContactRouterInput.swift */; };
+		4920382A244C9F12001FB093 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49203829244C9F12001FB093 /* Assembly.swift */; };
+		4920382C244CA81E001FB093 /* ContactAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920382B244CA81E001FB093 /* ContactAssembly.swift */; };
+		4920382E244CAFB6001FB093 /* ContactViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920382D244CAFB6001FB093 /* ContactViewInput.swift */; };
+		49203830244CB015001FB093 /* ContactViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920382F244CB015001FB093 /* ContactViewOutput.swift */; };
+		49203832244CB388001FB093 /* ContactInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49203831244CB388001FB093 /* ContactInteractorInput.swift */; };
+		49203834244CB39E001FB093 /* ContactInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49203833244CB39E001FB093 /* ContactInteractorOutput.swift */; };
+		49203836244CB6B0001FB093 /* BaseModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49203835244CB6B0001FB093 /* BaseModule.swift */; };
+		49203838244CB72F001FB093 /* ContactModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49203837244CB72F001FB093 /* ContactModuleInput.swift */; };
+		4920383A244CBA04001FB093 /* ContactModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49203839244CBA04001FB093 /* ContactModuleOutput.swift */; };
+		4920383C244CC7A7001FB093 /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920383B244CC7A7001FB093 /* DI.swift */; };
 		49259CE0244762880001C15C /* RxAboutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49259CDF244762880001C15C /* RxAboutInteractor.swift */; };
 		492F9975244B139F00395A45 /* RealmBindObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492F9974244B139F00395A45 /* RealmBindObserver.swift */; };
 		492F9977244B142900395A45 /* RxTableViewRealmDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492F9976244B142900395A45 /* RxTableViewRealmDataSource.swift */; };
@@ -28,6 +42,8 @@
 		494557642355CE0400942B4F /* AboutView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494557632355CE0400942B4F /* AboutView.storyboard */; };
 		494557682355CE4F00942B4F /* RxAboutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494557672355CE4F00942B4F /* RxAboutPresenter.swift */; };
 		494557702355CF4C00942B4F /* RxAboutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4945576F2355CF4C00942B4F /* RxAboutModel.swift */; };
+		495CBDDF244C69AB005AEA7D /* ContactView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 495CBDDE244C69AB005AEA7D /* ContactView.storyboard */; };
+		495CBDE1244C6B9E005AEA7D /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CBDE0244C6B9E005AEA7D /* ContactViewController.swift */; };
 		49624C6324483CCC009660D3 /* RxAboutRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C6224483CCC009660D3 /* RxAboutRouter.swift */; };
 		49624C6624484554009660D3 /* RxAboutConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C6524484554009660D3 /* RxAboutConfigurator.swift */; };
 		49624C7124487799009660D3 /* ContactsListView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49624C7024487799009660D3 /* ContactsListView.storyboard */; };
@@ -61,6 +77,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49203821244C9AD6001FB093 /* ContactPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPresenter.swift; sourceTree = "<group>"; };
+		49203823244C9AEA001FB093 /* ContactInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInteractor.swift; sourceTree = "<group>"; };
+		49203825244C9AFC001FB093 /* ContactRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRouter.swift; sourceTree = "<group>"; };
+		49203827244C9B5B001FB093 /* ContactRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRouterInput.swift; sourceTree = "<group>"; };
+		49203829244C9F12001FB093 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
+		4920382B244CA81E001FB093 /* ContactAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAssembly.swift; sourceTree = "<group>"; };
+		4920382D244CAFB6001FB093 /* ContactViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewInput.swift; sourceTree = "<group>"; };
+		4920382F244CB015001FB093 /* ContactViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewOutput.swift; sourceTree = "<group>"; };
+		49203831244CB388001FB093 /* ContactInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInteractorInput.swift; sourceTree = "<group>"; };
+		49203833244CB39E001FB093 /* ContactInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInteractorOutput.swift; sourceTree = "<group>"; };
+		49203835244CB6B0001FB093 /* BaseModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModule.swift; sourceTree = "<group>"; };
+		49203837244CB72F001FB093 /* ContactModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModuleInput.swift; sourceTree = "<group>"; };
+		49203839244CBA04001FB093 /* ContactModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModuleOutput.swift; sourceTree = "<group>"; };
+		4920383B244CC7A7001FB093 /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
 		49259CDF244762880001C15C /* RxAboutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAboutInteractor.swift; sourceTree = "<group>"; };
 		492F9974244B139F00395A45 /* RealmBindObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmBindObserver.swift; sourceTree = "<group>"; };
 		492F9976244B142900395A45 /* RxTableViewRealmDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxTableViewRealmDataSource.swift; sourceTree = "<group>"; };
@@ -82,6 +112,8 @@
 		494557632355CE0400942B4F /* AboutView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutView.storyboard; sourceTree = "<group>"; };
 		494557672355CE4F00942B4F /* RxAboutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAboutPresenter.swift; sourceTree = "<group>"; };
 		4945576F2355CF4C00942B4F /* RxAboutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAboutModel.swift; sourceTree = "<group>"; };
+		495CBDDE244C69AB005AEA7D /* ContactView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContactView.storyboard; sourceTree = "<group>"; };
+		495CBDE0244C6B9E005AEA7D /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		49624C6224483CCC009660D3 /* RxAboutRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAboutRouter.swift; sourceTree = "<group>"; };
 		49624C6524484554009660D3 /* RxAboutConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAboutConfigurator.swift; sourceTree = "<group>"; };
 		49624C7024487799009660D3 /* ContactsListView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContactsListView.storyboard; sourceTree = "<group>"; };
@@ -207,6 +239,66 @@
 				4945576F2355CF4C00942B4F /* RxAboutModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		495CBDDD244C6944005AEA7D /* ContactView */ = {
+			isa = PBXGroup;
+			children = (
+				495CBDE6244C715B005AEA7D /* Assembly */,
+				495CBDE5244C7153005AEA7D /* Router */,
+				495CBDE4244C714B005AEA7D /* Interactor */,
+				495CBDE3244C7143005AEA7D /* Presenter */,
+				495CBDE2244C713D005AEA7D /* View */,
+			);
+			path = ContactView;
+			sourceTree = "<group>";
+		};
+		495CBDE2244C713D005AEA7D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				495CBDDE244C69AB005AEA7D /* ContactView.storyboard */,
+				4920382D244CAFB6001FB093 /* ContactViewInput.swift */,
+				4920382F244CB015001FB093 /* ContactViewOutput.swift */,
+				495CBDE0244C6B9E005AEA7D /* ContactViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		495CBDE3244C7143005AEA7D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				49203837244CB72F001FB093 /* ContactModuleInput.swift */,
+				49203839244CBA04001FB093 /* ContactModuleOutput.swift */,
+				49203821244C9AD6001FB093 /* ContactPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		495CBDE4244C714B005AEA7D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				49203831244CB388001FB093 /* ContactInteractorInput.swift */,
+				49203833244CB39E001FB093 /* ContactInteractorOutput.swift */,
+				49203823244C9AEA001FB093 /* ContactInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		495CBDE5244C7153005AEA7D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				49203827244C9B5B001FB093 /* ContactRouterInput.swift */,
+				49203825244C9AFC001FB093 /* ContactRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		495CBDE6244C715B005AEA7D /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				4920382B244CA81E001FB093 /* ContactAssembly.swift */,
+			);
+			path = Assembly;
 			sourceTree = "<group>";
 		};
 		49624C642448453F009660D3 /* Configurator */ = {
@@ -339,6 +431,9 @@
 			isa = PBXGroup;
 			children = (
 				49624C8B2448FE2F009660D3 /* Router.swift */,
+				49203829244C9F12001FB093 /* Assembly.swift */,
+				49203835244CB6B0001FB093 /* BaseModule.swift */,
+				4920383B244CC7A7001FB093 /* DI.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -347,6 +442,7 @@
 			isa = PBXGroup;
 			children = (
 				49624C68244876C7009660D3 /* ContactsListView */,
+				495CBDDD244C6944005AEA7D /* ContactView */,
 				494557652355CE0800942B4F /* RxAboutView */,
 				49624C742448B11D009660D3 /* AboutView */,
 			);
@@ -523,6 +619,7 @@
 				4965E28A234623EA0042E4B9 /* ABOUT_TOKENS_en.html in Resources */,
 				4965E28B234623EA0042E4B9 /* Style.css in Resources */,
 				4965E28C234623EA0042E4B9 /* ABOUT_TOKENS_ru.html in Resources */,
+				495CBDDF244C69AB005AEA7D /* ContactView.storyboard in Resources */,
 				494557642355CE0400942B4F /* AboutView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -576,15 +673,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49203834244CB39E001FB093 /* ContactInteractorOutput.swift in Sources */,
+				49203826244C9AFC001FB093 /* ContactRouter.swift in Sources */,
 				49624C872448E26B009660D3 /* AboutRouter.swift in Sources */,
 				492F998C244B71E400395A45 /* ContactsListPresenter.swift in Sources */,
+				4920382C244CA81E001FB093 /* ContactAssembly.swift in Sources */,
 				49F0AEC224473A0600222DCF /* EntityService.swift in Sources */,
+				4920382A244C9F12001FB093 /* Assembly.swift in Sources */,
 				49BCF8472449F7FF0094363B /* AboutInteractorInput.swift in Sources */,
 				49E3D5602345F9D000861760 /* RxAboutViewController.swift in Sources */,
+				49203824244C9AEA001FB093 /* ContactInteractor.swift in Sources */,
 				492F9975244B139F00395A45 /* RealmBindObserver.swift in Sources */,
+				49203838244CB72F001FB093 /* ContactModuleInput.swift in Sources */,
 				49624C812448E243009660D3 /* AboutPresenter.swift in Sources */,
 				49F0AEBF244731B900222DCF /* AppVersion.swift in Sources */,
 				49624C772448B13A009660D3 /* AboutViewController.swift in Sources */,
+				49203832244CB388001FB093 /* ContactInteractorInput.swift in Sources */,
 				4965E27D234620000042E4B9 /* StringExtensions.swift in Sources */,
 				49624C892448E27A009660D3 /* AboutConfigurator.swift in Sources */,
 				49BCF84B2449F84C0094363B /* AboutRouterInput.swift in Sources */,
@@ -593,9 +697,12 @@
 				492F9994244B7D7C00395A45 /* ContactsListRouter.swift in Sources */,
 				49624C8C2448FE2F009660D3 /* Router.swift in Sources */,
 				49624C6324483CCC009660D3 /* RxAboutRouter.swift in Sources */,
+				49203836244CB6B0001FB093 /* BaseModule.swift in Sources */,
 				49259CE0244762880001C15C /* RxAboutInteractor.swift in Sources */,
 				49624C732448AD75009660D3 /* MainViewController.swift in Sources */,
 				492F998A244B68A000395A45 /* ContactsListViewOutput.swift in Sources */,
+				4920382E244CAFB6001FB093 /* ContactViewInput.swift in Sources */,
+				4920383A244CBA04001FB093 /* ContactModuleOutput.swift in Sources */,
 				492F9977244B142900395A45 /* RxTableViewRealmDataSource.swift in Sources */,
 				492F9979244B174700395A45 /* RxCollectionViewRealmDataSource.swift in Sources */,
 				492F9998244B82A900395A45 /* ContactsListConfigurator.swift in Sources */,
@@ -605,15 +712,20 @@
 				49BCF84F2449F8C70094363B /* AboutViewInput.swift in Sources */,
 				492F9988244B67C100395A45 /* ContactsListViewInput.swift in Sources */,
 				494557702355CF4C00942B4F /* RxAboutModel.swift in Sources */,
+				495CBDE1244C6B9E005AEA7D /* ContactViewController.swift in Sources */,
+				49203822244C9AD6001FB093 /* ContactPresenter.swift in Sources */,
+				49203830244CB015001FB093 /* ContactViewOutput.swift in Sources */,
 				49624C852448E25E009660D3 /* AboutInteractor.swift in Sources */,
 				49C675FD2446F41E002D8FF1 /* WKWebViewController.swift in Sources */,
 				492F9980244B494700395A45 /* ContactsListTableViewCell.swift in Sources */,
 				492F9990244B7B7C00395A45 /* ContactsListInteractorInput.swift in Sources */,
 				492F9982244B4DBE00395A45 /* ContactsListViewController.swift in Sources */,
 				4965E291234625D90042E4B9 /* WKWebViewExtensions.swift in Sources */,
+				4920383C244CC7A7001FB093 /* DI.swift in Sources */,
 				49C675FB2446F0BF002D8FF1 /* RxExtension.swift in Sources */,
 				49624C6624484554009660D3 /* RxAboutConfigurator.swift in Sources */,
 				492F9992244B7C7E00395A45 /* ContactsListInteractorOutput.swift in Sources */,
+				49203828244C9B5B001FB093 /* ContactRouterInput.swift in Sources */,
 				492F998E244B7AA100395A45 /* ContactsListInteractor.swift in Sources */,
 				494557682355CE4F00942B4F /* RxAboutPresenter.swift in Sources */,
 				49BCF8492449F81C0094363B /* AboutInteractorOutput.swift in Sources */,

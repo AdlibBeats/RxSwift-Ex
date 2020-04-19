@@ -13,64 +13,65 @@ import RealmSwift
 import RxRealm
 
 protocol EntityServiceProtocol: class {
-    var appVersionRelay: BehaviorRelay<AppVersion> { get }
+    func fetchAppVersion() -> Observable<AppVersion>
     
     func makeAppVersion() -> AppVersion
     func makeContacts() -> Contacts
 }
 
 final class EntityService: EntityServiceProtocol {
-    enum RealmObject {
-        case appVersion
-    }
-    
     private let realm: Realm
     private let disposedBag = DisposeBag()
     
-    init(with objects: RealmObject...) {
+    init() {
         do {
             realm = try Realm()
         } catch {
             fatalError("init(with objects:) has not been implemented. Error: \(error.localizedDescription)")
         }
-        
-        objects.forEach {
-            switch $0 {
-            case .appVersion: rxMakeAppVersion()
-            }
-        }
     }
     
-    let appVersionRelay = BehaviorRelay<AppVersion>(
-        value: AppVersion().with { $0.version = "..." }
-    )
-    
-    private func rxMakeAppVersion() {
-        let appVersionObserver = AnyObserver<Object>() { [appVersionRelay] in
-            guard let appVersion = $0.element as? AppVersion else { return }
-            appVersionRelay.accept(appVersion)
-        }
-        
+    func fetchAppVersion() -> Observable<AppVersion> {
         Observable
-            .collection(from: realm.objects(AppVersion.self))
-            .delay(.seconds(2), scheduler: MainScheduler.asyncInstance) //TEST will give app version after 2 seconds
-            .map({ $0.last })
-            .asDriver(onErrorJustReturn: nil)
-            .drive(onNext: { [realm, disposedBag] in
+            .create({ [realm] observer -> Disposable in
                 //TEST Realm
                 
-                guard let appVersion = $0 else {
-                    //else create realm data (first run)
-                    Observable.from(object: AppVersion().with { $0.version = "3.0.0" }) ~>
-                        [realm.rx.add(), appVersionObserver] ~ disposedBag
-                    return
+                //if realm data object not empty
+                if let appVersion = realm.objects(AppVersion.self).last {
+                    observer.onNext(appVersion)
+                    observer.onCompleted()
                 }
                 
-                //if realm data object not empty
-                appVersionObserver.on(.next(appVersion))
+                //else create realm data (first run)
+                let appVersion = AppVersion().with { $0.version = "3.0.0" }
+                do {
+                    try realm.write {
+                        realm.add(appVersion)
+                    }
+                } catch {
+                    observer.onError(error)
+                }
+                
+                observer.onNext(appVersion)
+                observer.onCompleted()
+                
+                return Disposables.create()
             })
-            .disposed(by: disposedBag)
+            .delay(.seconds(3), scheduler: MainScheduler.asyncInstance) //Will give app version after 3 seconds
+            //.subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background)) //Realm accessed from incorrect thread.
     }
+    
+//    TEST
+//    func fetchAppVersion() -> Observable<AppVersion> {
+//        Observable.collection(from: realm.objects(AppVersion.self)).map({ [realm, disposedBag] in
+//            guard let appVersion = $0.last else {
+//                let appVersion = AppVersion().with { $0.version = "3.0.0" }
+//                Observable.from(object: appVersion) ~> realm.rx.add() ~ disposedBag
+//                return appVersion
+//            }
+//            return appVersion
+//        })
+//    }
     
     func makeAppVersion() -> AppVersion {
         //TEST Realm

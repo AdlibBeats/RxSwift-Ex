@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ContactsListRouterInput {
-    func pushContactModule(with contact: ContactPresenter)
+    func pushContactModule(with contact: ContactModel)
 }
