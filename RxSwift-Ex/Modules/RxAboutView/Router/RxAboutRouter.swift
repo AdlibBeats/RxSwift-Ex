@@ -16,17 +16,8 @@ protocol RxAboutRouterProtocol: class {
 }
 
 final class RxAboutRouter {
-    private weak var viewController: RxAboutViewController!
-    private weak var navigationController: UINavigationController!
-    
-    init(with viewController: RxAboutViewController) {
-        self.viewController = viewController
-        
-        guard let navigationController = viewController.navigationController else {
-            fatalError("init(viewController:) has not been implemented")
-        }
-        self.navigationController = navigationController
-    }
+    weak var viewController: RxAboutViewController!
+    weak var navigationController: UINavigationController!
 }
 
 extension RxAboutRouter: RxAboutRouterProtocol {

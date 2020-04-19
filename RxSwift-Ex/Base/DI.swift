@@ -28,7 +28,9 @@ extension Container {
                 let navigationController = UINavigationController(rootViewController: viewController)
                 let presenter = RxAboutPresenter()
                 let interactor = RxAboutInteractor(with: r.resolve(EntityServiceProtocol.self)!)
-                let router = RxAboutRouter(with: viewController)
+                let router = RxAboutRouter()
+                router.viewController = viewController
+                router.navigationController = navigationController
                 
                 viewController.presenter = presenter
                 presenter.interactor = interactor
