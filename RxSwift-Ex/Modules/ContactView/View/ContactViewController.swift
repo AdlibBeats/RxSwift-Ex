@@ -9,8 +9,8 @@
 import UIKit
 
 class ContactViewController: UIViewController {
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var phoneLabel: UILabel!
     
     var output: ContactViewOutput!
     

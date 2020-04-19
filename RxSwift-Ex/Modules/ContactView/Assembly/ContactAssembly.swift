@@ -16,12 +16,13 @@ extension Assembly {
         let viewController = storyboard.instantiateViewController(withIdentifier: "ContactViewController")
         let contactViewController = viewController as! ContactViewController
         let presenter = ContactPresenter(with: contactViewController)
-        let interactor = ContactInteractor(with: presenter)
+        let interactor = ContactInteractor()
         let router = ContactRouter()
         
         contactViewController.output = presenter
         router.transitionHandler = contactViewController
         presenter.interactor = interactor
+        interactor.output = presenter
         presenter.router = router
         
         return ContactModule(view: contactViewController, input: presenter, output: output)

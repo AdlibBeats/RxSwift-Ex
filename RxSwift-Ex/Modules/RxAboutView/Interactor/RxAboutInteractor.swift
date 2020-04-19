@@ -15,15 +15,10 @@ protocol RxAboutInteractorProtocol: class {
 }
 
 final class RxAboutInteractor: RxAboutInteractorProtocol {
-    typealias Presenter = RxAboutPresenterProtocol
-    
-    private weak var presenter: Presenter!
-    
     private let container: Container
     private let disposeBag = DisposeBag()
     
-    required init(presenter: Presenter, container: Container) {
-        self.presenter = presenter
+    required init(container: Container) {
         self.container = container
     }
     

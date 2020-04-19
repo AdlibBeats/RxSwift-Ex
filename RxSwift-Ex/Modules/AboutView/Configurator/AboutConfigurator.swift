@@ -15,12 +15,13 @@ protocol AboutConfiguratorProtocol: class {
 final class AboutConfigurator: AboutConfiguratorProtocol {
     func configure(with viewController: AboutViewController) {
         let presenter = AboutPresenter(with: viewController)
-        let interactor = AboutInteractor(with: presenter, container: Container.shared)
+        let interactor = AboutInteractor()
         let router = AboutRouter()
         
         viewController.output = presenter
         router.transitionHandler = viewController
         presenter.interactor = interactor
+        interactor.output = presenter
         presenter.router = router
     }
 }

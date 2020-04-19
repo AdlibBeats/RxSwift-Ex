@@ -9,12 +9,12 @@
 import UIKit
 
 final class AboutViewController: UIViewController {
-    @IBOutlet weak var tipsButton: UIButton!
-    @IBOutlet weak var userAgreementButton: UIButton!
-    @IBOutlet weak var privacyPolicyButton: UIButton!
-    @IBOutlet weak var appVersionLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var tipsButton: UIButton!
+    @IBOutlet private weak var userAgreementButton: UIButton!
+    @IBOutlet private weak var privacyPolicyButton: UIButton!
+    @IBOutlet private weak var appVersionLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
     
     private let configurator: AboutConfiguratorProtocol = AboutConfigurator()
     

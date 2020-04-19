@@ -15,7 +15,7 @@ protocol RxAboutConfiguratorProtocol: class {
 final class RxAboutConfigurator: RxAboutConfiguratorProtocol {
     func configure(with viewController: RxAboutViewController) {
         let presenter = RxAboutPresenter()
-        let interactor = RxAboutInteractor(presenter: presenter, container: Container.shared)
+        let interactor = RxAboutInteractor(container: Container.shared)
         let router = RxAboutRouter(viewController: viewController)
         
         viewController.presenter = presenter

@@ -9,23 +9,14 @@
 import Swinject
 
 final class ContactsListInteractor {
-    typealias Presenter = ContactsListInteractorOutput
-    
-    private weak var presenter: Presenter!
-    
-    private let container: Container
-    
-    required init(with presenter: Presenter, container: Container) {
-        self.presenter = presenter
-        self.container = container
-    }
+    weak var output: ContactsListInteractorOutput!
 }
 
 //MARK: ContactsListInteractorInput
 extension ContactsListInteractor: ContactsListInteractorInput {
     func makeContacts() {
-        let entityService = container.resolve(EntityServiceProtocol.self)!
-        presenter.didSetContacts(
+        let entityService = Container.shared.resolve(EntityServiceProtocol.self)!
+        output.didSetContacts(
             entityService.makeContacts().list.toArray().map {
                 ContactModel(name: $0.name, phone: $0.phone)
             }

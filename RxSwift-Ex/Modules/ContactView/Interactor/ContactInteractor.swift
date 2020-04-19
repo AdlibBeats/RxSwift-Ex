@@ -9,13 +9,7 @@
 import Swinject
 
 final class ContactInteractor {
-    typealias Presenter = ContactInteractorOutput
-    
-    private weak var presenter: Presenter!
-    
-    required init(with presenter: Presenter) {
-        self.presenter = presenter
-    }
+    weak var output: ContactInteractorOutput!
 }
 
 extension ContactInteractor: ContactInteractorInput {

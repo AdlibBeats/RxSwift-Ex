@@ -15,12 +15,13 @@ protocol ContactsListConfiguratorProtocol: class {
 final class ContactsListConfigurator: ContactsListConfiguratorProtocol {
     func configure(with viewController: ContactsListViewController) {
         let presenter = ContactsListPresenter(with: viewController)
-        let interactor = ContactsListInteractor(with: presenter, container: Container.shared)
+        let interactor = ContactsListInteractor()
         let router = ContactsListRouter()
         
         viewController.output = presenter
         router.transitionHandler = viewController
         presenter.interactor = interactor
+        interactor.output = presenter
         presenter.router = router
     }
 }

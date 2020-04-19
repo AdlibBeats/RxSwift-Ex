@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 final class ContactsListViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView! {
+    @IBOutlet private weak var tableView: UITableView! {
         willSet {
             newValue.delegate = self
             newValue.dataSource = self
