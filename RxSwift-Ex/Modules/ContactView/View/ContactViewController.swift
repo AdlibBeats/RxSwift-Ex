@@ -17,20 +17,20 @@ class ContactViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        output.didLoad()
+        output.viewDidLoad()
     }
 }
 
 extension ContactViewController: ContactViewInput {
-    func didSetNavBarTitle(_ newValue: String) {
+    func setNavBarTitle(_ newValue: String) {
         title = newValue
     }
     
-    func didSetName(_ newValue: String) {
+    func setName(_ newValue: String) {
         nameLabel.text = newValue
     }
     
-    func didSetPhone(_ newValue: String) {
+    func setPhone(_ newValue: String) {
         phoneLabel.text = newValue
     }
 }

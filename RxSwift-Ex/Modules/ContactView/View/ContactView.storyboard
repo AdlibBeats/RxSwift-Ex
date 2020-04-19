@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLy-f8-dfr">
-                                <rect key="frame" x="0.0" y="154.5" width="375" height="353"/>
+                                <rect key="frame" x="0.0" y="231" width="375" height="200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rqv-6A-yFw">
                                         <rect key="frame" x="140.5" y="8" width="94" height="48"/>
@@ -35,9 +35,10 @@
                                 <constraints>
                                     <constraint firstItem="Rqv-6A-yFw" firstAttribute="top" secondItem="WLy-f8-dfr" secondAttribute="top" constant="8" id="A4Y-Op-bEU"/>
                                     <constraint firstItem="ZLX-XW-EOM" firstAttribute="centerX" secondItem="WLy-f8-dfr" secondAttribute="centerX" id="VxJ-pV-Uhs"/>
+                                    <constraint firstAttribute="height" constant="200" id="YUa-ud-Fi8"/>
                                     <constraint firstItem="Rqv-6A-yFw" firstAttribute="centerX" secondItem="WLy-f8-dfr" secondAttribute="centerX" id="bZZ-vf-63l"/>
                                     <constraint firstItem="ZLX-XW-EOM" firstAttribute="top" secondItem="Rqv-6A-yFw" secondAttribute="bottom" constant="36" id="oA8-Pp-YpO"/>
-                                    <constraint firstAttribute="bottom" secondItem="ZLX-XW-EOM" secondAttribute="bottom" constant="240" id="tpu-nN-bVO"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZLX-XW-EOM" secondAttribute="bottom" id="tpu-nN-bVO"/>
                                 </constraints>
                             </view>
                         </subviews>

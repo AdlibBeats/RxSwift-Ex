@@ -15,10 +15,11 @@ extension Assembly {
         let storyboard = UIStoryboard(name: "ContactView", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "ContactViewController")
         let contactViewController = viewController as! ContactViewController
-        let presenter = ContactPresenter(with: contactViewController)
+        let presenter = ContactPresenter()
         let interactor = ContactInteractor()
         let router = ContactRouter()
         
+        presenter.view = contactViewController
         contactViewController.output = presenter
         router.transitionHandler = contactViewController
         presenter.interactor = interactor

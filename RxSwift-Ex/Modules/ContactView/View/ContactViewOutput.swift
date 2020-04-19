@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ContactViewOutput: class {
-    func didLoad()
+    func viewDidLoad()
 }

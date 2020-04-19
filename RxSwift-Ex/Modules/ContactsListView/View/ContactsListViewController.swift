@@ -31,7 +31,7 @@ final class ContactsListViewController: UIViewController {
         super.viewDidLoad()
 
         configurator.configure(with: self)
-        output.didLoad()
+        output.viewDidLoad()
         
         navigationItem.backBarButtonItem = UIBarButtonItem().then {
             $0.tintColor = .init(red: 0.937, green: 0.565, blue: 0.729, alpha: 1)
@@ -44,7 +44,7 @@ extension ContactsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { 53 }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if !output.contactsList.check(index: indexPath.row) { return }
-        output.didSelect(indexPath.row)
+        output.tableViewDidSelect(indexPath.row)
     }
 }
 
@@ -64,7 +64,7 @@ extension ContactsListViewController: UITableViewDataSource {
 
 //MARK: ContactsListViewInput
 extension ContactsListViewController: ContactsListViewInput {
-    func didSetNavBarTitle(_ newValue: String) {
+    func setNavBarTitle(_ newValue: String) {
         title = newValue
     }
     

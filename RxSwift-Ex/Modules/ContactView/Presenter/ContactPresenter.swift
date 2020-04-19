@@ -14,23 +14,19 @@ final class ContactPresenter {
     typealias Router = ContactRouterInput
     typealias Output = ContactModuleOutput
     
-    private weak var view: View!
+    weak var view: View!
     var interactor: Interactor!
-    var router: Router!
+    var router: Router?
     var output: Output?
     
     private var contact = ContactModel(name: "", phone: "")
-    
-    required init(with view: View) {
-        self.view = view
-    }
 }
 
 extension ContactPresenter: ContactViewOutput {
-    func didLoad() {
-        view.didSetNavBarTitle("Контакт")
-        view.didSetName(contact.name)
-        view.didSetPhone(contact.phone)
+    func viewDidLoad() {
+        view.setNavBarTitle("Контакт")
+        view.setName(contact.name)
+        view.setPhone(contact.phone)
     }
 }
 

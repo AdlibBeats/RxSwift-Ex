@@ -11,6 +11,6 @@ import Foundation
 protocol ContactsListViewOutput: class {
     var contactsList: [ContactModel] { get }
     
-    func didLoad()
-    func didSelect(_ index: Int)
+    func viewDidLoad()
+    func tableViewDidSelect(_ index: Int)
 }

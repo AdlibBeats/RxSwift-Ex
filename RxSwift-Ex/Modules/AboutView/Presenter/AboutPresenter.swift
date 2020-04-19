@@ -13,24 +13,20 @@ final class AboutPresenter {
     typealias Interactor = AboutInteractorInput
     typealias Router = AboutRouterInput
     
-    private weak var view: View!
+    weak var view: View!
     var interactor: Interactor!
-    var router: Router!
-    
-    required init(with view: View) {
-        self.view = view
-    }
+    var router: Router?
 }
 
 // MARK: AboutViewOutput
 extension AboutPresenter: AboutViewOutput {
-    func didLoad() {
-        view.didSetNavBarTitle("О приложении")
-        view.didSetTitle("КАЛЕНДАРЬ БЕРЕМЕННОСТИ")
-        view.didSetDescription("Рекомендации профессиональных врачей для каждой недели беременности")
-        view.didSetTipsTitle("Подсказки")
-        view.didSetUserAgreementTitle("Пользовательское соглашение")
-        view.didSetPrivacyPolicyTitle("Политика конфиденциальности")
+    func viewDidLoad() {
+        view.setNavBarTitle("О приложении")
+        view.setTitle("КАЛЕНДАРЬ БЕРЕМЕННОСТИ")
+        view.setDescription("Рекомендации профессиональных врачей для каждой недели беременности")
+        view.setTipsTitle("Подсказки")
+        view.setUserAgreementTitle("Пользовательское соглашение")
+        view.setPrivacyPolicyTitle("Политика конфиденциальности")
         
         interactor?.makeAppVersion()
     }
@@ -57,6 +53,6 @@ extension AboutPresenter: AboutViewOutput {
 // MARK: AboutInteractorOutput
 extension AboutPresenter: AboutInteractorOutput {
     func didSetAppVersion(_ newValue: AppVersion) {
-        view.didSetAppVersion("Версия \(newValue.version)")
+        view.setAppVersion("Версия \(newValue.version)")
     }
 }

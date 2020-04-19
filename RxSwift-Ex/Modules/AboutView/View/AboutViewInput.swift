@@ -9,11 +9,11 @@
 import Foundation
 
 protocol AboutViewInput: class {
-    func didSetNavBarTitle(_ newValue: String)
-    func didSetTitle(_ newValue: String)
-    func didSetDescription(_ newValue: String)
-    func didSetTipsTitle(_ newValue: String)
-    func didSetUserAgreementTitle(_ newValue: String)
-    func didSetPrivacyPolicyTitle(_ newValue: String)
-    func didSetAppVersion(_ newValue: String)
+    func setNavBarTitle(_ newValue: String)
+    func setTitle(_ newValue: String)
+    func setDescription(_ newValue: String)
+    func setTipsTitle(_ newValue: String)
+    func setUserAgreementTitle(_ newValue: String)
+    func setPrivacyPolicyTitle(_ newValue: String)
+    func setAppVersion(_ newValue: String)
 }

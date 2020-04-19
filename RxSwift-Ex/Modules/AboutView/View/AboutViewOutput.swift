@@ -9,7 +9,7 @@
 import Foundation
 
 protocol AboutViewOutput: class {
-    func didLoad()
+    func viewDidLoad()
     func tipsDidTap()
     func privacyPolicyDidTap()
     func userAgreementDidTap()

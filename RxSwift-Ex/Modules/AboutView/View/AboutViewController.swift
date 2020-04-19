@@ -24,7 +24,7 @@ final class AboutViewController: UIViewController {
         super.viewDidLoad()
         
         configurator.configure(with: self)
-        output.didLoad()
+        output.viewDidLoad()
         
         navigationItem.backBarButtonItem = UIBarButtonItem().then {
             $0.tintColor = .init(red: 0.937, green: 0.565, blue: 0.729, alpha: 1)
@@ -46,31 +46,31 @@ final class AboutViewController: UIViewController {
 
 // MARK: AboutViewInput
 extension AboutViewController: AboutViewInput {
-    func didSetNavBarTitle(_ newValue: String) {
+    func setNavBarTitle(_ newValue: String) {
         title = newValue
     }
     
-    func didSetTitle(_ newValue: String) {
+    func setTitle(_ newValue: String) {
         titleLabel.text = newValue
     }
     
-    func didSetDescription(_ newValue: String) {
+    func setDescription(_ newValue: String) {
         descriptionLabel.text = newValue
     }
     
-    func didSetTipsTitle(_ newValue: String) {
+    func setTipsTitle(_ newValue: String) {
         tipsButton.setTitle(newValue, for: .normal)
     }
     
-    func didSetUserAgreementTitle(_ newValue: String) {
+    func setUserAgreementTitle(_ newValue: String) {
         userAgreementButton.setTitle(newValue, for: .normal)
     }
     
-    func didSetPrivacyPolicyTitle(_ newValue: String) {
+    func setPrivacyPolicyTitle(_ newValue: String) {
         privacyPolicyButton.setTitle(newValue, for: .normal)
     }
     
-    func didSetAppVersion(_ newValue: String) {
+    func setAppVersion(_ newValue: String) {
         appVersionLabel.text = newValue
     }
 }

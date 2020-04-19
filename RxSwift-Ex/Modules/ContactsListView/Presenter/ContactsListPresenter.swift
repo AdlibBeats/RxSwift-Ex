@@ -22,18 +22,14 @@ final class ContactsListPresenter {
     typealias Interactor = ContactsListInteractorInput
     typealias Router = ContactsListRouterInput
     
-    private weak var view: View!
+    weak var view: View!
     var interactor: Interactor!
-    var router: Router!
+    var router: Router?
     
     private var contacts: [ContactModel] = [] {
         willSet {
             view.reload()
         }
-    }
-    
-    required init(with view: View) {
-        self.view = view
     }
 }
 
@@ -41,14 +37,14 @@ final class ContactsListPresenter {
 extension ContactsListPresenter: ContactsListViewOutput {
     var contactsList: [ContactModel] { contacts }
     
-    func didLoad() {
-        view.didSetNavBarTitle("Контакты")
+    func viewDidLoad() {
+        view.setNavBarTitle("Контакты")
         
         interactor.makeContacts()
     }
     
-    func didSelect(_ index: Int) {
-        router.pushContactModule(with: contactsList[index])
+    func tableViewDidSelect(_ index: Int) {
+        router?.pushContactModule(with: contactsList[index])
     }
 }
 

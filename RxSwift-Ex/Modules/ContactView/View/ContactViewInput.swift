@@ -9,7 +9,7 @@
 import Foundation
 
 protocol ContactViewInput: class {
-    func didSetNavBarTitle(_ newValue: String)
-    func didSetName(_ newValue: String)
-    func didSetPhone(_ newValue: String)
+    func setNavBarTitle(_ newValue: String)
+    func setName(_ newValue: String)
+    func setPhone(_ newValue: String)
 }
