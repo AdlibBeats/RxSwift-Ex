@@ -33,8 +33,10 @@ final class ContactsListViewController: UIViewController {
         configurator.configure(with: self)
         output.viewDidLoad()
         
+        let navBarTitleColor = UIColor(red: 0.937, green: 0.565, blue: 0.729, alpha: 1)
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.backBarButtonItem?.tintColor = .init(red: 0.937, green: 0.565, blue: 0.729, alpha: 1)
+        navigationController?.navigationBar.largeTitleTextAttributes =
+            [NSAttributedString.Key.foregroundColor: navBarTitleColor]
     }
 }
 
