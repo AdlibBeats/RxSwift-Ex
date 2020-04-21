@@ -13,7 +13,7 @@ import RxCocoa
 import WebKit
 import RealmSwift
 
-extension Reactive where Base: UITextField {
+extension Reactive where Base : UITextField {
     var textColor: Binder<UIColor?> {
         Binder(base) { textField, color in
             textField.textColor = color
@@ -21,7 +21,7 @@ extension Reactive where Base: UITextField {
     }
 }
 
-extension Reactive where Base: UILabel {
+extension Reactive where Base : UILabel {
     var textColor: Binder<UIColor?> {
         Binder(base) { label, color in
             label.textColor = color
@@ -29,7 +29,7 @@ extension Reactive where Base: UILabel {
     }
 }
 
-extension Reactive where Base: UIDatePicker {
+extension Reactive where Base : UIDatePicker {
     var date: Binder<Date> {
         Binder(base) { datePicker, date in
             datePicker.setDate(date, animated: false)
@@ -49,7 +49,7 @@ extension Reactive where Base: UIDatePicker {
     }
 }
 
-extension Reactive where Base: UIView {
+extension Reactive where Base : UIView {
     var endEditing: Binder<Bool> {
         Binder(base) { view, value in
             view.endEditing(value)
@@ -61,7 +61,7 @@ extension Reactive where Base: UIView {
     }
 }
 
-extension Reactive where Base: UIViewController {
+extension Reactive where Base : UIViewController {
     var title: Binder<String> {
         Binder(base) { viewController, value in
             viewController.title = value
@@ -69,7 +69,7 @@ extension Reactive where Base: UIViewController {
     }
 }
 
-extension Reactive where Base: WKWebView {
+extension Reactive where Base : WKWebView {
     var load: Binder<WKWebView.Resource> {
         Binder(base) { webView, value in
             do {
@@ -81,7 +81,7 @@ extension Reactive where Base: WKWebView {
     }
 }
 
-extension Reactive where Base: UITableView {
+extension Reactive where Base : UITableView {
     func realmChanges<E>(_ dataSource: RxTableViewRealmDataSource<E>) -> RealmBindObserver<E, AnyRealmCollection<E>, RxTableViewRealmDataSource<E>> {
         RealmBindObserver(dataSource: dataSource) { dataSource, results, changes in
             if dataSource.tableView == nil {
@@ -106,7 +106,7 @@ extension Reactive where Base: UITableView {
     }
 }
 
-extension Reactive where Base: UICollectionView {
+extension Reactive where Base : UICollectionView {
     func realmChanges<E>(_ dataSource: RxCollectionViewRealmDataSource<E>) -> RealmBindObserver<E, AnyRealmCollection<E>, RxCollectionViewRealmDataSource<E>> {
         RealmBindObserver(dataSource: dataSource) { dataSource, results, changes in
             if dataSource.collectionView == nil {

@@ -50,7 +50,7 @@ extension ContactsListPresenter: ContactsListViewOutput {
 
 //MARK: ContactsListInteractorOutput
 extension ContactsListPresenter: ContactsListInteractorOutput {
-    func didSetContacts(_ contacts: [ContactModel]) {
+    func setContacts(_ contacts: [ContactModel]) {
         self.contacts = contacts
     }
 }

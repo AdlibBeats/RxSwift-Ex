@@ -10,15 +10,22 @@ import RxSwift
 import RxCocoa
 import WebKit
 
-protocol RxAboutRouterProtocol: class {
-    var present: Binder<RxAboutRouter.State> { get }
-    var push: Binder<RxAboutRouter.State> { get }
+protocol RxRouterProtocol: class {
+    var viewController: UIViewController! { get set }
+    var navigationController: UINavigationController! { get set }
 }
 
-final class RxAboutRouter {
-    weak var viewController: RxAboutViewController!
+class RxBaseRouter: RxRouterProtocol {
+    weak var viewController: UIViewController!
     weak var navigationController: UINavigationController!
 }
+
+protocol RxAboutRouterProtocol: class {
+    var presentBinder: Binder<RxAboutRouter.State> { get }
+    var pushBinder: Binder<RxAboutRouter.State> { get }
+}
+
+final class RxAboutRouter: RxBaseRouter { }
 
 extension RxAboutRouter: RxAboutRouterProtocol {
     enum State {
@@ -26,30 +33,28 @@ extension RxAboutRouter: RxAboutRouterProtocol {
         case web(WKWebView.Resource, String?)
     }
     
-    var present: Binder<State> {
+    var presentBinder: Binder<State> {
         viewController.rx.present
     }
 
-    var push: Binder<State> {
+    var pushBinder: Binder<State> {
         navigationController.rx.push
     }
 }
 
-fileprivate extension RxAboutRouter.State {
-    var makeViewController: UIViewController? {
-        switch self {
-        case .tips:
-            return nil /* TODO: create TipsViewController */
-        case .web(let resource, let title):
-            return WKWebViewController(with: resource, title: title)
-        }
+private func makeViewController(with state: RxAboutRouter.State) -> UIViewController? {
+    switch state {
+    case .tips:
+        return nil /* TODO: create TipsViewController */
+    case .web(let resource, let title):
+        return WKWebViewController(with: resource, title: title)
     }
 }
 
 private extension Reactive where Base : UIViewController {
     var present: Binder<RxAboutRouter.State> {
         Binder(base) { viewController, value in
-            value.makeViewController.flatMap {
+            makeViewController(with: value).flatMap {
                 viewController.present($0, animated: true)
             }
         }
@@ -59,7 +64,7 @@ private extension Reactive where Base : UIViewController {
 private extension Reactive where Base : UINavigationController {
     var push: Binder<RxAboutRouter.State> {
         Binder(base) { navigationController, value in
-            value.makeViewController.flatMap {
+            makeViewController(with: value).flatMap {
                 navigationController.pushViewController($0, animated: true)
             }
         }
