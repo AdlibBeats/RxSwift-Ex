@@ -25,9 +25,9 @@ extension RxAboutRouter: RxAboutRouterProtocol {
     }
     
     var presentBinder: Binder<State> {
-        Binder(self) { viewController, value in
+        Binder(self) { _, state in
             Container.shared.resolve(RxAboutViewController.self).flatMap { nc in
-                makeViewController(with: value).flatMap { vc in
+                makeViewController(with: state).flatMap { vc in
                     nc.present(vc, animated: true)
                 }
             }
@@ -35,9 +35,9 @@ extension RxAboutRouter: RxAboutRouterProtocol {
     }
     
     var pushBinder: Binder<State> {
-        Binder(self) { navigationController, value in
+        Binder(self) { _, state in
             Container.shared.resolve(UINavigationController.self, name: "RxAboutNavigationView").flatMap { nc in
-                makeViewController(with: value).flatMap { vc in
+                makeViewController(with: state).flatMap { vc in
                     nc.pushViewController(vc, animated: true)
                 }
             }
