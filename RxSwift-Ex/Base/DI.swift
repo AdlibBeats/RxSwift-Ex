@@ -23,20 +23,19 @@ extension Container {
             .inObjectScope(.servicesScope)
         
         container
-            .register(UINavigationController.self, name: "RxAboutNavigationView", factory: { r in
+            .register(UINavigationController.self, name: "RxAboutNavigationView", factory: { _ in UINavigationController() })
+            .inObjectScope(.viewControllersScope)
+        
+        container
+            .register(RxAboutViewController.self, factory: { r in
                 let viewController = RxAboutViewController()
-                let navigationController = UINavigationController(rootViewController: viewController)
                 let presenter = RxAboutPresenter()
-                let interactor = RxAboutInteractor(with: r.resolve(EntityServiceProtocol.self)!)
-                let router = RxAboutRouter()
-                router.viewController = viewController
-                router.navigationController = navigationController
-                
                 viewController.presenter = presenter
-                presenter.interactor = interactor
-                presenter.router = router
-                
-                return navigationController
+                r.resolve(EntityServiceProtocol.self).flatMap {
+                    presenter.interactor = RxAboutInteractor(with: $0)
+                }
+                presenter.router = RxAboutRouter()
+                return viewController
             })
             .inObjectScope(.viewControllersScope)
         

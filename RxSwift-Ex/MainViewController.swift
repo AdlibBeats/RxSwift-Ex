@@ -17,12 +17,12 @@ final class MainViewController: UITabBarController {
     }
     
     private func appendAboutViewController() {
-        guard let viewController = Container.shared.resolve(
-            UINavigationController.self,
-            name: "RxAboutNavigationView"
-        ) else { return }
-        
-        viewController.tabBarItem = .init(tabBarSystemItem: .more, tag: 1)
-        viewControllers?.append(viewController)
+        Container.shared.resolve(RxAboutViewController.self).flatMap { vc in
+            vc.tabBarItem = .init(tabBarSystemItem: .more, tag: 1)
+            Container.shared.resolve(UINavigationController.self, name: "RxAboutNavigationView").flatMap { [weak self] nc in
+                nc.setViewControllers([vc], animated: false)
+                self?.viewControllers?.append(nc)
+            }
+        }
     }
 }

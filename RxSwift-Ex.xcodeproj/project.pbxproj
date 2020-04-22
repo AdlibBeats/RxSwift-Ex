@@ -168,6 +168,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4913AC182450393E00ECBEBE /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		49259CDE2447625E0001C15C /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
@@ -430,6 +437,7 @@
 		49624C8D2448FF84009660D3 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4913AC182450393E00ECBEBE /* New Group */,
 				49624C68244876C7009660D3 /* ContactsListView */,
 				495CBDDD244C6944005AEA7D /* ContactView */,
 				494557652355CE0800942B4F /* RxAboutView */,
@@ -864,7 +872,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GKK9BFF346;
+				DEVELOPMENT_TEAM = W7AP9BD2P6;
 				INFOPLIST_FILE = "RxSwift-Ex/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -883,7 +891,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GKK9BFF346;
+				DEVELOPMENT_TEAM = W7AP9BD2P6;
 				INFOPLIST_FILE = "RxSwift-Ex/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

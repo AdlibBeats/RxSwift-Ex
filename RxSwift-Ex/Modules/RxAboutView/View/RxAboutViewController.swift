@@ -112,9 +112,6 @@ final class RxAboutViewController: UIViewController {
     private let userAgreementButton = MenuButton()
     private let privacyPolicyButton = MenuButton()
     
-    typealias Input = RxAboutPresenter.Input
-    typealias Output = RxAboutPresenter.Output
-    
     var presenter: RxAboutPresenterProtocol!
     
     private let disposeBag = DisposeBag()

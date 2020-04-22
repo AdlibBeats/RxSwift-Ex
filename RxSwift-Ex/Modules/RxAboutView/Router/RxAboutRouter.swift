@@ -9,23 +9,14 @@
 import RxSwift
 import RxCocoa
 import WebKit
-
-protocol RxRouterProtocol: class {
-    var viewController: UIViewController! { get set }
-    var navigationController: UINavigationController! { get set }
-}
-
-class RxBaseRouter: RxRouterProtocol {
-    weak var viewController: UIViewController!
-    weak var navigationController: UINavigationController!
-}
+import Swinject
 
 protocol RxAboutRouterProtocol: class {
     var presentBinder: Binder<RxAboutRouter.State> { get }
     var pushBinder: Binder<RxAboutRouter.State> { get }
 }
 
-final class RxAboutRouter: RxBaseRouter { }
+final class RxAboutRouter { }
 
 extension RxAboutRouter: RxAboutRouterProtocol {
     enum State {
@@ -34,11 +25,23 @@ extension RxAboutRouter: RxAboutRouterProtocol {
     }
     
     var presentBinder: Binder<State> {
-        viewController.rx.present
+        Binder(self) { viewController, value in
+            Container.shared.resolve(RxAboutViewController.self).flatMap { nc in
+                makeViewController(with: value).flatMap { vc in
+                    nc.present(vc, animated: true)
+                }
+            }
+        }
     }
-
+    
     var pushBinder: Binder<State> {
-        navigationController.rx.push
+        Binder(self) { navigationController, value in
+            Container.shared.resolve(UINavigationController.self, name: "RxAboutNavigationView").flatMap { nc in
+                makeViewController(with: value).flatMap { vc in
+                    nc.pushViewController(vc, animated: true)
+                }
+            }
+        }
     }
 }
 
@@ -50,24 +53,3 @@ private func makeViewController(with state: RxAboutRouter.State) -> UIViewContro
         return WKWebViewController(with: resource, title: title)
     }
 }
-
-private extension Reactive where Base : UIViewController {
-    var present: Binder<RxAboutRouter.State> {
-        Binder(base) { viewController, value in
-            makeViewController(with: value).flatMap {
-                viewController.present($0, animated: true)
-            }
-        }
-    }
-}
-
-private extension Reactive where Base : UINavigationController {
-    var push: Binder<RxAboutRouter.State> {
-        Binder(base) { navigationController, value in
-            makeViewController(with: value).flatMap {
-                navigationController.pushViewController($0, animated: true)
-            }
-        }
-    }
-}
-
