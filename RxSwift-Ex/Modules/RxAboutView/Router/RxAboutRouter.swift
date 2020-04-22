@@ -12,8 +12,8 @@ import WebKit
 import Swinject
 
 protocol RxAboutRouterProtocol: class {
-    var presentBinder: Binder<RxAboutRouter.State> { get }
-    var pushBinder: Binder<RxAboutRouter.State> { get }
+    var present: Binder<RxAboutRouter.State> { get }
+    var push: Binder<RxAboutRouter.State> { get }
 }
 
 final class RxAboutRouter { }
@@ -24,7 +24,7 @@ extension RxAboutRouter: RxAboutRouterProtocol {
         case web(WKWebView.Resource, String?)
     }
     
-    var presentBinder: Binder<State> {
+    var present: Binder<State> {
         Binder(self) { _, state in
             Container.shared.resolve(RxAboutViewController.self).flatMap { nc in
                 makeViewController(with: state).flatMap { vc in
@@ -32,9 +32,10 @@ extension RxAboutRouter: RxAboutRouterProtocol {
                 }
             }
         }
+        
     }
     
-    var pushBinder: Binder<State> {
+    var push: Binder<State> {
         Binder(self) { _, state in
             Container.shared.resolve(UINavigationController.self, name: "RxAboutNavigationView").flatMap { nc in
                 makeViewController(with: state).flatMap { vc in

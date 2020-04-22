@@ -121,7 +121,7 @@ final class RxAboutViewController: UIViewController {
         
         view.backgroundColor = .white
         navigationItem.backBarButtonItem = UIBarButtonItem().then {
-            $0.tintColor = .init(red: 0.937, green: 0.565, blue: 0.729, alpha: 1)
+            $0.tintColor = UIColor.kbrMainPink
         }
         
         func setConstraints() {
@@ -202,9 +202,9 @@ final class RxAboutViewController: UIViewController {
         func bind() {
             let output = presenter.transform(
                 input: RxAboutPresenter.Input(
-                    tipsTapEvent: tipsButton.rx.tap,
-                    userAgreementTapEvent: userAgreementButton.rx.tap,
-                    privacyPolicyTapEvent: privacyPolicyButton.rx.tap
+                    tipsTapEvent: tipsButton.rx.tapGesture().when(.recognized).map { _ in },
+                    userAgreementTapEvent: userAgreementButton.rx.tapGesture().when(.recognized).map { _ in },
+                    privacyPolicyTapEvent: privacyPolicyButton.rx.tapGesture().when(.recognized).map { _ in }
                 )
             )
             

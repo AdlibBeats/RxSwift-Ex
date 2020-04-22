@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4913AC1D24503BE600ECBEBE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4913AC1C24503BE600ECBEBE /* LoginViewController.swift */; };
+		4913AC2A245074C800ECBEBE /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4913AC29245074C800ECBEBE /* LoginView.storyboard */; };
+		4913AC2C24508A4500ECBEBE /* CallView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4913AC2B24508A4500ECBEBE /* CallView.storyboard */; };
+		4913AC2E24508A5300ECBEBE /* CallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4913AC2D24508A5300ECBEBE /* CallViewController.swift */; };
+		4913AC302450C88400ECBEBE /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4913AC2F2450C88400ECBEBE /* UIColorExtensions.swift */; };
 		49203822244C9AD6001FB093 /* ContactPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49203821244C9AD6001FB093 /* ContactPresenter.swift */; };
 		49203824244C9AEA001FB093 /* ContactInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49203823244C9AEA001FB093 /* ContactInteractor.swift */; };
 		49203826244C9AFC001FB093 /* ContactRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49203825244C9AFC001FB093 /* ContactRouter.swift */; };
@@ -63,7 +68,7 @@
 		49BCF84B2449F84C0094363B /* AboutRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BCF84A2449F84C0094363B /* AboutRouterInput.swift */; };
 		49BCF84D2449F8B00094363B /* AboutViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BCF84C2449F8B00094363B /* AboutViewOutput.swift */; };
 		49BCF84F2449F8C70094363B /* AboutViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BCF84E2449F8C70094363B /* AboutViewInput.swift */; };
-		49C675FB2446F0BF002D8FF1 /* RxExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C675FA2446F0BF002D8FF1 /* RxExtension.swift */; };
+		49C675FB2446F0BF002D8FF1 /* RxExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C675FA2446F0BF002D8FF1 /* RxExtensions.swift */; };
 		49C675FD2446F41E002D8FF1 /* WKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C675FC2446F41E002D8FF1 /* WKWebViewController.swift */; };
 		49E3D55C2345F9D000861760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3D55B2345F9D000861760 /* AppDelegate.swift */; };
 		49E3D5602345F9D000861760 /* RxAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3D55F2345F9D000861760 /* RxAboutViewController.swift */; };
@@ -76,6 +81,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4913AC1C24503BE600ECBEBE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4913AC1E24503C0000ECBEBE /* RxSwift-Ex.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "RxSwift-Ex.entitlements"; sourceTree = "<group>"; };
+		4913AC29245074C800ECBEBE /* LoginView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginView.storyboard; sourceTree = "<group>"; };
+		4913AC2B24508A4500ECBEBE /* CallView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CallView.storyboard; sourceTree = "<group>"; };
+		4913AC2D24508A5300ECBEBE /* CallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallViewController.swift; sourceTree = "<group>"; };
+		4913AC2F2450C88400ECBEBE /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		49203821244C9AD6001FB093 /* ContactPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPresenter.swift; sourceTree = "<group>"; };
 		49203823244C9AEA001FB093 /* ContactInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInteractor.swift; sourceTree = "<group>"; };
 		49203825244C9AFC001FB093 /* ContactRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRouter.swift; sourceTree = "<group>"; };
@@ -132,7 +143,7 @@
 		49BCF84A2449F84C0094363B /* AboutRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRouterInput.swift; sourceTree = "<group>"; };
 		49BCF84C2449F8B00094363B /* AboutViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewOutput.swift; sourceTree = "<group>"; };
 		49BCF84E2449F8C70094363B /* AboutViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewInput.swift; sourceTree = "<group>"; };
-		49C675FA2446F0BF002D8FF1 /* RxExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxExtension.swift; sourceTree = "<group>"; };
+		49C675FA2446F0BF002D8FF1 /* RxExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxExtensions.swift; sourceTree = "<group>"; };
 		49C675FC2446F41E002D8FF1 /* WKWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewController.swift; sourceTree = "<group>"; };
 		49E3D5582345F9D000861760 /* RxSwift-Ex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxSwift-Ex.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E3D55B2345F9D000861760 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -168,11 +179,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4913AC182450393E00ECBEBE /* New Group */ = {
+		4913AC182450393E00ECBEBE /* CallView */ = {
 			isa = PBXGroup;
 			children = (
+				4913AC1924503BA300ECBEBE /* View */,
 			);
-			path = "New Group";
+			path = CallView;
+			sourceTree = "<group>";
+		};
+		4913AC1924503BA300ECBEBE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4913AC29245074C800ECBEBE /* LoginView.storyboard */,
+				4913AC1C24503BE600ECBEBE /* LoginViewController.swift */,
+				4913AC2B24508A4500ECBEBE /* CallView.storyboard */,
+				4913AC2D24508A5300ECBEBE /* CallViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		49259CDE2447625E0001C15C /* Interactor */ = {
@@ -437,7 +460,7 @@
 		49624C8D2448FF84009660D3 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				4913AC182450393E00ECBEBE /* New Group */,
+				4913AC182450393E00ECBEBE /* CallView */,
 				49624C68244876C7009660D3 /* ContactsListView */,
 				495CBDDD244C6944005AEA7D /* ContactView */,
 				494557652355CE0800942B4F /* RxAboutView */,
@@ -450,7 +473,8 @@
 			isa = PBXGroup;
 			children = (
 				4965E290234625D90042E4B9 /* WKWebViewExtensions.swift */,
-				49C675FA2446F0BF002D8FF1 /* RxExtension.swift */,
+				49C675FA2446F0BF002D8FF1 /* RxExtensions.swift */,
+				4913AC2F2450C88400ECBEBE /* UIColorExtensions.swift */,
 				4965E27C234620000042E4B9 /* StringExtensions.swift */,
 			);
 			path = Extensions;
@@ -505,6 +529,7 @@
 		49E3D55A2345F9D000861760 /* RxSwift-Ex */ = {
 			isa = PBXGroup;
 			children = (
+				4913AC1E24503C0000ECBEBE /* RxSwift-Ex.entitlements */,
 				4965E280234623A60042E4B9 /* Resources */,
 				4965E27723461BF60042E4B9 /* Extensions */,
 				49A6D9D5235EEEF100EE512B /* ViewControllers */,
@@ -613,10 +638,12 @@
 				492F997E244B48D500395A45 /* ContactsListTableViewCell.xib in Resources */,
 				49E3D5652345F9D100861760 /* Assets.xcassets in Resources */,
 				49E3D5632345F9D000861760 /* Main.storyboard in Resources */,
+				4913AC2C24508A4500ECBEBE /* CallView.storyboard in Resources */,
 				4965E28A234623EA0042E4B9 /* ABOUT_TOKENS_en.html in Resources */,
 				4965E28B234623EA0042E4B9 /* Style.css in Resources */,
 				4965E28C234623EA0042E4B9 /* ABOUT_TOKENS_ru.html in Resources */,
 				495CBDDF244C69AB005AEA7D /* ContactView.storyboard in Resources */,
+				4913AC2A245074C800ECBEBE /* LoginView.storyboard in Resources */,
 				494557642355CE0400942B4F /* AboutView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -676,6 +703,7 @@
 				492F998C244B71E400395A45 /* ContactsListPresenter.swift in Sources */,
 				4920382C244CA81E001FB093 /* ContactAssembly.swift in Sources */,
 				49F0AEC224473A0600222DCF /* EntityService.swift in Sources */,
+				4913AC1D24503BE600ECBEBE /* LoginViewController.swift in Sources */,
 				4920382A244C9F12001FB093 /* Assembly.swift in Sources */,
 				49BCF8472449F7FF0094363B /* AboutInteractorInput.swift in Sources */,
 				49E3D5602345F9D000861760 /* RxAboutViewController.swift in Sources */,
@@ -690,6 +718,7 @@
 				49624C892448E27A009660D3 /* AboutConfigurator.swift in Sources */,
 				49BCF84B2449F84C0094363B /* AboutRouterInput.swift in Sources */,
 				492F9996244B7D9200395A45 /* ContactsListRouterInput.swift in Sources */,
+				4913AC2E24508A5300ECBEBE /* CallViewController.swift in Sources */,
 				49E3D55C2345F9D000861760 /* AppDelegate.swift in Sources */,
 				492F9994244B7D7C00395A45 /* ContactsListRouter.swift in Sources */,
 				49624C8C2448FE2F009660D3 /* Router.swift in Sources */,
@@ -717,9 +746,10 @@
 				492F9980244B494700395A45 /* ContactsListTableViewCell.swift in Sources */,
 				492F9990244B7B7C00395A45 /* ContactsListInteractorInput.swift in Sources */,
 				492F9982244B4DBE00395A45 /* ContactsListViewController.swift in Sources */,
+				4913AC302450C88400ECBEBE /* UIColorExtensions.swift in Sources */,
 				4965E291234625D90042E4B9 /* WKWebViewExtensions.swift in Sources */,
 				4920383C244CC7A7001FB093 /* DI.swift in Sources */,
-				49C675FB2446F0BF002D8FF1 /* RxExtension.swift in Sources */,
+				49C675FB2446F0BF002D8FF1 /* RxExtensions.swift in Sources */,
 				492F9992244B7C7E00395A45 /* ContactsListInteractorOutput.swift in Sources */,
 				49203828244C9B5B001FB093 /* ContactRouterInput.swift in Sources */,
 				492F998E244B7AA100395A45 /* ContactsListInteractor.swift in Sources */,
@@ -871,8 +901,10 @@
 			baseConfigurationReference = E681EE009DD966F2A8F9D5B9 /* Pods-RxSwift-Ex.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "RxSwift-Ex/RxSwift-Ex.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W7AP9BD2P6;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "RxSwift-Ex/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -890,8 +922,10 @@
 			baseConfigurationReference = EC8A19083853EDF4BAA3FCB2 /* Pods-RxSwift-Ex.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "RxSwift-Ex/RxSwift-Ex.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W7AP9BD2P6;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "RxSwift-Ex/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

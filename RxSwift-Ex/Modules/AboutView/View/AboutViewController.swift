@@ -27,7 +27,7 @@ final class AboutViewController: UIViewController {
         output.viewDidLoad()
         
         navigationItem.backBarButtonItem = UIBarButtonItem().then {
-            $0.tintColor = .init(red: 0.937, green: 0.565, blue: 0.729, alpha: 1)
+            $0.tintColor = UIColor.kbrMainPink
         }
     }
     

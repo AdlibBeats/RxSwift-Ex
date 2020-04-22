@@ -8,20 +8,21 @@
 
 import UIKit
 import Swinject
+import SwinjectStoryboard
 
 final class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        appendAboutViewController()
+        appendAboutViewController(at: &viewControllers)
     }
     
-    private func appendAboutViewController() {
+    private func appendAboutViewController(at viewControllers: inout [UIViewController]?) {
         Container.shared.resolve(RxAboutViewController.self).flatMap { vc in
             vc.tabBarItem = .init(tabBarSystemItem: .more, tag: 1)
-            Container.shared.resolve(UINavigationController.self, name: "RxAboutNavigationView").flatMap { [weak self] nc in
+            Container.shared.resolve(UINavigationController.self, name: "RxAboutNavigationView").flatMap { nc in
                 nc.setViewControllers([vc], animated: false)
-                self?.viewControllers?.append(nc)
+                viewControllers?.append(nc)
             }
         }
     }

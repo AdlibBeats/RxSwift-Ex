@@ -1,5 +1,5 @@
 //
-//  RxExtension.swift
+//  RxExtensions.swift
 //  RxSwift-Ex
 //
 //  Created by Andrew on 15.04.2020.
@@ -13,10 +13,42 @@ import RxCocoa
 import WebKit
 import RealmSwift
 
+extension Reactive where Base : UIViewController {
+    var present: Binder<UIViewController?> {
+        Binder(base) { viewController, value in
+            value.flatMap {
+                viewController.present($0, animated: true)
+            }
+        }
+    }
+}
+
+extension Reactive where Base : UINavigationController {
+    var push: Binder<UIViewController?> {
+        Binder(base) { navigationController, value in
+            value.flatMap {
+                navigationController.pushViewController($0, animated: true)
+            }
+        }
+    }
+}
+
 extension Reactive where Base : UITextField {
     var textColor: Binder<UIColor?> {
         Binder(base) { textField, color in
             textField.textColor = color
+        }
+    }
+    
+    var becomeFirstResponder: Binder<Void> {
+        Binder(base) { textField, _ in
+            textField.becomeFirstResponder()
+        }
+    }
+    
+    var resignFirstResponder: Binder<Void> {
+        Binder(base) { textField, _ in
+            textField.resignFirstResponder()
         }
     }
 }
@@ -56,9 +88,9 @@ extension Reactive where Base : UIView {
         }
     }
     
-    var tap: Observable<Void> {
-        tapGesture().when(.recognized).map { _ in }
-    }
+//    var tap: Observable<Void> {
+//        tapGesture().when(.recognized).map { _ in }
+//    }
 }
 
 extension Reactive where Base : UIViewController {

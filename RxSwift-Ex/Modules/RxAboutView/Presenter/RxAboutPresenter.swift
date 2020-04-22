@@ -30,7 +30,7 @@ final class RxAboutPresenter: RxAboutPresenterProtocol {
     
     func transform(input: Input) -> Output {
         interactor.appVersion ~> model.appVersion ~
-        input.tipsTapEvent.map { .tips } ~> router.presentBinder ~
+        input.tipsTapEvent.map { .tips } ~> router.present ~
         Observable.merge(
             input.userAgreementTapEvent.withLatestFrom(Observable.combineLatest(
                     model.userAgreementResource,
@@ -42,7 +42,7 @@ final class RxAboutPresenter: RxAboutPresenterProtocol {
                     model.webPrivacyPolicyTitle
                 )
             ).map { .web($0, $1) }
-        ) ~> router.pushBinder ~ disposedBag
+        ) ~> router.push ~ disposedBag
         
         return Output(
             navBarTitle: model.navBarTitle.asDriver(),

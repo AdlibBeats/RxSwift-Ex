@@ -51,6 +51,11 @@ PODS:
   - SwinjectStoryboard (2.2.0):
     - Swinject (~> 2.6)
   - Then (2.6.0)
+  - VoxImplantSDK (2.30.0):
+    - VoxImplantSDK/Core (= 2.30.0)
+  - VoxImplantSDK/Core (2.30.0):
+    - VoxImplantWebRTC (= 78.2.0)
+  - VoxImplantWebRTC (78.2.0)
 
 DEPENDENCIES:
   - AlamofireImage
@@ -68,6 +73,7 @@ DEPENDENCIES:
   - Swinject (= 2.6.0)
   - SwinjectStoryboard
   - Then
+  - VoxImplantSDK
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -93,6 +99,8 @@ SPEC REPOS:
     - Swinject
     - SwinjectStoryboard
     - Then
+    - VoxImplantSDK
+    - VoxImplantWebRTC
 
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
@@ -117,7 +125,9 @@ SPEC CHECKSUMS:
   Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
   SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
+  VoxImplantSDK: 5d52bdba51a8cff528f6ec71bf85aebe111c4bf1
+  VoxImplantWebRTC: 0f59be5f7362ed7af3de6718c9ed50735691ee99
 
-PODFILE CHECKSUM: 85be71e0cc2c61dc906e0e116bb28fd2843df17b
+PODFILE CHECKSUM: 1b8b8c07015f4c8922d2505586fa0df034ff8132
 
 COCOAPODS: 1.9.1

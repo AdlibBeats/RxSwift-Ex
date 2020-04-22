@@ -22,6 +22,8 @@ def shared_pods
   
   pod 'Then'
   pod 'Align'
+  
+  pod 'VoxImplantSDK'
 end
 
 target 'RxSwift-Ex' do
