@@ -22,6 +22,7 @@ def shared_pods
   
   pod 'Then'
   pod 'Align'
+  pod 'SVProgressHUD'
   
   pod 'VoxImplantSDK'
 end

@@ -12,6 +12,7 @@ import RxSwift
 import RxCocoa
 import WebKit
 import RealmSwift
+import SVProgressHUD
 
 extension Reactive where Base : UIViewController {
     var present: Binder<UIViewController?> {
@@ -19,6 +20,18 @@ extension Reactive where Base : UIViewController {
             value.flatMap {
                 viewController.present($0, animated: true)
             }
+        }
+    }
+    
+    var push: Binder<UIViewController?> {
+        Binder(base) { viewController, value in
+            viewController.navigationController?.rx.push.on(.next(value))
+        }
+    }
+    
+    var executeProgress: Binder<Bool> {
+        Binder(base) { _, value in
+            value ? SVProgressHUD.show() : SVProgressHUD.dismiss()
         }
     }
 }
@@ -61,6 +74,14 @@ extension Reactive where Base : UILabel {
     }
 }
 
+extension Reactive where Base : UIButton {
+    func textColor(for controlState: UIControl.State = []) -> Binder<UIColor> {
+        Binder(base) { button, color in
+            button.setTitleColor(color, for: controlState)
+        }
+    }
+}
+
 extension Reactive where Base : UIDatePicker {
     var date: Binder<Date> {
         Binder(base) { datePicker, date in
@@ -87,10 +108,6 @@ extension Reactive where Base : UIView {
             view.endEditing(value)
         }
     }
-    
-//    var tap: Observable<Void> {
-//        tapGesture().when(.recognized).map { _ in }
-//    }
 }
 
 extension Reactive where Base : UIViewController {
