@@ -47,6 +47,12 @@
 		494557642355CE0400942B4F /* AboutView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494557632355CE0400942B4F /* AboutView.storyboard */; };
 		494557682355CE4F00942B4F /* RxAboutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494557672355CE4F00942B4F /* RxAboutPresenter.swift */; };
 		494557702355CF4C00942B4F /* RxAboutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4945576F2355CF4C00942B4F /* RxAboutModel.swift */; };
+		4951CB332452F5370025E45C /* CXAudioFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951CB322452F5370025E45C /* CXAudioFile.swift */; };
+		4951CB352452F6A10025E45C /* CXExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951CB342452F6A10025E45C /* CXExtensions.swift */; };
+		4951CB392452F8BD0025E45C /* fennelliott-beeping.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4951CB372452F8BC0025E45C /* fennelliott-beeping.wav */; };
+		4951CB3A2452F8BD0025E45C /* noisecollector-beam.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4951CB382452F8BC0025E45C /* noisecollector-beam.aiff */; };
+		4951CB3E245301730025E45C /* CallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951CB3D245301730025E45C /* CallManager.swift */; };
+		4951CB4A2453100B0025E45C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951CB492453100B0025E45C /* Settings.swift */; };
 		495CBDDF244C69AB005AEA7D /* ContactView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 495CBDDE244C69AB005AEA7D /* ContactView.storyboard */; };
 		495CBDE1244C6B9E005AEA7D /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CBDE0244C6B9E005AEA7D /* ContactViewController.swift */; };
 		49624C6324483CCC009660D3 /* RxAboutRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C6224483CCC009660D3 /* RxAboutRouter.swift */; };
@@ -122,6 +128,12 @@
 		494557632355CE0400942B4F /* AboutView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutView.storyboard; sourceTree = "<group>"; };
 		494557672355CE4F00942B4F /* RxAboutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAboutPresenter.swift; sourceTree = "<group>"; };
 		4945576F2355CF4C00942B4F /* RxAboutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAboutModel.swift; sourceTree = "<group>"; };
+		4951CB322452F5370025E45C /* CXAudioFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXAudioFile.swift; sourceTree = "<group>"; };
+		4951CB342452F6A10025E45C /* CXExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXExtensions.swift; sourceTree = "<group>"; };
+		4951CB372452F8BC0025E45C /* fennelliott-beeping.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "fennelliott-beeping.wav"; sourceTree = "<group>"; };
+		4951CB382452F8BC0025E45C /* noisecollector-beam.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "noisecollector-beam.aiff"; sourceTree = "<group>"; };
+		4951CB3D245301730025E45C /* CallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallManager.swift; sourceTree = "<group>"; };
+		4951CB492453100B0025E45C /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		495CBDDE244C69AB005AEA7D /* ContactView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContactView.storyboard; sourceTree = "<group>"; };
 		495CBDE0244C6B9E005AEA7D /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		49624C6224483CCC009660D3 /* RxAboutRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAboutRouter.swift; sourceTree = "<group>"; };
@@ -194,6 +206,10 @@
 				4913AC1C24503BE600ECBEBE /* LoginViewController.swift */,
 				4913AC2B24508A4500ECBEBE /* CallView.storyboard */,
 				4913AC2D24508A5300ECBEBE /* CallViewController.swift */,
+				4951CB322452F5370025E45C /* CXAudioFile.swift */,
+				4951CB342452F6A10025E45C /* CXExtensions.swift */,
+				4951CB3D245301730025E45C /* CallManager.swift */,
+				4951CB492453100B0025E45C /* Settings.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -266,6 +282,15 @@
 				4945576F2355CF4C00942B4F /* RxAboutModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4951CB362452F8950025E45C /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				4951CB372452F8BC0025E45C /* fennelliott-beeping.wav */,
+				4951CB382452F8BC0025E45C /* noisecollector-beam.aiff */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		495CBDDD244C6944005AEA7D /* ContactView */ = {
@@ -483,6 +508,7 @@
 		4965E280234623A60042E4B9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4951CB362452F8950025E45C /* Sounds */,
 				4965E281234623B40042E4B9 /* EULA */,
 				49E3D5642345F9D100861760 /* Assets.xcassets */,
 			);
@@ -634,11 +660,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				49624C7124487799009660D3 /* ContactsListView.storyboard in Resources */,
+				4951CB392452F8BD0025E45C /* fennelliott-beeping.wav in Resources */,
 				49E3D5682345F9D100861760 /* LaunchScreen.storyboard in Resources */,
 				492F997E244B48D500395A45 /* ContactsListTableViewCell.xib in Resources */,
 				49E3D5652345F9D100861760 /* Assets.xcassets in Resources */,
 				49E3D5632345F9D000861760 /* Main.storyboard in Resources */,
 				4913AC2C24508A4500ECBEBE /* CallView.storyboard in Resources */,
+				4951CB3A2452F8BD0025E45C /* noisecollector-beam.aiff in Resources */,
 				4965E28A234623EA0042E4B9 /* ABOUT_TOKENS_en.html in Resources */,
 				4965E28B234623EA0042E4B9 /* Style.css in Resources */,
 				4965E28C234623EA0042E4B9 /* ABOUT_TOKENS_ru.html in Resources */,
@@ -721,6 +749,7 @@
 				4913AC2E24508A5300ECBEBE /* CallViewController.swift in Sources */,
 				49E3D55C2345F9D000861760 /* AppDelegate.swift in Sources */,
 				492F9994244B7D7C00395A45 /* ContactsListRouter.swift in Sources */,
+				4951CB352452F6A10025E45C /* CXExtensions.swift in Sources */,
 				49624C8C2448FE2F009660D3 /* Router.swift in Sources */,
 				49624C6324483CCC009660D3 /* RxAboutRouter.swift in Sources */,
 				49203836244CB6B0001FB093 /* BaseModule.swift in Sources */,
@@ -738,14 +767,17 @@
 				49BCF84F2449F8C70094363B /* AboutViewInput.swift in Sources */,
 				492F9988244B67C100395A45 /* ContactsListViewInput.swift in Sources */,
 				494557702355CF4C00942B4F /* RxAboutModel.swift in Sources */,
+				4951CB3E245301730025E45C /* CallManager.swift in Sources */,
 				495CBDE1244C6B9E005AEA7D /* ContactViewController.swift in Sources */,
 				49203822244C9AD6001FB093 /* ContactPresenter.swift in Sources */,
 				49203830244CB015001FB093 /* ContactViewOutput.swift in Sources */,
+				4951CB332452F5370025E45C /* CXAudioFile.swift in Sources */,
 				49624C852448E25E009660D3 /* AboutInteractor.swift in Sources */,
 				49C675FD2446F41E002D8FF1 /* WKWebViewController.swift in Sources */,
 				492F9980244B494700395A45 /* ContactsListTableViewCell.swift in Sources */,
 				492F9990244B7B7C00395A45 /* ContactsListInteractorInput.swift in Sources */,
 				492F9982244B4DBE00395A45 /* ContactsListViewController.swift in Sources */,
+				4951CB4A2453100B0025E45C /* Settings.swift in Sources */,
 				4913AC302450C88400ECBEBE /* UIColorExtensions.swift in Sources */,
 				4965E291234625D90042E4B9 /* WKWebViewExtensions.swift in Sources */,
 				4920383C244CC7A7001FB093 /* DI.swift in Sources */,

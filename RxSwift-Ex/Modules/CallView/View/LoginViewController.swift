@@ -90,10 +90,8 @@ final class LoginViewController: UIViewController {
         self.passwordTextField.rx.isEnabled.on(.next(!loading))
         isLoginButtonEnabled.accept(!loading)
     }
-}
-
-extension LoginViewController: VIClientSessionDelegate {
-    func clientSessionDidConnect(_ client: VIClient) {
+    
+    func login() {
         guard
             let client = self.client,
             let login = self.loginTextField.text,
@@ -113,6 +111,7 @@ extension LoginViewController: VIClientSessionDelegate {
                     .instantiateViewController(withIdentifier: "CallViewController") as? CallViewController).flatMap {
                         $0.title = displayName
                         $0.client = client
+                        $0.loginAction = { [weak self] in self?.login() }
                         
                         self?.title = "Logout"
                         self?.rx.push.on(.next($0))
@@ -124,6 +123,12 @@ extension LoginViewController: VIClientSessionDelegate {
                 print("Login failed")
             }
         )
+    }
+}
+
+extension LoginViewController: VIClientSessionDelegate {
+    func clientSessionDidConnect(_ client: VIClient) {
+        login()
     }
     
     func clientSessionDidDisconnect(_ client: VIClient) {
