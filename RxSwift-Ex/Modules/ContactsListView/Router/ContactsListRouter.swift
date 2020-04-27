@@ -16,9 +16,13 @@ final class ContactsListRouter {
 
 // MARK: ContactsListRouterInput
 extension ContactsListRouter: ContactsListRouterInput {
-    func pushContactModule(with contact: ContactModel) {
+    func goToContactModule(with contact: ContactModel) {
         let module = Assembly.createModule(ContactModule.self, output: nil)
         transitionHandler?.pushModule(module.view, animated: true)
         module.input?.didSetContact(contact)
+    }
+    
+    func goBack() {
+        transitionHandler?.closeCurrentModule(true)
     }
 }

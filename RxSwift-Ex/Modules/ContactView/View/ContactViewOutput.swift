@@ -10,4 +10,5 @@ import Foundation
 
 protocol ContactViewOutput: class {
     func viewDidLoad()
+    func backDidTap()
 }

@@ -106,16 +106,328 @@ final class EntityService: EntityServiceProtocol {
         let contacts = Contacts().with {
             [
                 Contact().with {
-                    $0.name = "Andrew"
-                    $0.phone = "555 5412"
+                    $0.id = 614
+                    $0.active = true
+                    $0.login = "IIVANOV00"
+                    $0.firstName = "Иван"
+                    $0.lastName = "Иванов"
+                    $0.middleName = "Иванович"
+                    $0.position = "Директор региона"
+                    $0.email = "iivanov@mail.ru"
+                    $0.level = "Регион"
+                    ["Категорийный менеджер"].forEach($0.roles.append)
+                    [1].forEach($0.divisions.append)
+                    [12, 788, 92, 33, 4, 66].forEach($0.regions.append)
+                    [1142, 1444, 122, 113, 47676, 64446].forEach($0.shops.append)
+                    [122].forEach($0.directorOfShops.append)
+                    $0.businessDirId = 31
+                    $0.lang = "ru"
                 },
                 Contact().with {
-                    $0.name = "Max"
-                    $0.phone = "555 1196"
+                    $0.id = 615
+                    $0.active = true
+                    $0.login = "ivanov3311"
+                    $0.firstName = "Вася"
+                    $0.lastName = "Пупкин"
+                    $0.middleName = "Иванович"
+                    $0.position = "Директор"
+                    $0.email = "ivanov3311@mail.ru"
+                    $0.level = "Компания"
+                    ["Директор", "Проверяющий"].forEach($0.roles.append)
+                    [1].forEach($0.divisions.append)
+                    [12, 788, 92, 33, 4, 66].forEach($0.regions.append)
+                    [1142, 1444, 122, 113, 47676, 64446].forEach($0.shops.append)
+                    [122].forEach($0.directorOfShops.append)
+                    $0.businessDirId = 31
+                    $0.lang = "ru"
                 },
                 Contact().with {
-                    $0.name = "Tod"
-                    $0.phone = "555 3747"
+                    $0.id = 616
+                    $0.active = true
+                    $0.login = "ivanov3311"
+                    $0.firstName = "Иван"
+                    $0.lastName = "Иванов"
+                    $0.middleName = "Иванович"
+                    $0.position = "Директор"
+                    $0.email = "ivanov3311@mail.ru"
+                    $0.level = "Компания"
+                    ["Директор", "Проверяющий"].forEach($0.roles.append)
+                    [1].forEach($0.divisions.append)
+                    [12, 788, 92, 33, 4, 66].forEach($0.regions.append)
+                    [1142, 1444, 122, 113, 47676, 64446].forEach($0.shops.append)
+                    [122].forEach($0.directorOfShops.append)
+                    $0.businessDirId = 31
+                    $0.lang = "ru"
+                },
+                Contact().with {
+                    $0.id = 614
+                    $0.active = true
+                    $0.login = "IIVANOV00"
+                    $0.firstName = "Иван"
+                    $0.lastName = "Иванов"
+                    $0.middleName = "Иванович"
+                    $0.position = "Директор региона"
+                    $0.email = "iivanov@mail.ru"
+                    $0.level = "Регион"
+                    ["Директор", "Проверяющий"].forEach($0.roles.append)
+                    [1].forEach($0.divisions.append)
+                    [12, 788, 92, 33, 4, 66].forEach($0.regions.append)
+                    [1142, 1444, 122, 113, 47676, 64446].forEach($0.shops.append)
+                    [122].forEach($0.directorOfShops.append)
+                    $0.businessDirId = 31
+                    $0.lang = "ru"
+                },
+                Contact().with {
+                    $0.id = 615
+                    $0.active = true
+                    $0.login = "ivanov3311"
+                    $0.firstName = "Вася"
+                    $0.lastName = "Пупкин"
+                    $0.middleName = "Иванович"
+                    $0.position = "Директор"
+                    $0.email = "ivanov3311@mail.ru"
+                    $0.level = "Компания"
+                    ["Директор", "Проверяющий"].forEach($0.roles.append)
+                    [1].forEach($0.divisions.append)
+                    [12, 788, 92, 33, 4, 66].forEach($0.regions.append)
+                    [1142, 1444, 122, 113, 47676, 64446].forEach($0.shops.append)
+                    [122].forEach($0.directorOfShops.append)
+                    $0.businessDirId = 31
+                    $0.lang = "ru"
+                },
+                Contact().with {
+                    $0.id = 616
+                    $0.active = true
+                    $0.login = "ivanov3311"
+                    $0.firstName = "Иван"
+                    $0.lastName = "Иванов"
+                    $0.middleName = "Иванович"
+                    $0.position = "Директор"
+                    $0.email = "ivanov3311@mail.ru"
+                    $0.level = "Компания"
+                    ["Директор", "Проверяющий"].forEach($0.roles.append)
+                    [1].forEach($0.divisions.append)
+                    [12, 788, 92, 33, 4, 66].forEach($0.regions.append)
+                    [1142, 1444, 122, 113, 47676, 64446].forEach($0.shops.append)
+                    [122].forEach($0.directorOfShops.append)
+                    $0.businessDirId = 31
+                    $0.lang = "ru"
+                },
+                Contact().with {
+                    $0.id = 614
+                    $0.active = true
+                    $0.login = "IIVANOV00"
+                    $0.firstName = "Иван"
+                    $0.lastName = "Иванов"
+                    $0.middleName = "Иванович"
+                    $0.position = "Директор региона"
+                    $0.email = "iivanov@mail.ru"
+                    $0.level = "Регион"
+                    ["Директор", "Проверяющий"].forEach($0.roles.append)
+                    [1].forEach($0.divisions.append)
+                    [12, 788, 92, 33, 4, 66].forEach($0.regions.append)
+                    [1142, 1444, 122, 113, 47676, 64446].forEach($0.shops.append)
+                    [122].forEach($0.directorOfShops.append)
+                    $0.businessDirId = 31
+                    $0.lang = "ru"
+                },
+                Contact().with {
+                    $0.id = 615
+                    $0.active = true
+                    $0.login = "ivanov3311"
+                    $0.firstName = "Вася"
+                    $0.lastName = "Пупкин"
+                    $0.middleName = "Иванович"
+                    $0.position = "Директор"
+                    $0.email = "ivanov3311@mail.ru"
+                    $0.level = "Компания"
+                    ["Директор", "Проверяющий"].forEach($0.roles.append)
+                    [1].forEach($0.divisions.append)
+                    [12, 788, 92, 33, 4, 66].forEach($0.regions.append)
+                    [1142, 1444, 122, 113, 47676, 64446].forEach($0.shops.append)
+                    [122].forEach($0.directorOfShops.append)
+                    $0.businessDirId = 31
+                    $0.lang = "ru"
+                },
+                Contact().with {
+                    $0.id = 616
+                    $0.active = true
+                    $0.login = "ivanov3311"
+                    $0.firstName = "Иван"
+                    $0.lastName = "Иванов"
+                    $0.middleName = "Иванович"
+                    $0.position = "Директор"
+                    $0.email = "ivanov3311@mail.ru"
+                    $0.level = "Компания"
+                    ["Директор", "Проверяющий"].forEach($0.roles.append)
+                    [1].forEach($0.divisions.append)
+                    [12, 788, 92, 33, 4, 66].forEach($0.regions.append)
+                    [1142, 1444, 122, 113, 47676, 64446].forEach($0.shops.append)
+                    [122].forEach($0.directorOfShops.append)
+                    $0.businessDirId = 31
+                    $0.lang = "ru"
+                },
+                Contact().with {
+                    $0.id = 614
+                    $0.active = true
+                    $0.login = "IIVANOV00"
+                    $0.firstName = "Иван"
+                    $0.lastName = "Иванов"
+                    $0.middleName = "Иванович"
+                    $0.position = "Директор региона"
+                    $0.email = "iivanov@mail.ru"
+                    $0.level = "Регион"
+                    ["Категорийный менеджер"].forEach($0.roles.append)
+                    [1].forEach($0.divisions.append)
+                    [12, 788, 92, 33, 4, 66].forEach($0.regions.append)
+                    [1142, 1444, 122, 113, 47676, 64446].forEach($0.shops.append)
+                    [122].forEach($0.directorOfShops.append)
+                    $0.businessDirId = 31
+                    $0.lang = "ru"
+                },
+                Contact().with {
+                    $0.id = 615
+                    $0.active = true
+                    $0.login = "ivanov3311"
+                    $0.firstName = "Вася"
+                    $0.lastName = "Пупкин"
+                    $0.middleName = "Иванович"
+                    $0.position = "Директор"
+                    $0.email = "ivanov3311@mail.ru"
+                    $0.level = "Компания"
+                    ["Директор", "Проверяющий"].forEach($0.roles.append)
+                    [1].forEach($0.divisions.append)
+                    [12, 788, 92, 33, 4, 66].forEach($0.regions.append)
+                    [1142, 1444, 122, 113, 47676, 64446].forEach($0.shops.append)
+                    [122].forEach($0.directorOfShops.append)
+                    $0.businessDirId = 31
+                    $0.lang = "ru"
+                },
+                Contact().with {
+                    $0.id = 616
+                    $0.active = true
+                    $0.login = "ivanov3311"
+                    $0.firstName = "Иван"
+                    $0.lastName = "Иванов"
+                    $0.middleName = "Иванович"
+                    $0.position = "Директор"
+                    $0.email = "ivanov3311@mail.ru"
+                    $0.level = "Компания"
+                    ["Директор", "Проверяющий"].forEach($0.roles.append)
+                    [1].forEach($0.divisions.append)
+                    [12, 788, 92, 33, 4, 66].forEach($0.regions.append)
+                    [1142, 1444, 122, 113, 47676, 64446].forEach($0.shops.append)
+                    [122].forEach($0.directorOfShops.append)
+                    $0.businessDirId = 31
+                    $0.lang = "ru"
+                },
+                Contact().with {
+                    $0.id = 614
+                    $0.active = true
+                    $0.login = "IIVANOV00"
+                    $0.firstName = "Иван"
+                    $0.lastName = "Иванов"
+                    $0.middleName = "Иванович"
+                    $0.position = "Директор региона"
+                    $0.email = "iivanov@mail.ru"
+                    $0.level = "Регион"
+                    ["Директор", "Проверяющий"].forEach($0.roles.append)
+                    [1].forEach($0.divisions.append)
+                    [12, 788, 92, 33, 4, 66].forEach($0.regions.append)
+                    [1142, 1444, 122, 113, 47676, 64446].forEach($0.shops.append)
+                    [122].forEach($0.directorOfShops.append)
+                    $0.businessDirId = 31
+                    $0.lang = "ru"
+                },
+                Contact().with {
+                    $0.id = 615
+                    $0.active = true
+                    $0.login = "ivanov3311"
+                    $0.firstName = "Вася"
+                    $0.lastName = "Пупкин"
+                    $0.middleName = "Иванович"
+                    $0.position = "Директор"
+                    $0.email = "ivanov3311@mail.ru"
+                    $0.level = "Компания"
+                    ["Директор", "Проверяющий"].forEach($0.roles.append)
+                    [1].forEach($0.divisions.append)
+                    [12, 788, 92, 33, 4, 66].forEach($0.regions.append)
+                    [1142, 1444, 122, 113, 47676, 64446].forEach($0.shops.append)
+                    [122].forEach($0.directorOfShops.append)
+                    $0.businessDirId = 31
+                    $0.lang = "ru"
+                },
+                Contact().with {
+                    $0.id = 616
+                    $0.active = true
+                    $0.login = "ivanov3311"
+                    $0.firstName = "Иван"
+                    $0.lastName = "Иванов"
+                    $0.middleName = "Иванович"
+                    $0.position = "Директор"
+                    $0.email = "ivanov3311@mail.ru"
+                    $0.level = "Компания"
+                    ["Директор", "Проверяющий"].forEach($0.roles.append)
+                    [1].forEach($0.divisions.append)
+                    [12, 788, 92, 33, 4, 66].forEach($0.regions.append)
+                    [1142, 1444, 122, 113, 47676, 64446].forEach($0.shops.append)
+                    [122].forEach($0.directorOfShops.append)
+                    $0.businessDirId = 31
+                    $0.lang = "ru"
+                },
+                Contact().with {
+                    $0.id = 614
+                    $0.active = true
+                    $0.login = "IIVANOV00"
+                    $0.firstName = "Иван"
+                    $0.lastName = "Иванов"
+                    $0.middleName = "Иванович"
+                    $0.position = "Директор региона"
+                    $0.email = "iivanov@mail.ru"
+                    $0.level = "Регион"
+                    ["Директор", "Проверяющий"].forEach($0.roles.append)
+                    [1].forEach($0.divisions.append)
+                    [12, 788, 92, 33, 4, 66].forEach($0.regions.append)
+                    [1142, 1444, 122, 113, 47676, 64446].forEach($0.shops.append)
+                    [122].forEach($0.directorOfShops.append)
+                    $0.businessDirId = 31
+                    $0.lang = "ru"
+                },
+                Contact().with {
+                    $0.id = 615
+                    $0.active = true
+                    $0.login = "ivanov3311"
+                    $0.firstName = "Вася"
+                    $0.lastName = "Пупкин"
+                    $0.middleName = "Иванович"
+                    $0.position = "Директор"
+                    $0.email = "ivanov3311@mail.ru"
+                    $0.level = "Компания"
+                    ["Директор", "Проверяющий"].forEach($0.roles.append)
+                    [1].forEach($0.divisions.append)
+                    [12, 788, 92, 33, 4, 66].forEach($0.regions.append)
+                    [1142, 1444, 122, 113, 47676, 64446].forEach($0.shops.append)
+                    [122].forEach($0.directorOfShops.append)
+                    $0.businessDirId = 31
+                    $0.lang = "ru"
+                },
+                Contact().with {
+                    $0.id = 616
+                    $0.active = true
+                    $0.login = "ivanov3311"
+                    $0.firstName = "Иван"
+                    $0.lastName = "Иванов"
+                    $0.middleName = "Иванович"
+                    $0.position = "Директор"
+                    $0.email = "ivanov3311@mail.ru"
+                    $0.level = "Компания"
+                    ["Директор", "Проверяющий"].forEach($0.roles.append)
+                    [1].forEach($0.divisions.append)
+                    [12, 788, 92, 33, 4, 66].forEach($0.regions.append)
+                    [1142, 1444, 122, 113, 47676, 64446].forEach($0.shops.append)
+                    [122].forEach($0.directorOfShops.append)
+                    $0.businessDirId = 31
+                    $0.lang = "ru"
                 }
             ].forEach($0.list.append)
         }

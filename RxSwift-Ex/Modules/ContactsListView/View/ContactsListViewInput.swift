@@ -9,6 +9,5 @@
 import Foundation
 
 protocol ContactsListViewInput: class {
-    func setNavBarTitle(_ newValue: String)
     func reload()
 }

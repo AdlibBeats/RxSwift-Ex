@@ -9,8 +9,22 @@
 import Foundation
 
 struct ContactModel {
-    let name: String
-    let phone: String
+    let id: Int
+    let active: Bool
+    let login: String
+    let firstName: String
+    let lastName: String
+    let middleName: String
+    let position: String
+    let email: String
+    let level: String
+    let roles: [String]
+    let divisions: [Int]
+    let regions: [Int]
+    let shops: [Int]
+    let directorOfShops: [Int]
+    let businessDirId: Int
+    let lang: String
 }
 
 struct ContactsModel {
@@ -35,16 +49,26 @@ final class ContactsListPresenter {
 
 //MARK: ContactsListViewOutput
 extension ContactsListPresenter: ContactsListViewOutput {
+    func backDidTap() {
+        router?.goBack()
+    }
+    
+    func filterDidTap() {
+        //TODO:
+    }
+    
+    func searchDidTap() {
+        //TODO:
+    }
+    
     var contactsList: [ContactModel] { contacts }
     
     func viewDidLoad() {
-        view.setNavBarTitle("Контакты")
-        
         interactor.makeContacts()
     }
     
     func tableViewDidSelect(_ index: Int) {
-        router?.pushContactModule(with: contactsList[index])
+        router?.goToContactModule(with: contactsList[index])
     }
 }
 

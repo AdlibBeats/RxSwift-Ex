@@ -2,7 +2,9 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d8r-X1-KXk">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -53,12 +55,48 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="t32-tc-dbU" kind="relationship" relationship="rootViewController" id="SNy-v4-S0g"/>
+                        <segue destination="GCW-gc-bpc" kind="relationship" relationship="rootViewController" id="7G4-Hb-t0v"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qvt-ah-LCr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="342" y="-145"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="YGw-6i-QuE">
+            <objects>
+                <viewController id="GCW-gc-bpc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8mV-pM-6rH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncy-ah-rBC">
+                                <rect key="frame" x="72" y="310.5" width="231" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Перейти к контактам">
+                                    <color key="titleColor" red="0.30588235289999999" green="0.3803921569" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="t32-tc-dbU" kind="show" id="ZC1-Gj-Owh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ncy-ah-rBC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fB0-SU-VFn" secondAttribute="top" id="0O5-0E-c9Y"/>
+                            <constraint firstItem="Ncy-ah-rBC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8mV-pM-6rH" secondAttribute="leading" id="4mD-qI-36C"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ncy-ah-rBC" secondAttribute="trailing" id="PBm-aG-3eF"/>
+                            <constraint firstItem="Ncy-ah-rBC" firstAttribute="centerY" secondItem="fB0-SU-VFn" secondAttribute="centerY" id="U0K-ld-nZg"/>
+                            <constraint firstItem="fB0-SU-VFn" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ncy-ah-rBC" secondAttribute="bottom" id="bWZ-bD-T9f"/>
+                            <constraint firstItem="Ncy-ah-rBC" firstAttribute="centerX" secondItem="fB0-SU-VFn" secondAttribute="centerX" id="oFs-XR-fKo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fB0-SU-VFn"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FFt-ny-vXv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CCC-wW-AXC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1382" y="-475"/>
         </scene>
         <!--ContactsListView-->
         <scene sceneID="XiX-Uu-Lsw">
@@ -68,7 +106,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pbU-hK-NHJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="905" y="-146"/>
+            <point key="canvasLocation" x="2023" y="-476"/>
         </scene>
         <!--AboutView-->
         <scene sceneID="eV8-Xw-2jC">

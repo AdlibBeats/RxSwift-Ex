@@ -19,6 +19,10 @@ class ContactViewController: UIViewController {
 
         output.viewDidLoad()
     }
+    
+    @IBAction func backBarButtonItemDidTap(_ sender: UIBarButtonItem) {
+        output.backDidTap()
+    }
 }
 
 extension ContactViewController: ContactViewInput {

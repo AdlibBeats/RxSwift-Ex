@@ -13,5 +13,7 @@ final class ContactRouter {
 }
 
 extension ContactRouter: ContactRouterInput {
-    
+    func goBack() {
+        transitionHandler?.closeCurrentModule(true)
+    }
 }

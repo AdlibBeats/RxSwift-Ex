@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u9t-Sz-jWi">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -43,7 +44,7 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="135.9375"/>
         </scene>
-        <!--Contacts List View Controller-->
+        <!--Контакты-->
         <scene sceneID="jPp-Ta-jpF">
             <objects>
                 <viewController id="u9t-Sz-jWi" customClass="ContactsListViewController" customModule="RxSwift_Ex" customModuleProvider="target" sceneMemberID="viewController">
@@ -51,21 +52,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NVa-jL-kiS">
-                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NVa-jL-kiS">
+                                <rect key="frame" x="0.0" y="60" width="375" height="558"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="NVa-jL-kiS" firstAttribute="top" secondItem="jLt-vy-HaZ" secondAttribute="top" id="3CX-T7-yyr"/>
+                            <constraint firstItem="NVa-jL-kiS" firstAttribute="top" secondItem="jLt-vy-HaZ" secondAttribute="top" constant="16" id="3CX-T7-yyr"/>
                             <constraint firstAttribute="trailing" secondItem="NVa-jL-kiS" secondAttribute="trailing" id="59Y-vf-5na"/>
                             <constraint firstItem="NVa-jL-kiS" firstAttribute="leading" secondItem="oSZ-TH-076" secondAttribute="leading" id="94v-No-6YP"/>
                             <constraint firstItem="jLt-vy-HaZ" firstAttribute="bottom" secondItem="NVa-jL-kiS" secondAttribute="bottom" id="Ier-U5-GO3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jLt-vy-HaZ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="RvF-Kl-pPB"/>
+                    <navigationItem key="navigationItem" title="Контакты" largeTitleDisplayMode="never" id="RvF-Kl-pPB">
+                        <barButtonItem key="leftBarButtonItem" title="Назад" id="bMm-k9-KrL">
+                            <color key="tintColor" red="0.30588235294117649" green="0.38039215686274508" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backBarButtonItemDidTap:" destination="u9t-Sz-jWi" id="wBT-Uf-nx3"/>
+                            </connections>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="contactsSearchIcon" id="4rv-Cj-us7">
+                                <connections>
+                                    <action selector="searchBarButtonItemDidTap:" destination="u9t-Sz-jWi" id="pth-2D-1iU"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="contactsFiltersSettingsIcon" id="sBe-wl-Ftr">
+                                <connections>
+                                    <action selector="filterBarButtonItemDidTap:" destination="u9t-Sz-jWi" id="Kmk-l7-NuF"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="NVa-jL-kiS" id="6Bg-nY-bGh"/>
                     </connections>
@@ -75,4 +96,8 @@
             <point key="canvasLocation" x="1265" y="135"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="contactsFiltersSettingsIcon" width="24" height="24"/>
+        <image name="contactsSearchIcon" width="24" height="24"/>
+    </resources>
 </document>
