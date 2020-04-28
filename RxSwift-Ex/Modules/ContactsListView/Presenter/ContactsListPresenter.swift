@@ -8,29 +8,6 @@
 
 import Foundation
 
-struct ContactModel {
-    let id: Int
-    let active: Bool
-    let login: String
-    let firstName: String
-    let lastName: String
-    let middleName: String
-    let position: String
-    let email: String
-    let level: String
-    let roles: [String]
-    let divisions: [Int]
-    let regions: [Int]
-    let shops: [Int]
-    let directorOfShops: [Int]
-    let businessDirId: Int
-    let lang: String
-}
-
-struct ContactsModel {
-    let list: [ContactModel]
-}
-
 final class ContactsListPresenter {
     typealias View = ContactsListViewInput
     typealias Interactor = ContactsListInteractorInput
@@ -40,7 +17,7 @@ final class ContactsListPresenter {
     var interactor: Interactor!
     var router: Router?
     
-    private var contacts: [ContactModel] = [] {
+    private var contacts: Contacts = [] {
         willSet {
             view.reload()
         }
@@ -49,19 +26,27 @@ final class ContactsListPresenter {
 
 //MARK: ContactsListViewOutput
 extension ContactsListPresenter: ContactsListViewOutput {
-    func backDidTap() {
-        router?.goBack()
-    }
-    
     func filterDidTap() {
         //TODO:
+        print(#function)
     }
     
     func searchDidTap() {
         //TODO:
+        print(#function)
     }
     
-    var contactsList: [ContactModel] { contacts }
+    func videoCallDidTap(_ contact: Contact) {
+        //TODO:
+        print(#function)
+    }
+    
+    func audioCallDidTap(_ contact: Contact) {
+        //TODO:
+        print(#function)
+    }
+    
+    var contactsList: Contacts { contacts }
     
     func viewDidLoad() {
         interactor.makeContacts()
@@ -74,7 +59,7 @@ extension ContactsListPresenter: ContactsListViewOutput {
 
 //MARK: ContactsListInteractorOutput
 extension ContactsListPresenter: ContactsListInteractorOutput {
-    func setContacts(_ contacts: [ContactModel]) {
+    func setContacts(_ contacts: Contacts) {
         self.contacts = contacts
     }
 }

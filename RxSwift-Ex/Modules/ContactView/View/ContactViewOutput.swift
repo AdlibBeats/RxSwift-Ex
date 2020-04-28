@@ -9,6 +9,9 @@
 import Foundation
 
 protocol ContactViewOutput: class {
+    var propertiesList: ContactProperties { get }
+    
     func viewDidLoad()
-    func backDidTap()
+    func messagesDidTap()
+    func menuDidTap()
 }

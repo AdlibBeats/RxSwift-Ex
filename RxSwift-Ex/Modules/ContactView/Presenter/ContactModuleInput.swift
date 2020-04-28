@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ContactModuleInput: class {
-    func didSetContact(_ newValue: ContactModel)
+    func setContact(_ newValue: Contact)
 }

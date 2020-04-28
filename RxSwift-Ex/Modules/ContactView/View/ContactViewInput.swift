@@ -9,7 +9,8 @@
 import Foundation
 
 protocol ContactViewInput: class {
-    func setNavBarTitle(_ newValue: String)
-    func setName(_ newValue: String)
-    func setPhone(_ newValue: String)
+    func reload()
+    func setShortName(_ newValue: String)
+    func setDisplayName(_ newValue: String)
+    func setActiveTime(_ newValue: String)
 }

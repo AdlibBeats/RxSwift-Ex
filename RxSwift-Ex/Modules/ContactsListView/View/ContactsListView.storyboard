@@ -68,21 +68,15 @@
                         <viewLayoutGuide key="safeArea" id="jLt-vy-HaZ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Контакты" largeTitleDisplayMode="never" id="RvF-Kl-pPB">
-                        <barButtonItem key="leftBarButtonItem" title="Назад" id="bMm-k9-KrL">
-                            <color key="tintColor" red="0.30588235294117649" green="0.38039215686274508" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="backBarButtonItemDidTap:" destination="u9t-Sz-jWi" id="wBT-Uf-nx3"/>
-                            </connections>
-                        </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem image="contactsSearchIcon" id="4rv-Cj-us7">
-                                <connections>
-                                    <action selector="searchBarButtonItemDidTap:" destination="u9t-Sz-jWi" id="pth-2D-1iU"/>
-                                </connections>
-                            </barButtonItem>
                             <barButtonItem image="contactsFiltersSettingsIcon" id="sBe-wl-Ftr">
                                 <connections>
                                     <action selector="filterBarButtonItemDidTap:" destination="u9t-Sz-jWi" id="Kmk-l7-NuF"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="contactsSearchIcon" id="4rv-Cj-us7">
+                                <connections>
+                                    <action selector="searchBarButtonItemDidTap:" destination="u9t-Sz-jWi" id="pth-2D-1iU"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>

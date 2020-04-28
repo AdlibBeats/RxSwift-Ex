@@ -9,12 +9,13 @@
 import Foundation
 
 protocol ContactsListViewOutput: class {
-    var contactsList: [ContactModel] { get }
+    var contactsList: Contacts { get }
     
     func viewDidLoad()
     func tableViewDidSelect(_ index: Int)
     
-    func backDidTap()
     func filterDidTap()
     func searchDidTap()
+    func videoCallDidTap(_ contact: Contact)
+    func audioCallDidTap(_ contact: Contact)
 }

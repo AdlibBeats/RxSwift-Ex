@@ -62,10 +62,10 @@
             </objects>
             <point key="canvasLocation" x="342" y="-145"/>
         </scene>
-        <!--View Controller-->
+        <!--Others View Controller-->
         <scene sceneID="YGw-6i-QuE">
             <objects>
-                <viewController id="GCW-gc-bpc" sceneMemberID="viewController">
+                <viewController id="GCW-gc-bpc" customClass="OthersViewController" customModule="RxSwift_Ex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8mV-pM-6rH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
