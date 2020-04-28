@@ -9,6 +9,7 @@
 import UIKit
 
 final class ContactViewController: UIViewController {
+    @IBOutlet private weak var tableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var shortNameLabel: UILabel!
     @IBOutlet private weak var displayNameLabel: UILabel!
     @IBOutlet private weak var activeTimeLabel: UILabel!
@@ -91,8 +92,10 @@ extension ContactViewController: ContactViewInput {
     
     func reload() {
         tableView.reloadData()
+        
+        //iOS Bug: tableView.contentSize.height doesn't update tableView height constraint
+        tableViewHeightConstraint.constant = tableView.contentSize.height
     }
-    
 }
 
 private extension Array {
