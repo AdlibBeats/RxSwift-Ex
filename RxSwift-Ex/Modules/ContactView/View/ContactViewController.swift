@@ -58,7 +58,7 @@ extension ContactViewController: UITableViewDelegate {
 
 //MARK: UITableViewDataSource
 extension ContactViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? { "Информация" }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? { section == 0 ? "Информация" : nil }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { output.propertiesList.count }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
