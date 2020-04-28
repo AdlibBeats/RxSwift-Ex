@@ -13,7 +13,6 @@ protocol ContactsListViewOutput: class {
     
     func viewDidLoad()
     func tableViewDidSelect(_ index: Int)
-    
     func filterDidTap()
     func searchDidTap()
     func videoCallDidTap(_ contact: Contact)

@@ -49,6 +49,7 @@ final class ContactPresenter {
     }
 }
 
+//MARK: ContactViewOutput
 extension ContactPresenter: ContactViewOutput {
     func messagesDidTap() {
         //TODO:
@@ -71,10 +72,12 @@ extension ContactPresenter: ContactViewOutput {
     }
 }
 
+//MARK: ContactInteractorOutput
 extension ContactPresenter: ContactInteractorOutput {
     
 }
 
+//MARK: ContactModuleInput
 extension ContactPresenter: ContactModuleInput {
     func setContact(_ newValue: Contact) {
         contact = newValue
@@ -82,7 +85,6 @@ extension ContactPresenter: ContactModuleInput {
 }
 
 private extension String {
-
     var length: Int {
         return count
     }

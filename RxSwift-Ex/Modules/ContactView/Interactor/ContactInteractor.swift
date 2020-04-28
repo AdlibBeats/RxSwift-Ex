@@ -12,6 +12,7 @@ final class ContactInteractor {
     weak var output: ContactInteractorOutput!
 }
 
+//MARK: ContactInteractorInput
 extension ContactInteractor: ContactInteractorInput {
     
 }

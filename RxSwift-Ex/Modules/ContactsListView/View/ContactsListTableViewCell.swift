@@ -29,7 +29,7 @@ final class ContactsListTableViewCell: UITableViewCell {
     @IBOutlet private weak var positionLabel: UILabel!
     
     
-    @IBAction func videoCallDidTap(_ sender: UIButton) {
+    @IBAction private func videoCallDidTap(_ sender: UIButton) {
         delegate.flatMap { [weak self] delegate in
             self?.contact.flatMap {
                 delegate.videoCall(to: $0)
@@ -37,7 +37,7 @@ final class ContactsListTableViewCell: UITableViewCell {
         }
     }
     
-    @IBAction func audioCallDidTap(_ sender: UIButton) {
+    @IBAction private func audioCallDidTap(_ sender: UIButton) {
         delegate.flatMap { [weak self] delegate in
             self?.contact.flatMap {
                 delegate.audioCall(to: $0)
@@ -47,7 +47,6 @@ final class ContactsListTableViewCell: UITableViewCell {
 }
 
 private extension String {
-
     var length: Int {
         return count
     }

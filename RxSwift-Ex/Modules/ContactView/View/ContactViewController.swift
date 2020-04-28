@@ -8,11 +8,10 @@
 
 import UIKit
 
-class ContactViewController: UIViewController {
-    @IBOutlet weak var shortNameLabel: UILabel!
-    @IBOutlet weak var displayNameLabel: UILabel!
-    @IBOutlet weak var activeTimeLabel: UILabel!
-    
+final class ContactViewController: UIViewController {
+    @IBOutlet private weak var shortNameLabel: UILabel!
+    @IBOutlet private weak var displayNameLabel: UILabel!
+    @IBOutlet private weak var activeTimeLabel: UILabel!
     @IBOutlet private weak var tableView: UITableView! {
         willSet {
             newValue.delegate = self
@@ -42,11 +41,11 @@ class ContactViewController: UIViewController {
         output.viewDidLoad()
     }
     
-    @IBAction func messagesBarButtonItemDidTap(_ sender: UIBarButtonItem) {
+    @IBAction private func messagesBarButtonItemDidTap(_ sender: UIBarButtonItem) {
         output.messagesDidTap()
     }
     
-    @IBAction func menuBarButtonItemDidTap(_ sender: UIBarButtonItem) {
+    @IBAction private func menuBarButtonItemDidTap(_ sender: UIBarButtonItem) {
         output.menuDidTap()
     }
 }
@@ -76,6 +75,7 @@ extension ContactViewController: UITableViewDataSource {
     }
 }
 
+//MARK: ContactViewInput
 extension ContactViewController: ContactViewInput {
     func setShortName(_ newValue: String) {
         shortNameLabel.text = newValue

@@ -42,11 +42,11 @@ final class ContactsListViewController: UIViewController {
         output.viewDidLoad()
     }
     
-    @IBAction func filterBarButtonItemDidTap(_ sender: UIBarButtonItem) {
+    @IBAction private func filterBarButtonItemDidTap(_ sender: UIBarButtonItem) {
         output.filterDidTap()
     }
     
-    @IBAction func searchBarButtonItemDidTap(_ sender: UIBarButtonItem) {
+    @IBAction private func searchBarButtonItemDidTap(_ sender: UIBarButtonItem) {
         output.searchDidTap()
     }
 }
@@ -88,6 +88,7 @@ extension ContactsListViewController: ContactsListViewInput {
     }
 }
 
+//MARK: ContactsListTableViewCellDelegate
 extension ContactsListViewController: ContactsListTableViewCellDelegate {
     func videoCall(to contact: Contact) {
         output.videoCallDidTap(contact)

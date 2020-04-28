@@ -12,6 +12,7 @@ protocol ContactsListConfiguratorProtocol: class {
     func configure(with viewController: ContactsListViewController)
 }
 
+//MARK: ContactsListConfiguratorProtocol
 final class ContactsListConfigurator: ContactsListConfiguratorProtocol {
     func configure(with viewController: ContactsListViewController) {
         let presenter = ContactsListPresenter()

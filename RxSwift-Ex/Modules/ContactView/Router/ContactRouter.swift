@@ -12,6 +12,7 @@ final class ContactRouter {
     weak var transitionHandler: TransitionHandler?
 }
 
+//MARK: ContactRouterInput
 extension ContactRouter: ContactRouterInput {
     
 }
