@@ -12,9 +12,9 @@ import RealmSwift
 final class ContactsListViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView! {
         willSet {
-            newValue.delegate = self
-            newValue.dataSource = self
-            newValue.register(
+            newValue?.delegate = self
+            newValue?.dataSource = self
+            newValue?.register(
                 .init(nibName: cellIdentifier, bundle: nil),
                 forCellReuseIdentifier: cellIdentifier
             )

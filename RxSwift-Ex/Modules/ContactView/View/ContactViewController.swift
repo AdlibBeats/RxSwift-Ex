@@ -15,9 +15,9 @@ final class ContactViewController: UIViewController {
     @IBOutlet private weak var activeTimeLabel: UILabel!
     @IBOutlet private weak var tableView: UITableView! {
         willSet {
-            newValue.delegate = self
-            newValue.dataSource = self
-            newValue.register(
+            newValue?.delegate = self
+            newValue?.dataSource = self
+            newValue?.register(
                 .init(nibName: cellIdentifier, bundle: nil),
                 forCellReuseIdentifier: cellIdentifier
             )
