@@ -39,15 +39,15 @@ final class ContactsListViewController: UIViewController {
         }()
         
         configurator.configure(with: self)
-        output.viewDidLoad()
+        output?.viewDidLoad()
     }
     
     @IBAction private func filterBarButtonItemDidTap(_ sender: UIBarButtonItem) {
-        output.filterDidTap()
+        output?.filterDidTap()
     }
     
     @IBAction private func searchBarButtonItemDidTap(_ sender: UIBarButtonItem) {
-        output.searchDidTap()
+        output?.searchDidTap()
     }
 }
 
@@ -55,15 +55,15 @@ final class ContactsListViewController: UIViewController {
 extension ContactsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { 56 }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if !output.contactsList.check(index: indexPath.row) { return }
-        output.tableViewDidSelect(indexPath.row)
+        if let output = output, !output.contactsList.check(index: indexPath.row) { return }
+        output?.tableViewDidSelect(indexPath.row)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
 //MARK: UITableViewDataSource
 extension ContactsListViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { output.contactsList.count }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { output?.contactsList.count ?? 0 }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         cell.selectedBackgroundView = {
@@ -72,10 +72,10 @@ extension ContactsListViewController: UITableViewDataSource {
             return view
         }()
         
-        if !output.contactsList.check(index: indexPath.row) { return cell }
+        if let output = output, !output.contactsList.check(index: indexPath.row) { return cell }
         (cell as? ContactsListTableViewCell).flatMap {
             $0.delegate = self
-            $0.contact = output.contactsList[indexPath.row]
+            $0.contact = output?.contactsList[indexPath.row]
         }
         return cell
     }
@@ -84,18 +84,18 @@ extension ContactsListViewController: UITableViewDataSource {
 //MARK: ContactsListViewInput
 extension ContactsListViewController: ContactsListViewInput {
     func reload() {
-        tableView.reloadData()
+        tableView?.reloadData()
     }
 }
 
 //MARK: ContactsListTableViewCellDelegate
 extension ContactsListViewController: ContactsListTableViewCellDelegate {
     func videoCall(to contact: Contact) {
-        output.videoCallDidTap(contact)
+        output?.videoCallDidTap(contact)
     }
     
     func audioCall(to contact: Contact) {
-        output.audioCallDidTap(contact)
+        output?.audioCallDidTap(contact)
     }
 }
 

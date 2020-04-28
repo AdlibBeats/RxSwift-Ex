@@ -39,15 +39,15 @@ final class ContactViewController: UIViewController {
             return barButtonItem
         }()
         
-        output.viewDidLoad()
+        output?.viewDidLoad()
     }
     
     @IBAction private func messagesBarButtonItemDidTap(_ sender: UIBarButtonItem) {
-        output.messagesDidTap()
+        output?.messagesDidTap()
     }
     
     @IBAction private func menuBarButtonItemDidTap(_ sender: UIBarButtonItem) {
-        output.menuDidTap()
+        output?.menuDidTap()
     }
 }
 
@@ -59,7 +59,7 @@ extension ContactViewController: UITableViewDelegate {
 //MARK: UITableViewDataSource
 extension ContactViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? { section == 0 ? "Информация" : nil }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { output.propertiesList.count }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { output?.propertiesList.count ?? 0 }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         cell.selectedBackgroundView = {
@@ -68,9 +68,9 @@ extension ContactViewController: UITableViewDataSource {
             return view
         }()
         
-        if !output.propertiesList.check(index: indexPath.row) { return cell }
+        if let output = output, !output.propertiesList.check(index: indexPath.row) { return cell }
         (cell as? ContactPropertiesListTableViewCell).flatMap {
-            $0.property = output.propertiesList[indexPath.row]
+            $0.property = output?.propertiesList[indexPath.row]
         }
         return cell
     }
@@ -79,22 +79,24 @@ extension ContactViewController: UITableViewDataSource {
 //MARK: ContactViewInput
 extension ContactViewController: ContactViewInput {
     func setShortName(_ newValue: String) {
-        shortNameLabel.text = newValue
+        shortNameLabel?.text = newValue
     }
     
     func setDisplayName(_ newValue: String) {
-        displayNameLabel.text = newValue
+        displayNameLabel?.text = newValue
     }
     
     func setActiveTime(_ newValue: String) {
-        activeTimeLabel.text = newValue
+        activeTimeLabel?.text = newValue
     }
     
     func reload() {
-        tableView.reloadData()
+        tableView?.reloadData()
         
         //iOS Bug: tableView.contentSize.height doesn't update tableView height constraint
-        tableViewHeightConstraint.constant = tableView.contentSize.height
+        tableView.flatMap {
+            tableViewHeightConstraint?.constant = $0.contentSize.height
+        }
     }
 }
 

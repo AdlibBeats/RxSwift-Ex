@@ -17,7 +17,7 @@ extension ContactsListInteractor: ContactsListInteractorInput {
     func makeContacts() {
         guard let entityService = Container.shared.resolve(EntityServiceProtocol.self) else { return }
         do {
-            output.setContacts(try entityService.makeContacts())
+            output?.setContacts(try entityService.makeContacts())
         } catch {
             print(error)
         }

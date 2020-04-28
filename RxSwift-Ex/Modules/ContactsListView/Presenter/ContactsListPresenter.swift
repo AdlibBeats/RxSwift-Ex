@@ -19,7 +19,7 @@ final class ContactsListPresenter {
     
     private var contacts: Contacts = [] {
         willSet {
-            view.reload()
+            view?.reload()
         }
     }
 }
@@ -49,7 +49,7 @@ extension ContactsListPresenter: ContactsListViewOutput {
     var contactsList: Contacts { contacts }
     
     func viewDidLoad() {
-        interactor.makeContacts()
+        interactor?.makeContacts()
     }
     
     func tableViewDidSelect(_ index: Int) {

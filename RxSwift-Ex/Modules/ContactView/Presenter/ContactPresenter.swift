@@ -64,11 +64,11 @@ extension ContactPresenter: ContactViewOutput {
     var propertiesList: ContactProperties { properties }
     
     func viewDidLoad() {
-        view.setShortName("\(contact?.lastName?[0] ?? "") \(contact?.firstName?[0] ?? "")")
-        view.setDisplayName(contact?.displayName ?? "")
-        view.setActiveTime((contact?.active ?? false) ? "В сети" : "Не в сети")
+        view?.setShortName("\(contact?.lastName?[0] ?? "") \(contact?.firstName?[0] ?? "")")
+        view?.setDisplayName(contact?.displayName ?? "")
+        view?.setActiveTime((contact?.active ?? false) ? "В сети" : "Не в сети")
         
-        view.reload()
+        view?.reload()
     }
 }
 

@@ -229,7 +229,7 @@
                         <outlet property="activeTimeLabel" destination="46H-PY-1Fp" id="98E-ze-gwe"/>
                         <outlet property="displayNameLabel" destination="qsW-vE-Svl" id="MAN-3z-eTi"/>
                         <outlet property="shortNameLabel" destination="xEI-9h-dQD" id="m8M-ZM-1Or"/>
-                        <outlet property="tableView" destination="1WW-8K-tqx" id="IGm-p5-eTD"/>
+                        <outlet property="tableView" destination="1WW-8K-tqx" id="7Pq-hM-1ag"/>
                         <outlet property="tableViewHeightConstraint" destination="SrH-N1-KMh" id="odg-Zg-SHk"/>
                     </connections>
                 </viewController>
