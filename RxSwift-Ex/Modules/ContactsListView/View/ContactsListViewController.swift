@@ -23,8 +23,6 @@ final class ContactsListViewController: UIViewController {
     
     private let cellIdentifier = "ContactsListTableViewCell"
     
-    private let configurator: ContactsListConfiguratorProtocol = ContactsListConfigurator()
-    
     var output: ContactsListViewOutput!
     
     override func viewDidLoad() {
@@ -38,7 +36,6 @@ final class ContactsListViewController: UIViewController {
             return barButtonItem
         }()
         
-        configurator.configure(with: self)
         output?.viewDidLoad()
     }
     

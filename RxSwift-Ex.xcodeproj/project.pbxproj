@@ -42,7 +42,7 @@
 		492F9992244B7C7E00395A45 /* ContactsListInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492F9991244B7C7E00395A45 /* ContactsListInteractorOutput.swift */; };
 		492F9994244B7D7C00395A45 /* ContactsListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492F9993244B7D7C00395A45 /* ContactsListRouter.swift */; };
 		492F9996244B7D9200395A45 /* ContactsListRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492F9995244B7D9200395A45 /* ContactsListRouterInput.swift */; };
-		492F9998244B82A900395A45 /* ContactsListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492F9997244B82A900395A45 /* ContactsListConfigurator.swift */; };
+		492F9998244B82A900395A45 /* ContactsListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492F9997244B82A900395A45 /* ContactsListAssembly.swift */; };
 		493328BB24581EE900562F8D /* contacts.json in Resources */ = {isa = PBXBuildFile; fileRef = 493328BA24581EE900562F8D /* contacts.json */; };
 		493328BD24581FD800562F8D /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493328BC24581FD800562F8D /* Contacts.swift */; };
 		494557642355CE0400942B4F /* AboutView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494557632355CE0400942B4F /* AboutView.storyboard */; };
@@ -116,6 +116,8 @@
 		49D27E422459ADF20071C298 /* FiltersListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D27E412459ADF20071C298 /* FiltersListTableViewCell.swift */; };
 		49D27E442459AE860071C298 /* FiltersListViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D27E432459AE860071C298 /* FiltersListViewInput.swift */; };
 		49D27E462459AFE10071C298 /* FiltersListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49D27E452459AFE10071C298 /* FiltersListTableViewCell.xib */; };
+		49D27E482459CB1C0071C298 /* ContactsListModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D27E472459CB1C0071C298 /* ContactsListModuleInput.swift */; };
+		49D27E4A2459CB310071C298 /* ContactsListModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D27E492459CB310071C298 /* ContactsListModuleOutput.swift */; };
 		49E3D55C2345F9D000861760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3D55B2345F9D000861760 /* AppDelegate.swift */; };
 		49E3D5602345F9D000861760 /* RxAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3D55F2345F9D000861760 /* RxAboutViewController.swift */; };
 		49E3D5632345F9D000861760 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E3D5612345F9D000861760 /* Main.storyboard */; };
@@ -163,7 +165,7 @@
 		492F9991244B7C7E00395A45 /* ContactsListInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListInteractorOutput.swift; sourceTree = "<group>"; };
 		492F9993244B7D7C00395A45 /* ContactsListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListRouter.swift; sourceTree = "<group>"; };
 		492F9995244B7D9200395A45 /* ContactsListRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListRouterInput.swift; sourceTree = "<group>"; };
-		492F9997244B82A900395A45 /* ContactsListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListConfigurator.swift; sourceTree = "<group>"; };
+		492F9997244B82A900395A45 /* ContactsListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListAssembly.swift; sourceTree = "<group>"; };
 		493328BA24581EE900562F8D /* contacts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = contacts.json; sourceTree = "<group>"; };
 		493328BC24581FD800562F8D /* Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
 		494557632355CE0400942B4F /* AboutView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutView.storyboard; sourceTree = "<group>"; };
@@ -237,6 +239,8 @@
 		49D27E412459ADF20071C298 /* FiltersListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersListTableViewCell.swift; sourceTree = "<group>"; };
 		49D27E432459AE860071C298 /* FiltersListViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersListViewInput.swift; sourceTree = "<group>"; };
 		49D27E452459AFE10071C298 /* FiltersListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FiltersListTableViewCell.xib; sourceTree = "<group>"; };
+		49D27E472459CB1C0071C298 /* ContactsListModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListModuleInput.swift; sourceTree = "<group>"; };
+		49D27E492459CB310071C298 /* ContactsListModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListModuleOutput.swift; sourceTree = "<group>"; };
 		49E3D5582345F9D000861760 /* RxSwift-Ex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxSwift-Ex.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E3D55B2345F9D000861760 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49E3D55F2345F9D000861760 /* RxAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAboutViewController.swift; sourceTree = "<group>"; };
@@ -527,7 +531,7 @@
 		49624C68244876C7009660D3 /* ContactsListView */ = {
 			isa = PBXGroup;
 			children = (
-				49624C69244876E9009660D3 /* Configurator */,
+				49624C69244876E9009660D3 /* Assembly */,
 				49624C6A244876F5009660D3 /* Router */,
 				49624C6E2448771E009660D3 /* Interactor */,
 				49624C6C24487711009660D3 /* Presenter */,
@@ -536,12 +540,12 @@
 			path = ContactsListView;
 			sourceTree = "<group>";
 		};
-		49624C69244876E9009660D3 /* Configurator */ = {
+		49624C69244876E9009660D3 /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
-				492F9997244B82A900395A45 /* ContactsListConfigurator.swift */,
+				492F9997244B82A900395A45 /* ContactsListAssembly.swift */,
 			);
-			path = Configurator;
+			path = Assembly;
 			sourceTree = "<group>";
 		};
 		49624C6A244876F5009660D3 /* Router */ = {
@@ -570,6 +574,8 @@
 			isa = PBXGroup;
 			children = (
 				492F998B244B71E400395A45 /* ContactsListPresenter.swift */,
+				49D27E472459CB1C0071C298 /* ContactsListModuleInput.swift */,
+				49D27E492459CB310071C298 /* ContactsListModuleOutput.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -1029,6 +1035,7 @@
 				49CC3AA024585BEA001F1F47 /* OthersViewController.swift in Sources */,
 				49D27E2E2459A88F0071C298 /* FiltersListViewOutput.swift in Sources */,
 				49259CE0244762880001C15C /* RxAboutInteractor.swift in Sources */,
+				49D27E482459CB1C0071C298 /* ContactsListModuleInput.swift in Sources */,
 				49D27E302459A8F90071C298 /* FiltersListPresenter.swift in Sources */,
 				49D27E3E2459AD0A0071C298 /* FiltersListModuleInput.swift in Sources */,
 				49624C732448AD75009660D3 /* MainViewController.swift in Sources */,
@@ -1039,8 +1046,9 @@
 				49D27E3A2459ABAC0071C298 /* FiltersListRouter.swift in Sources */,
 				4946DE582458C1150098433F /* CombineAboutViewController.swift in Sources */,
 				49D27E322459A9840071C298 /* FiltersListInteractor.swift in Sources */,
+				49D27E4A2459CB310071C298 /* ContactsListModuleOutput.swift in Sources */,
 				492F9979244B174700395A45 /* RxCollectionViewRealmDataSource.swift in Sources */,
-				492F9998244B82A900395A45 /* ContactsListConfigurator.swift in Sources */,
+				492F9998244B82A900395A45 /* ContactsListAssembly.swift in Sources */,
 				49BCF84D2449F8B00094363B /* AboutViewOutput.swift in Sources */,
 				49BCF84F2449F8C70094363B /* AboutViewInput.swift in Sources */,
 				492F9988244B67C100395A45 /* ContactsListViewInput.swift in Sources */,

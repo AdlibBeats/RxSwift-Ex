@@ -8,8 +8,7 @@
 
 import UIKit
 
-class FiltersListViewController: UIViewController {
-
+final class FiltersListViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView! {
         willSet {
             newValue?.delegate = self

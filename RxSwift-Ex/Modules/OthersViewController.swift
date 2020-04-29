@@ -24,4 +24,10 @@ final class OthersViewController: UIViewController {
             [NSAttributedString.Key.foregroundColor: UIColor(red: 0.306, green: 0.380, blue: 0.451, alpha: 1)]
         }()
     }
+    
+    @IBAction func buttonDidTap(_ sender: UIButton) {
+        let transitionHandler: TransitionHandler = self
+        let module = Assembly.createModule(ContactsListModule.self, output: nil)
+        transitionHandler.pushModule(module.view, animated: true)
+    }
 }

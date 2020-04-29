@@ -62,3 +62,8 @@ extension ContactsListPresenter: ContactsListInteractorOutput {
         self.contacts = contacts
     }
 }
+
+//MARK: ContactsListModuleInput
+extension ContactsListPresenter: ContactsListModuleInput {
+    
+}
