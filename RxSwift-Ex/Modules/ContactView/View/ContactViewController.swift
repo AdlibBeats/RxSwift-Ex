@@ -9,10 +9,10 @@
 import UIKit
 
 final class ContactViewController: UIViewController {
-    @IBOutlet private weak var tableViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet private weak var shortNameLabel: UILabel!
-    @IBOutlet private weak var displayNameLabel: UILabel!
-    @IBOutlet private weak var activeTimeLabel: UILabel!
+    private var shortName: String!
+    private var displayName: String!
+    private var activeTime: String!
+    
     @IBOutlet private weak var tableView: UITableView! {
         willSet {
             newValue?.delegate = self
@@ -21,10 +21,15 @@ final class ContactViewController: UIViewController {
                 .init(nibName: cellIdentifier, bundle: nil),
                 forCellReuseIdentifier: cellIdentifier
             )
+            newValue?.register(
+                .init(nibName: headerIdentifer, bundle: nil),
+                forHeaderFooterViewReuseIdentifier: headerIdentifer
+            )
         }
     }
     
     private let cellIdentifier = "ContactPropertiesListTableViewCell"
+    private let headerIdentifer = "ContactPropertiesListHeaderView"
     
     var output: ContactViewOutput!
     
@@ -35,7 +40,7 @@ final class ContactViewController: UIViewController {
         
         navigationItem.backBarButtonItem = {
             let barButtonItem = UIBarButtonItem()
-            barButtonItem.tintColor = UIColor(red: 0.306, green: 0.380, blue: 0.451, alpha: 1)
+            barButtonItem.tintColor = .navBarTextColor
             return barButtonItem
         }()
         
@@ -54,23 +59,29 @@ final class ContactViewController: UIViewController {
 //MARK: UITableViewDelegate
 extension ContactViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        section == 0 ? 40 : tableView.sectionHeaderHeight
+        section == 0 ? 152 : tableView.sectionHeaderHeight
     }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         section == 0 ? 16 : tableView.sectionHeaderHeight
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { 56 }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = ContactPropertiesListHeaderView(frame: .init(x: 0, y: 0, width: tableView.bounds.width, height: 152))
+        headerView.activeTime = activeTime
+        headerView.displayName = displayName
+        headerView.shortName = shortName
+        return headerView
+    }
 }
 
 //MARK: UITableViewDataSource
 extension ContactViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? { section == 0 ? "Информация" : nil }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { output?.propertiesList.count ?? 0 }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         cell.selectedBackgroundView = {
             let view = UIView()
-            view.backgroundColor = .init(red: 0.898, green: 0.898, blue: 0.898, alpha: 0.1)
+            view.backgroundColor = .separatorColor
             return view
         }()
         
@@ -85,24 +96,19 @@ extension ContactViewController: UITableViewDataSource {
 //MARK: ContactViewInput
 extension ContactViewController: ContactViewInput {
     func setShortName(_ newValue: String) {
-        shortNameLabel?.text = newValue
+        shortName = newValue
     }
     
     func setDisplayName(_ newValue: String) {
-        displayNameLabel?.text = newValue
+        displayName = newValue
     }
     
     func setActiveTime(_ newValue: String) {
-        activeTimeLabel?.text = newValue
+        activeTime = newValue
     }
     
     func reload() {
         tableView?.reloadData()
-        
-        //iOS Bug: tableView.contentSize.height doesn't update tableView height constraint
-        tableView.flatMap {
-            tableViewHeightConstraint?.constant = $0.contentSize.height
-        }
     }
 }
 

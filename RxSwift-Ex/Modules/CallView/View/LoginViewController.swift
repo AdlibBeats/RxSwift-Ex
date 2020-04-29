@@ -48,7 +48,7 @@ final class LoginViewController: UIViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.largeTitleTextAttributes =
-            [NSAttributedString.Key.foregroundColor: UIColor.kbrMainPink]
+            [NSAttributedString.Key.foregroundColor: UIColor.kbrMainPinkColor]
         
         func bind() {
             Observable
@@ -69,8 +69,8 @@ final class LoginViewController: UIViewController {
                 view.rx.tapGesture().when(.recognized).map { _ in true } ~>
                 view.rx.endEditing ~
                 isLoginButtonEnabled.map { $0 ?
-                    UIColor.kbrMainPink :
-                    UIColor.kbrMainPink.withAlphaComponent(0.2)
+                    UIColor.kbrMainPinkColor :
+                    UIColor.kbrMainPinkColor.withAlphaComponent(0.2)
                 } ~> loginButton.rx.textColor(for: .normal) ~
                 Observable
                     .merge(

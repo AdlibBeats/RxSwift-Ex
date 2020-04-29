@@ -16,12 +16,12 @@ final class OthersViewController: UIViewController {
         
         navigationItem.backBarButtonItem = {
             let barButtonItem = UIBarButtonItem()
-            barButtonItem.tintColor = UIColor(red: 0.306, green: 0.380, blue: 0.451, alpha: 1)
+            barButtonItem.tintColor = .navBarTextColor
             return barButtonItem
         }()
-        navigationController?.navigationBar.tintColor = UIColor(red: 0.306, green: 0.380, blue: 0.451, alpha: 1)
+        navigationController?.navigationBar.tintColor = .navBarTextColor
         navigationController?.navigationBar.titleTextAttributes = {
-            [NSAttributedString.Key.foregroundColor: UIColor(red: 0.306, green: 0.380, blue: 0.451, alpha: 1)]
+            [NSAttributedString.Key.foregroundColor: UIColor.navBarTextColor]
         }()
     }
     

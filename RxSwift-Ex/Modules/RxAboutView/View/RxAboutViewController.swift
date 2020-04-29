@@ -121,7 +121,7 @@ final class RxAboutViewController: UIViewController {
         
         view.backgroundColor = .white
         navigationItem.backBarButtonItem = UIBarButtonItem().then {
-            $0.tintColor = UIColor.kbrMainPink
+            $0.tintColor = .kbrMainPinkColor
         }
         
         func setConstraints() {

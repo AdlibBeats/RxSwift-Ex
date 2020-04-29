@@ -9,5 +9,7 @@
 import UIKit
 
 extension UIColor {
-    static let kbrMainPink = UIColor(red: 0.937, green: 0.565, blue: 0.729, alpha: 1)
+    static let kbrMainPinkColor = UIColor(red: 0.937, green: 0.565, blue: 0.729, alpha: 1)
+    static let separatorColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 0.9)
+    static let navBarTextColor = UIColor(red: 0.306, green: 0.380, blue: 0.451, alpha: 1)
 }

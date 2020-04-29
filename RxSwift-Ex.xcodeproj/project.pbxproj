@@ -118,6 +118,8 @@
 		49D27E462459AFE10071C298 /* FiltersListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49D27E452459AFE10071C298 /* FiltersListTableViewCell.xib */; };
 		49D27E482459CB1C0071C298 /* ContactsListModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D27E472459CB1C0071C298 /* ContactsListModuleInput.swift */; };
 		49D27E4A2459CB310071C298 /* ContactsListModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D27E492459CB310071C298 /* ContactsListModuleOutput.swift */; };
+		49D5531C2459E5FC00D9A349 /* ContactPropertiesListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D5531B2459E5FC00D9A349 /* ContactPropertiesListHeaderView.swift */; };
+		49D5531E2459E6B200D9A349 /* ContactPropertiesListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49D5531D2459E6B200D9A349 /* ContactPropertiesListHeaderView.xib */; };
 		49E3D55C2345F9D000861760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3D55B2345F9D000861760 /* AppDelegate.swift */; };
 		49E3D5602345F9D000861760 /* RxAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3D55F2345F9D000861760 /* RxAboutViewController.swift */; };
 		49E3D5632345F9D000861760 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E3D5612345F9D000861760 /* Main.storyboard */; };
@@ -241,6 +243,8 @@
 		49D27E452459AFE10071C298 /* FiltersListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FiltersListTableViewCell.xib; sourceTree = "<group>"; };
 		49D27E472459CB1C0071C298 /* ContactsListModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListModuleInput.swift; sourceTree = "<group>"; };
 		49D27E492459CB310071C298 /* ContactsListModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListModuleOutput.swift; sourceTree = "<group>"; };
+		49D5531B2459E5FC00D9A349 /* ContactPropertiesListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPropertiesListHeaderView.swift; sourceTree = "<group>"; };
+		49D5531D2459E6B200D9A349 /* ContactPropertiesListHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactPropertiesListHeaderView.xib; sourceTree = "<group>"; };
 		49E3D5582345F9D000861760 /* RxSwift-Ex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxSwift-Ex.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E3D55B2345F9D000861760 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49E3D55F2345F9D000861760 /* RxAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAboutViewController.swift; sourceTree = "<group>"; };
@@ -487,6 +491,8 @@
 				495CBDE0244C6B9E005AEA7D /* ContactViewController.swift */,
 				49CC3A9D245839B6001F1F47 /* ContactPropertiesListTableViewCell.swift */,
 				49CC3A992458394C001F1F47 /* ContactPropertiesListTableViewCell.xib */,
+				49D5531B2459E5FC00D9A349 /* ContactPropertiesListHeaderView.swift */,
+				49D5531D2459E6B200D9A349 /* ContactPropertiesListHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -936,6 +942,7 @@
 				4965E28C234623EA0042E4B9 /* ABOUT_TOKENS_ru.html in Resources */,
 				495CBDDF244C69AB005AEA7D /* ContactView.storyboard in Resources */,
 				4913AC2A245074C800ECBEBE /* LoginView.storyboard in Resources */,
+				49D5531E2459E6B200D9A349 /* ContactPropertiesListHeaderView.xib in Resources */,
 				49D27E2C2459A6A30071C298 /* FiltersListView.storyboard in Resources */,
 				494557642355CE0400942B4F /* AboutView.storyboard in Resources */,
 				49CC3A9A2458394C001F1F47 /* ContactPropertiesListTableViewCell.xib in Resources */,
@@ -1041,6 +1048,7 @@
 				49624C732448AD75009660D3 /* MainViewController.swift in Sources */,
 				492F998A244B68A000395A45 /* ContactsListViewOutput.swift in Sources */,
 				4920382E244CAFB6001FB093 /* ContactViewInput.swift in Sources */,
+				49D5531C2459E5FC00D9A349 /* ContactPropertiesListHeaderView.swift in Sources */,
 				4920383A244CBA04001FB093 /* ContactModuleOutput.swift in Sources */,
 				492F9977244B142900395A45 /* RxTableViewRealmDataSource.swift in Sources */,
 				49D27E3A2459ABAC0071C298 /* FiltersListRouter.swift in Sources */,

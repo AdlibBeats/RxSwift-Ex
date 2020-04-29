@@ -32,7 +32,7 @@ final class ContactsListViewController: UIViewController {
         
         navigationItem.backBarButtonItem = {
             let barButtonItem = UIBarButtonItem()
-            barButtonItem.tintColor = UIColor(red: 0.306, green: 0.380, blue: 0.451, alpha: 1)
+            barButtonItem.tintColor = .navBarTextColor
             return barButtonItem
         }()
         
@@ -71,7 +71,7 @@ extension ContactsListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         cell.selectedBackgroundView = {
             let view = UIView()
-            view.backgroundColor = .init(red: 0.898, green: 0.898, blue: 0.898, alpha: 0.1)
+            view.backgroundColor = .separatorColor
             return view
         }()
         

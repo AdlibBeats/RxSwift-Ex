@@ -138,7 +138,7 @@ final class CallViewController: UIViewController, CallManager {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.largeTitleTextAttributes =
-            [NSAttributedString.Key.foregroundColor: UIColor.kbrMainPink]
+            [NSAttributedString.Key.foregroundColor: UIColor.kbrMainPinkColor]
         
         callButton.layer.cornerRadius = callButton.frame.height / 2
         
