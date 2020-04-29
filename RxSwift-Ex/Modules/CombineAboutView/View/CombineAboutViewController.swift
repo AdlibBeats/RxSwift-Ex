@@ -215,20 +215,20 @@ final class CombineAboutViewController: UIViewController {
                 )
             )
             
-            [
-                output.navBarTitle.sink(receiveValue: { [weak self] in self?.title = $0 }),
-                output.title.sink(receiveValue: { [weak self] in self?.titleLabel.text = $0 }),
-                output.description.sink(receiveValue: { [weak self] in self?.descriptionLabel.text = $0 }),
-                output.tipsTitle.sink(receiveValue: { [weak self] in self?.tipsButton.text = $0 }),
-                output.userAgreementTitle.sink(receiveValue: { [weak self] in self?.userAgreementButton.text = $0 }),
-                output.privacyPolicyTitle.sink(receiveValue: { [weak self] in self?.privacyPolicyButton.text = $0 }),
-                output.appVersion.sink(receiveValue: { [weak self] in self?.appVersionLabel.text = $0 }),
-            ].forEach { $0.store(in: &subscriptions) }
-            
-            
+            output.navBarTitle ~> titleBinder ~
+            output.title ~> titleLabel.textBinder ~
+            output.description ~> descriptionLabel.textBinder ~
+            output.tipsTitle ~> tipsButton.textBinder ~
+            output.userAgreementTitle ~> userAgreementButton.textBinder ~
+            output.privacyPolicyTitle ~> privacyPolicyButton.textBinder ~
+            output.appVersion ~> appVersionLabel.textBinder ~ subscriptions
         }
         
         setConstraints()
         bind()
     }
+}
+
+private extension CombineAboutViewController.MenuButton {
+    var textBinder: ((String?) -> Void) { { [weak self] in self?.text = $0 } }
 }

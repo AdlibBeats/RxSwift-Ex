@@ -27,6 +27,7 @@
 		4920383A244CBA04001FB093 /* ContactModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49203839244CBA04001FB093 /* ContactModuleOutput.swift */; };
 		4920383C244CC7A7001FB093 /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920383B244CC7A7001FB093 /* DI.swift */; };
 		49259CE0244762880001C15C /* RxAboutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49259CDF244762880001C15C /* RxAboutInteractor.swift */; };
+		492D82DA24599C7B00DC1DA2 /* CombineBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492D82D924599C7B00DC1DA2 /* CombineBinding.swift */; };
 		492F9975244B139F00395A45 /* RealmBindObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492F9974244B139F00395A45 /* RealmBindObserver.swift */; };
 		492F9977244B142900395A45 /* RxTableViewRealmDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492F9976244B142900395A45 /* RxTableViewRealmDataSource.swift */; };
 		492F9979244B174700395A45 /* RxCollectionViewRealmDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492F9978244B174600395A45 /* RxCollectionViewRealmDataSource.swift */; };
@@ -132,6 +133,7 @@
 		49203839244CBA04001FB093 /* ContactModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModuleOutput.swift; sourceTree = "<group>"; };
 		4920383B244CC7A7001FB093 /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
 		49259CDF244762880001C15C /* RxAboutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAboutInteractor.swift; sourceTree = "<group>"; };
+		492D82D924599C7B00DC1DA2 /* CombineBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineBinding.swift; sourceTree = "<group>"; };
 		492F9974244B139F00395A45 /* RealmBindObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmBindObserver.swift; sourceTree = "<group>"; };
 		492F9976244B142900395A45 /* RxTableViewRealmDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxTableViewRealmDataSource.swift; sourceTree = "<group>"; };
 		492F9978244B174600395A45 /* RxCollectionViewRealmDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCollectionViewRealmDataSource.swift; sourceTree = "<group>"; };
@@ -400,6 +402,7 @@
 				4946DE642458DCFE0098433F /* CombineControlEvent.swift */,
 				4946DE662458DD2C0098433F /* CombineControlProperty.swift */,
 				4946DE682458DD4A0098433F /* CombineControlTarget.swift */,
+				492D82D924599C7B00DC1DA2 /* CombineBinding.swift */,
 			);
 			path = Combine;
 			sourceTree = "<group>";
@@ -642,9 +645,9 @@
 			children = (
 				4965E290234625D90042E4B9 /* WKWebViewExtensions.swift */,
 				49C675FA2446F0BF002D8FF1 /* RxExtensions.swift */,
+				4946DE612458C27A0098433F /* CombineExtensions.swift */,
 				4913AC2F2450C88400ECBEBE /* UIColorExtensions.swift */,
 				4965E27C234620000042E4B9 /* StringExtensions.swift */,
-				4946DE612458C27A0098433F /* CombineExtensions.swift */,
 				4946DE632458DCDB0098433F /* Combine */,
 			);
 			path = Extensions;
@@ -904,6 +907,7 @@
 				492F9996244B7D9200395A45 /* ContactsListRouterInput.swift in Sources */,
 				4913AC2E24508A5300ECBEBE /* CallViewController.swift in Sources */,
 				49E3D55C2345F9D000861760 /* AppDelegate.swift in Sources */,
+				492D82DA24599C7B00DC1DA2 /* CombineBinding.swift in Sources */,
 				492F9994244B7D7C00395A45 /* ContactsListRouter.swift in Sources */,
 				4951CB352452F6A10025E45C /* CXExtensions.swift in Sources */,
 				49624C8C2448FE2F009660D3 /* Router.swift in Sources */,

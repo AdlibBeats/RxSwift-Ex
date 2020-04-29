@@ -1,10 +1,23 @@
-////
-////  CombineExtensions.swift
-////  Contacts
-////
-////  Created by Andrew on 28.04.2020.
-////  Copyright © 2020 Andrew. All rights reserved.
-////
+//
+//  CombineExtensions.swift
+//  RxSwift-Ex
+//
+//  Created by Andrew on 29.04.2020.
+//  Copyright © 2020 ru.proarttherapy. All rights reserved.
+//
+
+import UIKit
+
+extension UIViewController {
+    var titleBinder: ((String?) -> Void) { { [weak self] in self?.title = $0 } }
+}
+
+extension UILabel {
+    var textBinder: ((String?) -> Void) { { [weak self] in self?.text = $0 } }
+}
+
+
+
 //
 //import UIKit
 //import Combine
