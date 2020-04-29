@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,13 +16,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Логин" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMC-vf-TtH">
-                        <rect key="frame" x="2" y="8" width="373" height="17"/>
+                        <rect key="frame" x="20" y="8" width="355" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.43137254901960786" green="0.46666666666666667" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="IIVANOV00" translatesAutoresizingMaskIntoConstraints="NO" id="hq7-oP-Gac">
-                        <rect key="frame" x="-4" y="25" width="379" height="31"/>
+                        <rect key="frame" x="14" y="25" width="361" height="31"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                         <color key="textColor" red="0.0" green="0.078431372550000003" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -33,12 +32,12 @@
                     </textView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="hq7-oP-Gac" firstAttribute="leading" secondItem="C6t-IH-NSJ" secondAttribute="leading" constant="-4" id="I8x-4n-vw6"/>
+                    <constraint firstItem="hq7-oP-Gac" firstAttribute="leading" secondItem="C6t-IH-NSJ" secondAttribute="leading" constant="14" id="I8x-4n-vw6"/>
                     <constraint firstAttribute="trailing" secondItem="hq7-oP-Gac" secondAttribute="trailing" id="J2o-J3-Xfc"/>
                     <constraint firstAttribute="bottom" secondItem="hq7-oP-Gac" secondAttribute="bottom" id="L9I-pt-pTz"/>
                     <constraint firstItem="hq7-oP-Gac" firstAttribute="top" secondItem="aMC-vf-TtH" secondAttribute="bottom" id="TdN-TI-st6"/>
                     <constraint firstItem="aMC-vf-TtH" firstAttribute="top" secondItem="C6t-IH-NSJ" secondAttribute="top" constant="8" id="abK-Zd-oru"/>
-                    <constraint firstItem="aMC-vf-TtH" firstAttribute="leading" secondItem="C6t-IH-NSJ" secondAttribute="leading" constant="2" id="uM1-FY-6wv"/>
+                    <constraint firstItem="aMC-vf-TtH" firstAttribute="leading" secondItem="C6t-IH-NSJ" secondAttribute="leading" constant="20" id="uM1-FY-6wv"/>
                     <constraint firstAttribute="trailing" secondItem="aMC-vf-TtH" secondAttribute="trailing" id="xh0-IT-fmm"/>
                 </constraints>
             </tableViewCellContentView>

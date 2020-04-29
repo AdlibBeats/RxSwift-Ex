@@ -1,15 +1,15 @@
 //
-//  ContactsListViewController.swift
+//  FiltersListViewController.swift
 //  RxSwift-Ex
 //
-//  Created by Andrew on 18.04.2020.
+//  Created by Andrew on 29.04.2020.
 //  Copyright © 2020 ru.proarttherapy. All rights reserved.
 //
 
 import UIKit
-import RealmSwift
 
-final class ContactsListViewController: UIViewController {
+class FiltersListViewController: UIViewController {
+
     @IBOutlet private weak var tableView: UITableView! {
         willSet {
             newValue?.delegate = self
@@ -21,16 +21,14 @@ final class ContactsListViewController: UIViewController {
         }
     }
     
-    private let cellIdentifier = "ContactsListTableViewCell"
+    private let cellIdentifier = "FiltersListTableViewCell"
     
-    private let configurator: ContactsListConfiguratorProtocol = ContactsListConfigurator()
-    
-    var output: ContactsListViewOutput!
+    var output: FiltersListViewOutput!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        title = "Контакты"
+
+        title = "Фильтры"
         
         navigationItem.backBarButtonItem = {
             let barButtonItem = UIBarButtonItem()
@@ -38,21 +36,12 @@ final class ContactsListViewController: UIViewController {
             return barButtonItem
         }()
         
-        configurator.configure(with: self)
-        output?.viewDidLoad()
-    }
-    
-    @IBAction private func filterBarButtonItemDidTap(_ sender: UIBarButtonItem) {
-        output?.filterDidTap()
-    }
-    
-    @IBAction private func searchBarButtonItemDidTap(_ sender: UIBarButtonItem) {
-        output?.searchDidTap()
+        output.viewDidLoad()
     }
 }
 
 //MARK: UITableViewDelegate
-extension ContactsListViewController: UITableViewDelegate {
+extension FiltersListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         section == 0 ? 16 : tableView.sectionHeaderHeight
     }
@@ -61,15 +50,15 @@ extension ContactsListViewController: UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { 56 }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let output = output, !output.contactsList.check(index: indexPath.row) { return }
+        if let output = output, !output.filtersList.check(index: indexPath.row) { return }
         output?.tableViewDidSelect(indexPath.row)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
 //MARK: UITableViewDataSource
-extension ContactsListViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { output?.contactsList.count ?? 0 }
+extension FiltersListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { output?.filtersList.count ?? 0 }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         cell.selectedBackgroundView = {
@@ -78,30 +67,18 @@ extension ContactsListViewController: UITableViewDataSource {
             return view
         }()
         
-        if let output = output, !output.contactsList.check(index: indexPath.row) { return cell }
-        (cell as? ContactsListTableViewCell).flatMap {
-            $0.delegate = self
-            $0.contact = output?.contactsList[indexPath.row]
+        if let output = output, !output.filtersList.check(index: indexPath.row) { return cell }
+        (cell as? FiltersListTableViewCell).flatMap {
+            $0.filter = output?.filtersList[indexPath.row]
         }
         return cell
     }
 }
 
-//MARK: ContactsListViewInput
-extension ContactsListViewController: ContactsListViewInput {
+//MARK: FiltersListViewInput
+extension FiltersListViewController: FiltersListViewInput {
     func reload() {
         tableView?.reloadData()
-    }
-}
-
-//MARK: ContactsListTableViewCellDelegate
-extension ContactsListViewController: ContactsListTableViewCellDelegate {
-    func videoCall(to contact: Contact) {
-        output?.videoCallDidTap(contact)
-    }
-    
-    func audioCall(to contact: Contact) {
-        output?.audioCallDidTap(contact)
     }
 }
 

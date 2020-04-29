@@ -21,4 +21,9 @@ extension ContactsListRouter: ContactsListRouterInput {
         transitionHandler?.pushModule(module.view, animated: true)
         module.input?.setContact(contact)
     }
+    
+    func goToFiltersModule() {
+        let module = Assembly.createModule(FiltersListModule.self, output: nil)
+        transitionHandler?.pushModule(module.view, animated: true)
+    }
 }

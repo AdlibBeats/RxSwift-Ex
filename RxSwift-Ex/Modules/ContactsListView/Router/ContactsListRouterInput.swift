@@ -10,4 +10,5 @@ import Foundation
 
 protocol ContactsListRouterInput {
     func goToContactModule(with contact: Contact)
+    func goToFiltersModule()
 }

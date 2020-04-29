@@ -27,8 +27,7 @@ final class ContactsListPresenter {
 //MARK: ContactsListViewOutput
 extension ContactsListPresenter: ContactsListViewOutput {
     func filterDidTap() {
-        //TODO:
-        print(#function)
+        router?.goToFiltersModule()
     }
     
     func searchDidTap() {

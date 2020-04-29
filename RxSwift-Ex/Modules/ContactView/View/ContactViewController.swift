@@ -53,6 +53,12 @@ final class ContactViewController: UIViewController {
 
 //MARK: UITableViewDelegate
 extension ContactViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        section == 0 ? 40 : tableView.sectionHeaderHeight
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        section == 0 ? 16 : tableView.sectionHeaderHeight
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { 56 }
 }
 

@@ -101,6 +101,21 @@
 		49CC3A9A2458394C001F1F47 /* ContactPropertiesListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49CC3A992458394C001F1F47 /* ContactPropertiesListTableViewCell.xib */; };
 		49CC3A9E245839B6001F1F47 /* ContactPropertiesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CC3A9D245839B6001F1F47 /* ContactPropertiesListTableViewCell.swift */; };
 		49CC3AA024585BEA001F1F47 /* OthersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CC3A9F24585BEA001F1F47 /* OthersViewController.swift */; };
+		49D27E2A2459A5A00071C298 /* FiltersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D27E292459A5A00071C298 /* FiltersListViewController.swift */; };
+		49D27E2C2459A6A30071C298 /* FiltersListView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D27E2B2459A6A30071C298 /* FiltersListView.storyboard */; };
+		49D27E2E2459A88F0071C298 /* FiltersListViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D27E2D2459A88F0071C298 /* FiltersListViewOutput.swift */; };
+		49D27E302459A8F90071C298 /* FiltersListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D27E2F2459A8F90071C298 /* FiltersListPresenter.swift */; };
+		49D27E322459A9840071C298 /* FiltersListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D27E312459A9840071C298 /* FiltersListInteractor.swift */; };
+		49D27E342459A9A40071C298 /* FiltersListInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D27E332459A9A40071C298 /* FiltersListInteractorInput.swift */; };
+		49D27E362459A9AF0071C298 /* FiltersListInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D27E352459A9AF0071C298 /* FiltersListInteractorOutput.swift */; };
+		49D27E382459AB710071C298 /* FiltersListRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D27E372459AB710071C298 /* FiltersListRouterInput.swift */; };
+		49D27E3A2459ABAC0071C298 /* FiltersListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D27E392459ABAC0071C298 /* FiltersListRouter.swift */; };
+		49D27E3C2459ACC80071C298 /* FiltersListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D27E3B2459ACC70071C298 /* FiltersListAssembly.swift */; };
+		49D27E3E2459AD0A0071C298 /* FiltersListModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D27E3D2459AD0A0071C298 /* FiltersListModuleInput.swift */; };
+		49D27E402459AD3B0071C298 /* FiltersListModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D27E3F2459AD3B0071C298 /* FiltersListModuleOutput.swift */; };
+		49D27E422459ADF20071C298 /* FiltersListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D27E412459ADF20071C298 /* FiltersListTableViewCell.swift */; };
+		49D27E442459AE860071C298 /* FiltersListViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D27E432459AE860071C298 /* FiltersListViewInput.swift */; };
+		49D27E462459AFE10071C298 /* FiltersListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49D27E452459AFE10071C298 /* FiltersListTableViewCell.xib */; };
 		49E3D55C2345F9D000861760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3D55B2345F9D000861760 /* AppDelegate.swift */; };
 		49E3D5602345F9D000861760 /* RxAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3D55F2345F9D000861760 /* RxAboutViewController.swift */; };
 		49E3D5632345F9D000861760 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E3D5612345F9D000861760 /* Main.storyboard */; };
@@ -207,6 +222,21 @@
 		49CC3A992458394C001F1F47 /* ContactPropertiesListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactPropertiesListTableViewCell.xib; sourceTree = "<group>"; };
 		49CC3A9D245839B6001F1F47 /* ContactPropertiesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPropertiesListTableViewCell.swift; sourceTree = "<group>"; };
 		49CC3A9F24585BEA001F1F47 /* OthersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersViewController.swift; sourceTree = "<group>"; };
+		49D27E292459A5A00071C298 /* FiltersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersListViewController.swift; sourceTree = "<group>"; };
+		49D27E2B2459A6A30071C298 /* FiltersListView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FiltersListView.storyboard; sourceTree = "<group>"; };
+		49D27E2D2459A88F0071C298 /* FiltersListViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersListViewOutput.swift; sourceTree = "<group>"; };
+		49D27E2F2459A8F90071C298 /* FiltersListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersListPresenter.swift; sourceTree = "<group>"; };
+		49D27E312459A9840071C298 /* FiltersListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersListInteractor.swift; sourceTree = "<group>"; };
+		49D27E332459A9A40071C298 /* FiltersListInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersListInteractorInput.swift; sourceTree = "<group>"; };
+		49D27E352459A9AF0071C298 /* FiltersListInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersListInteractorOutput.swift; sourceTree = "<group>"; };
+		49D27E372459AB710071C298 /* FiltersListRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersListRouterInput.swift; sourceTree = "<group>"; };
+		49D27E392459ABAC0071C298 /* FiltersListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersListRouter.swift; sourceTree = "<group>"; };
+		49D27E3B2459ACC70071C298 /* FiltersListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersListAssembly.swift; sourceTree = "<group>"; };
+		49D27E3D2459AD0A0071C298 /* FiltersListModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersListModuleInput.swift; sourceTree = "<group>"; };
+		49D27E3F2459AD3B0071C298 /* FiltersListModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersListModuleOutput.swift; sourceTree = "<group>"; };
+		49D27E412459ADF20071C298 /* FiltersListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersListTableViewCell.swift; sourceTree = "<group>"; };
+		49D27E432459AE860071C298 /* FiltersListViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersListViewInput.swift; sourceTree = "<group>"; };
+		49D27E452459AFE10071C298 /* FiltersListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FiltersListTableViewCell.xib; sourceTree = "<group>"; };
 		49E3D5582345F9D000861760 /* RxSwift-Ex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxSwift-Ex.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E3D55B2345F9D000861760 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49E3D55F2345F9D000861760 /* RxAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAboutViewController.swift; sourceTree = "<group>"; };
@@ -526,7 +556,6 @@
 		49624C6B2448770B009660D3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				49CC3A9F24585BEA001F1F47 /* OthersViewController.swift */,
 				49624C7024487799009660D3 /* ContactsListView.storyboard */,
 				492F997D244B48D500395A45 /* ContactsListTableViewCell.xib */,
 				492F997F244B494700395A45 /* ContactsListTableViewCell.swift */,
@@ -627,6 +656,8 @@
 		49624C8D2448FF84009660D3 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				49CC3A9F24585BEA001F1F47 /* OthersViewController.swift */,
+				49D27E232459A5320071C298 /* FiltersListView */,
 				4946DE512458C0B00098433F /* CombineAboutView */,
 				4913AC182450393E00ECBEBE /* CallView */,
 				49624C68244876C7009660D3 /* ContactsListView */,
@@ -677,6 +708,68 @@
 				494557662355CE1400942B4F /* WKWebViewController */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		49D27E232459A5320071C298 /* FiltersListView */ = {
+			isa = PBXGroup;
+			children = (
+				49D27E282459A5660071C298 /* Assembly */,
+				49D27E272459A5600071C298 /* Router */,
+				49D27E262459A55A0071C298 /* Interactor */,
+				49D27E252459A5530071C298 /* Presenter */,
+				49D27E242459A54E0071C298 /* View */,
+			);
+			path = FiltersListView;
+			sourceTree = "<group>";
+		};
+		49D27E242459A54E0071C298 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49D27E292459A5A00071C298 /* FiltersListViewController.swift */,
+				49D27E452459AFE10071C298 /* FiltersListTableViewCell.xib */,
+				49D27E412459ADF20071C298 /* FiltersListTableViewCell.swift */,
+				49D27E2D2459A88F0071C298 /* FiltersListViewOutput.swift */,
+				49D27E432459AE860071C298 /* FiltersListViewInput.swift */,
+				49D27E2B2459A6A30071C298 /* FiltersListView.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		49D27E252459A5530071C298 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				49D27E2F2459A8F90071C298 /* FiltersListPresenter.swift */,
+				49D27E3D2459AD0A0071C298 /* FiltersListModuleInput.swift */,
+				49D27E3F2459AD3B0071C298 /* FiltersListModuleOutput.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		49D27E262459A55A0071C298 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				49D27E312459A9840071C298 /* FiltersListInteractor.swift */,
+				49D27E332459A9A40071C298 /* FiltersListInteractorInput.swift */,
+				49D27E352459A9AF0071C298 /* FiltersListInteractorOutput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		49D27E272459A5600071C298 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				49D27E372459AB710071C298 /* FiltersListRouterInput.swift */,
+				49D27E392459ABAC0071C298 /* FiltersListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		49D27E282459A5660071C298 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				49D27E3B2459ACC70071C298 /* FiltersListAssembly.swift */,
+			);
+			path = Assembly;
 			sourceTree = "<group>";
 		};
 		49E0B70324599F1A000B09E0 /* Cocoa */ = {
@@ -823,6 +916,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49624C7124487799009660D3 /* ContactsListView.storyboard in Resources */,
+				49D27E462459AFE10071C298 /* FiltersListTableViewCell.xib in Resources */,
 				4951CB392452F8BD0025E45C /* fennelliott-beeping.wav in Resources */,
 				49E3D5682345F9D100861760 /* LaunchScreen.storyboard in Resources */,
 				492F997E244B48D500395A45 /* ContactsListTableViewCell.xib in Resources */,
@@ -836,6 +930,7 @@
 				4965E28C234623EA0042E4B9 /* ABOUT_TOKENS_ru.html in Resources */,
 				495CBDDF244C69AB005AEA7D /* ContactView.storyboard in Resources */,
 				4913AC2A245074C800ECBEBE /* LoginView.storyboard in Resources */,
+				49D27E2C2459A6A30071C298 /* FiltersListView.storyboard in Resources */,
 				494557642355CE0400942B4F /* AboutView.storyboard in Resources */,
 				49CC3A9A2458394C001F1F47 /* ContactPropertiesListTableViewCell.xib in Resources */,
 			);
@@ -894,6 +989,7 @@
 				4946DE7C2458DEE10098433F /* UIStepper+Combine.swift in Sources */,
 				49203826244C9AFC001FB093 /* ContactRouter.swift in Sources */,
 				49624C872448E26B009660D3 /* AboutRouter.swift in Sources */,
+				49D27E402459AD3B0071C298 /* FiltersListModuleOutput.swift in Sources */,
 				492F998C244B71E400395A45 /* ContactsListPresenter.swift in Sources */,
 				4920382C244CA81E001FB093 /* ContactAssembly.swift in Sources */,
 				49F0AEC224473A0600222DCF /* EntityService.swift in Sources */,
@@ -919,6 +1015,7 @@
 				49624C892448E27A009660D3 /* AboutConfigurator.swift in Sources */,
 				49BCF84B2449F84C0094363B /* AboutRouterInput.swift in Sources */,
 				4946DE672458DD2C0098433F /* CombineControlProperty.swift in Sources */,
+				49D27E382459AB710071C298 /* FiltersListRouterInput.swift in Sources */,
 				493328BD24581FD800562F8D /* Contacts.swift in Sources */,
 				492F9996244B7D9200395A45 /* ContactsListRouterInput.swift in Sources */,
 				4913AC2E24508A5300ECBEBE /* CallViewController.swift in Sources */,
@@ -930,19 +1027,26 @@
 				49624C6324483CCC009660D3 /* RxAboutRouter.swift in Sources */,
 				49203836244CB6B0001FB093 /* BaseModule.swift in Sources */,
 				49CC3AA024585BEA001F1F47 /* OthersViewController.swift in Sources */,
+				49D27E2E2459A88F0071C298 /* FiltersListViewOutput.swift in Sources */,
 				49259CE0244762880001C15C /* RxAboutInteractor.swift in Sources */,
+				49D27E302459A8F90071C298 /* FiltersListPresenter.swift in Sources */,
+				49D27E3E2459AD0A0071C298 /* FiltersListModuleInput.swift in Sources */,
 				49624C732448AD75009660D3 /* MainViewController.swift in Sources */,
 				492F998A244B68A000395A45 /* ContactsListViewOutput.swift in Sources */,
 				4920382E244CAFB6001FB093 /* ContactViewInput.swift in Sources */,
 				4920383A244CBA04001FB093 /* ContactModuleOutput.swift in Sources */,
 				492F9977244B142900395A45 /* RxTableViewRealmDataSource.swift in Sources */,
+				49D27E3A2459ABAC0071C298 /* FiltersListRouter.swift in Sources */,
 				4946DE582458C1150098433F /* CombineAboutViewController.swift in Sources */,
+				49D27E322459A9840071C298 /* FiltersListInteractor.swift in Sources */,
 				492F9979244B174700395A45 /* RxCollectionViewRealmDataSource.swift in Sources */,
 				492F9998244B82A900395A45 /* ContactsListConfigurator.swift in Sources */,
 				49BCF84D2449F8B00094363B /* AboutViewOutput.swift in Sources */,
 				49BCF84F2449F8C70094363B /* AboutViewInput.swift in Sources */,
 				492F9988244B67C100395A45 /* ContactsListViewInput.swift in Sources */,
+				49D27E2A2459A5A00071C298 /* FiltersListViewController.swift in Sources */,
 				494557702355CF4C00942B4F /* RxAboutModel.swift in Sources */,
+				49D27E442459AE860071C298 /* FiltersListViewInput.swift in Sources */,
 				4951CB3E245301730025E45C /* CallManager.swift in Sources */,
 				495CBDE1244C6B9E005AEA7D /* ContactViewController.swift in Sources */,
 				49203822244C9AD6001FB093 /* ContactPresenter.swift in Sources */,
@@ -958,7 +1062,10 @@
 				4951CB4A2453100B0025E45C /* Settings.swift in Sources */,
 				4946DE772458DEE10098433F /* UIGestureRecognizer+Combine.swift in Sources */,
 				4913AC302450C88400ECBEBE /* UIColorExtensions.swift in Sources */,
+				49D27E362459A9AF0071C298 /* FiltersListInteractorOutput.swift in Sources */,
+				49D27E3C2459ACC80071C298 /* FiltersListAssembly.swift in Sources */,
 				4965E291234625D90042E4B9 /* WKWebViewExtensions.swift in Sources */,
+				49D27E342459A9A40071C298 /* FiltersListInteractorInput.swift in Sources */,
 				4920383C244CC7A7001FB093 /* DI.swift in Sources */,
 				49C675FB2446F0BF002D8FF1 /* RxExtensions.swift in Sources */,
 				4946DE7E2458DEE10098433F /* UITextField+Combine.swift in Sources */,
@@ -966,6 +1073,7 @@
 				49CC3A9E245839B6001F1F47 /* ContactPropertiesListTableViewCell.swift in Sources */,
 				49203828244C9B5B001FB093 /* ContactRouterInput.swift in Sources */,
 				492F998E244B7AA100395A45 /* ContactsListInteractor.swift in Sources */,
+				49D27E422459ADF20071C298 /* FiltersListTableViewCell.swift in Sources */,
 				4946DE7A2458DEE10098433F /* UISegmentedControl+Combine.swift in Sources */,
 				494557682355CE4F00942B4F /* RxAboutPresenter.swift in Sources */,
 				49BCF8492449F81C0094363B /* AboutInteractorOutput.swift in Sources */,
