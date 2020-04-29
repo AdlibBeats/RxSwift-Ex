@@ -9,7 +9,7 @@ def shared_pods
   
   pod 'Moya/RxSwift'
   pod 'AlamofireImage'
-
+  
   pod 'RxBinding'
   pod 'RxCocoa'
   pod 'RxDataSources'

@@ -39,6 +39,23 @@ extension Container {
             })
             .inObjectScope(.viewControllersScope)
         
+        container
+            .register(UINavigationController.self, name: "CombineAboutNavigationView", factory: { _ in UINavigationController() })
+            .inObjectScope(.viewControllersScope)
+        
+        container
+            .register(CombineAboutViewController.self, factory: { r in
+                let viewController = CombineAboutViewController()
+                let presenter = CombineAboutPresenter()
+                viewController.presenter = presenter
+                r.resolve(EntityServiceProtocol.self).flatMap {
+                    presenter.interactor = CombineAboutInteractor(with: $0)
+                }
+                presenter.router = CombineAboutRouter()
+                return viewController
+            })
+            .inObjectScope(.viewControllersScope)
+        
         return container
     }()
 }

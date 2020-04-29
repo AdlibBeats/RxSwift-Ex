@@ -47,6 +47,27 @@
 		494557642355CE0400942B4F /* AboutView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494557632355CE0400942B4F /* AboutView.storyboard */; };
 		494557682355CE4F00942B4F /* RxAboutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494557672355CE4F00942B4F /* RxAboutPresenter.swift */; };
 		494557702355CF4C00942B4F /* RxAboutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4945576F2355CF4C00942B4F /* RxAboutModel.swift */; };
+		4946DE582458C1150098433F /* CombineAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946DE572458C1150098433F /* CombineAboutViewController.swift */; };
+		4946DE5A2458C11F0098433F /* CombineAboutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946DE592458C11F0098433F /* CombineAboutPresenter.swift */; };
+		4946DE5C2458C12B0098433F /* CombineAboutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946DE5B2458C12B0098433F /* CombineAboutModel.swift */; };
+		4946DE5E2458C1460098433F /* CombineAboutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946DE5D2458C1460098433F /* CombineAboutInteractor.swift */; };
+		4946DE602458C1520098433F /* CombineAboutRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946DE5F2458C1520098433F /* CombineAboutRouter.swift */; };
+		4946DE622458C27A0098433F /* CombineExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946DE612458C27A0098433F /* CombineExtensions.swift */; };
+		4946DE652458DCFE0098433F /* CombineControlEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946DE642458DCFE0098433F /* CombineControlEvent.swift */; };
+		4946DE672458DD2C0098433F /* CombineControlProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946DE662458DD2C0098433F /* CombineControlProperty.swift */; };
+		4946DE692458DD4A0098433F /* CombineControlTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946DE682458DD4A0098433F /* CombineControlTarget.swift */; };
+		4946DE772458DEE10098433F /* UIGestureRecognizer+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946DE6B2458DEE00098433F /* UIGestureRecognizer+Combine.swift */; };
+		4946DE782458DEE10098433F /* UIButton+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946DE6C2458DEE00098433F /* UIButton+Combine.swift */; };
+		4946DE792458DEE10098433F /* UIPageControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946DE6D2458DEE10098433F /* UIPageControl+Combine.swift */; };
+		4946DE7A2458DEE10098433F /* UISegmentedControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946DE6E2458DEE10098433F /* UISegmentedControl+Combine.swift */; };
+		4946DE7B2458DEE10098433F /* UISlider+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946DE6F2458DEE10098433F /* UISlider+Combine.swift */; };
+		4946DE7C2458DEE10098433F /* UIStepper+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946DE702458DEE10098433F /* UIStepper+Combine.swift */; };
+		4946DE7D2458DEE10098433F /* UISwitch+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946DE712458DEE10098433F /* UISwitch+Combine.swift */; };
+		4946DE7E2458DEE10098433F /* UITextField+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946DE722458DEE10098433F /* UITextField+Combine.swift */; };
+		4946DE7F2458DEE10098433F /* UIBarButtonItem+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946DE732458DEE10098433F /* UIBarButtonItem+Combine.swift */; };
+		4946DE802458DEE10098433F /* UIScrollView+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946DE742458DEE10098433F /* UIScrollView+Combine.swift */; };
+		4946DE812458DEE10098433F /* UIRefreshControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946DE752458DEE10098433F /* UIRefreshControl+Combine.swift */; };
+		4946DE822458DEE10098433F /* UIDatePicker+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946DE762458DEE10098433F /* UIDatePicker+Combine.swift */; };
 		4951CB332452F5370025E45C /* CXAudioFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951CB322452F5370025E45C /* CXAudioFile.swift */; };
 		4951CB352452F6A10025E45C /* CXExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951CB342452F6A10025E45C /* CXExtensions.swift */; };
 		4951CB392452F8BD0025E45C /* fennelliott-beeping.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4951CB372452F8BC0025E45C /* fennelliott-beeping.wav */; };
@@ -131,6 +152,27 @@
 		494557632355CE0400942B4F /* AboutView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutView.storyboard; sourceTree = "<group>"; };
 		494557672355CE4F00942B4F /* RxAboutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAboutPresenter.swift; sourceTree = "<group>"; };
 		4945576F2355CF4C00942B4F /* RxAboutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAboutModel.swift; sourceTree = "<group>"; };
+		4946DE572458C1150098433F /* CombineAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineAboutViewController.swift; sourceTree = "<group>"; };
+		4946DE592458C11F0098433F /* CombineAboutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineAboutPresenter.swift; sourceTree = "<group>"; };
+		4946DE5B2458C12B0098433F /* CombineAboutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineAboutModel.swift; sourceTree = "<group>"; };
+		4946DE5D2458C1460098433F /* CombineAboutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineAboutInteractor.swift; sourceTree = "<group>"; };
+		4946DE5F2458C1520098433F /* CombineAboutRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineAboutRouter.swift; sourceTree = "<group>"; };
+		4946DE612458C27A0098433F /* CombineExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineExtensions.swift; sourceTree = "<group>"; };
+		4946DE642458DCFE0098433F /* CombineControlEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineControlEvent.swift; sourceTree = "<group>"; };
+		4946DE662458DD2C0098433F /* CombineControlProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineControlProperty.swift; sourceTree = "<group>"; };
+		4946DE682458DD4A0098433F /* CombineControlTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineControlTarget.swift; sourceTree = "<group>"; };
+		4946DE6B2458DEE00098433F /* UIGestureRecognizer+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIGestureRecognizer+Combine.swift"; sourceTree = "<group>"; };
+		4946DE6C2458DEE00098433F /* UIButton+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Combine.swift"; sourceTree = "<group>"; };
+		4946DE6D2458DEE10098433F /* UIPageControl+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIPageControl+Combine.swift"; sourceTree = "<group>"; };
+		4946DE6E2458DEE10098433F /* UISegmentedControl+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Combine.swift"; sourceTree = "<group>"; };
+		4946DE6F2458DEE10098433F /* UISlider+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISlider+Combine.swift"; sourceTree = "<group>"; };
+		4946DE702458DEE10098433F /* UIStepper+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStepper+Combine.swift"; sourceTree = "<group>"; };
+		4946DE712458DEE10098433F /* UISwitch+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISwitch+Combine.swift"; sourceTree = "<group>"; };
+		4946DE722458DEE10098433F /* UITextField+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Combine.swift"; sourceTree = "<group>"; };
+		4946DE732458DEE10098433F /* UIBarButtonItem+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Combine.swift"; sourceTree = "<group>"; };
+		4946DE742458DEE10098433F /* UIScrollView+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Combine.swift"; sourceTree = "<group>"; };
+		4946DE752458DEE10098433F /* UIRefreshControl+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+Combine.swift"; sourceTree = "<group>"; };
+		4946DE762458DEE10098433F /* UIDatePicker+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDatePicker+Combine.swift"; sourceTree = "<group>"; };
 		4951CB322452F5370025E45C /* CXAudioFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXAudioFile.swift; sourceTree = "<group>"; };
 		4951CB342452F6A10025E45C /* CXExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXExtensions.swift; sourceTree = "<group>"; };
 		4951CB372452F8BC0025E45C /* fennelliott-beeping.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "fennelliott-beeping.wav"; sourceTree = "<group>"; };
@@ -297,6 +339,88 @@
 				4945576F2355CF4C00942B4F /* RxAboutModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4946DE512458C0B00098433F /* CombineAboutView */ = {
+			isa = PBXGroup;
+			children = (
+				4946DE562458C0F40098433F /* Router */,
+				4946DE552458C0E80098433F /* Interactor */,
+				4946DE542458C0E10098433F /* Model */,
+				4946DE532458C0D90098433F /* Presenter */,
+				4946DE522458C0D40098433F /* View */,
+			);
+			path = CombineAboutView;
+			sourceTree = "<group>";
+		};
+		4946DE522458C0D40098433F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4946DE572458C1150098433F /* CombineAboutViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4946DE532458C0D90098433F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4946DE592458C11F0098433F /* CombineAboutPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4946DE542458C0E10098433F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4946DE5B2458C12B0098433F /* CombineAboutModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4946DE552458C0E80098433F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				4946DE5D2458C1460098433F /* CombineAboutInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		4946DE562458C0F40098433F /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				4946DE5F2458C1520098433F /* CombineAboutRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		4946DE632458DCDB0098433F /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+				4946DE6A2458DECC0098433F /* Controls */,
+				4946DE642458DCFE0098433F /* CombineControlEvent.swift */,
+				4946DE662458DD2C0098433F /* CombineControlProperty.swift */,
+				4946DE682458DD4A0098433F /* CombineControlTarget.swift */,
+			);
+			path = Combine;
+			sourceTree = "<group>";
+		};
+		4946DE6A2458DECC0098433F /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				4946DE732458DEE10098433F /* UIBarButtonItem+Combine.swift */,
+				4946DE6C2458DEE00098433F /* UIButton+Combine.swift */,
+				4946DE762458DEE10098433F /* UIDatePicker+Combine.swift */,
+				4946DE6B2458DEE00098433F /* UIGestureRecognizer+Combine.swift */,
+				4946DE6D2458DEE10098433F /* UIPageControl+Combine.swift */,
+				4946DE752458DEE10098433F /* UIRefreshControl+Combine.swift */,
+				4946DE742458DEE10098433F /* UIScrollView+Combine.swift */,
+				4946DE6E2458DEE10098433F /* UISegmentedControl+Combine.swift */,
+				4946DE6F2458DEE10098433F /* UISlider+Combine.swift */,
+				4946DE702458DEE10098433F /* UIStepper+Combine.swift */,
+				4946DE712458DEE10098433F /* UISwitch+Combine.swift */,
+				4946DE722458DEE10098433F /* UITextField+Combine.swift */,
+			);
+			path = Controls;
 			sourceTree = "<group>";
 		};
 		4951CB362452F8950025E45C /* Sounds */ = {
@@ -503,6 +627,7 @@
 		49624C8D2448FF84009660D3 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4946DE512458C0B00098433F /* CombineAboutView */,
 				4913AC182450393E00ECBEBE /* CallView */,
 				49624C68244876C7009660D3 /* ContactsListView */,
 				495CBDDD244C6944005AEA7D /* ContactView */,
@@ -519,6 +644,8 @@
 				49C675FA2446F0BF002D8FF1 /* RxExtensions.swift */,
 				4913AC2F2450C88400ECBEBE /* UIColorExtensions.swift */,
 				4965E27C234620000042E4B9 /* StringExtensions.swift */,
+				4946DE612458C27A0098433F /* CombineExtensions.swift */,
+				4946DE632458DCDB0098433F /* Combine */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -745,16 +872,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				49203834244CB39E001FB093 /* ContactInteractorOutput.swift in Sources */,
+				4946DE7C2458DEE10098433F /* UIStepper+Combine.swift in Sources */,
 				49203826244C9AFC001FB093 /* ContactRouter.swift in Sources */,
 				49624C872448E26B009660D3 /* AboutRouter.swift in Sources */,
 				492F998C244B71E400395A45 /* ContactsListPresenter.swift in Sources */,
 				4920382C244CA81E001FB093 /* ContactAssembly.swift in Sources */,
 				49F0AEC224473A0600222DCF /* EntityService.swift in Sources */,
+				4946DE7B2458DEE10098433F /* UISlider+Combine.swift in Sources */,
+				4946DE792458DEE10098433F /* UIPageControl+Combine.swift in Sources */,
 				4913AC1D24503BE600ECBEBE /* LoginViewController.swift in Sources */,
 				4920382A244C9F12001FB093 /* Assembly.swift in Sources */,
+				4946DE822458DEE10098433F /* UIDatePicker+Combine.swift in Sources */,
 				49BCF8472449F7FF0094363B /* AboutInteractorInput.swift in Sources */,
+				4946DE622458C27A0098433F /* CombineExtensions.swift in Sources */,
+				4946DE692458DD4A0098433F /* CombineControlTarget.swift in Sources */,
 				49E3D5602345F9D000861760 /* RxAboutViewController.swift in Sources */,
 				49203824244C9AEA001FB093 /* ContactInteractor.swift in Sources */,
+				4946DE7D2458DEE10098433F /* UISwitch+Combine.swift in Sources */,
+				4946DE812458DEE10098433F /* UIRefreshControl+Combine.swift in Sources */,
 				492F9975244B139F00395A45 /* RealmBindObserver.swift in Sources */,
 				49203838244CB72F001FB093 /* ContactModuleInput.swift in Sources */,
 				49624C812448E243009660D3 /* AboutPresenter.swift in Sources */,
@@ -764,6 +899,7 @@
 				4965E27D234620000042E4B9 /* StringExtensions.swift in Sources */,
 				49624C892448E27A009660D3 /* AboutConfigurator.swift in Sources */,
 				49BCF84B2449F84C0094363B /* AboutRouterInput.swift in Sources */,
+				4946DE672458DD2C0098433F /* CombineControlProperty.swift in Sources */,
 				493328BD24581FD800562F8D /* Contacts.swift in Sources */,
 				492F9996244B7D9200395A45 /* ContactsListRouterInput.swift in Sources */,
 				4913AC2E24508A5300ECBEBE /* CallViewController.swift in Sources */,
@@ -780,6 +916,7 @@
 				4920382E244CAFB6001FB093 /* ContactViewInput.swift in Sources */,
 				4920383A244CBA04001FB093 /* ContactModuleOutput.swift in Sources */,
 				492F9977244B142900395A45 /* RxTableViewRealmDataSource.swift in Sources */,
+				4946DE582458C1150098433F /* CombineAboutViewController.swift in Sources */,
 				492F9979244B174700395A45 /* RxCollectionViewRealmDataSource.swift in Sources */,
 				492F9998244B82A900395A45 /* ContactsListConfigurator.swift in Sources */,
 				49BCF84D2449F8B00094363B /* AboutViewOutput.swift in Sources */,
@@ -790,23 +927,34 @@
 				495CBDE1244C6B9E005AEA7D /* ContactViewController.swift in Sources */,
 				49203822244C9AD6001FB093 /* ContactPresenter.swift in Sources */,
 				49203830244CB015001FB093 /* ContactViewOutput.swift in Sources */,
+				4946DE7F2458DEE10098433F /* UIBarButtonItem+Combine.swift in Sources */,
 				4951CB332452F5370025E45C /* CXAudioFile.swift in Sources */,
+				4946DE602458C1520098433F /* CombineAboutRouter.swift in Sources */,
 				49624C852448E25E009660D3 /* AboutInteractor.swift in Sources */,
 				49C675FD2446F41E002D8FF1 /* WKWebViewController.swift in Sources */,
 				492F9980244B494700395A45 /* ContactsListTableViewCell.swift in Sources */,
 				492F9990244B7B7C00395A45 /* ContactsListInteractorInput.swift in Sources */,
 				492F9982244B4DBE00395A45 /* ContactsListViewController.swift in Sources */,
 				4951CB4A2453100B0025E45C /* Settings.swift in Sources */,
+				4946DE772458DEE10098433F /* UIGestureRecognizer+Combine.swift in Sources */,
 				4913AC302450C88400ECBEBE /* UIColorExtensions.swift in Sources */,
 				4965E291234625D90042E4B9 /* WKWebViewExtensions.swift in Sources */,
 				4920383C244CC7A7001FB093 /* DI.swift in Sources */,
 				49C675FB2446F0BF002D8FF1 /* RxExtensions.swift in Sources */,
+				4946DE7E2458DEE10098433F /* UITextField+Combine.swift in Sources */,
 				492F9992244B7C7E00395A45 /* ContactsListInteractorOutput.swift in Sources */,
 				49CC3A9E245839B6001F1F47 /* ContactPropertiesListTableViewCell.swift in Sources */,
 				49203828244C9B5B001FB093 /* ContactRouterInput.swift in Sources */,
 				492F998E244B7AA100395A45 /* ContactsListInteractor.swift in Sources */,
+				4946DE7A2458DEE10098433F /* UISegmentedControl+Combine.swift in Sources */,
 				494557682355CE4F00942B4F /* RxAboutPresenter.swift in Sources */,
 				49BCF8492449F81C0094363B /* AboutInteractorOutput.swift in Sources */,
+				4946DE782458DEE10098433F /* UIButton+Combine.swift in Sources */,
+				4946DE802458DEE10098433F /* UIScrollView+Combine.swift in Sources */,
+				4946DE5E2458C1460098433F /* CombineAboutInteractor.swift in Sources */,
+				4946DE5A2458C11F0098433F /* CombineAboutPresenter.swift in Sources */,
+				4946DE652458DCFE0098433F /* CombineControlEvent.swift in Sources */,
+				4946DE5C2458C12B0098433F /* CombineAboutModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -883,7 +1031,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -939,7 +1087,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

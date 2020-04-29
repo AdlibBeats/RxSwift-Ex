@@ -25,5 +25,13 @@ final class MainViewController: UITabBarController {
                 viewControllers?.append(nc)
             }
         }
+        
+        Container.shared.resolve(CombineAboutViewController.self).flatMap { vc in
+            vc.tabBarItem = .init(tabBarSystemItem: .more, tag: 1)
+            Container.shared.resolve(UINavigationController.self, name: "CombineAboutNavigationView").flatMap { nc in
+                nc.setViewControllers([vc], animated: false)
+                viewControllers?.append(nc)
+            }
+        }
     }
 }
