@@ -63,7 +63,7 @@ extension FiltersListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         cell.selectedBackgroundView = {
             let view = UIView()
-            view.backgroundColor = .init(red: 0.9, green: 0.9, blue: 0.9, alpha: 0.9)
+            view.backgroundColor = .init(red: 0.898, green: 0.898, blue: 0.898, alpha: 0.1)
             return view
         }()
         
