@@ -398,11 +398,8 @@
 		4946DE632458DCDB0098433F /* Combine */ = {
 			isa = PBXGroup;
 			children = (
-				4946DE6A2458DECC0098433F /* Controls */,
-				4946DE642458DCFE0098433F /* CombineControlEvent.swift */,
-				4946DE662458DD2C0098433F /* CombineControlProperty.swift */,
-				4946DE682458DD4A0098433F /* CombineControlTarget.swift */,
-				492D82D924599C7B00DC1DA2 /* CombineBinding.swift */,
+				49E0B70424599F32000B09E0 /* Binding */,
+				49E0B70324599F1A000B09E0 /* Cocoa */,
 			);
 			path = Combine;
 			sourceTree = "<group>";
@@ -680,6 +677,25 @@
 				494557662355CE1400942B4F /* WKWebViewController */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		49E0B70324599F1A000B09E0 /* Cocoa */ = {
+			isa = PBXGroup;
+			children = (
+				4946DE642458DCFE0098433F /* CombineControlEvent.swift */,
+				4946DE662458DD2C0098433F /* CombineControlProperty.swift */,
+				4946DE682458DD4A0098433F /* CombineControlTarget.swift */,
+				4946DE6A2458DECC0098433F /* Controls */,
+			);
+			path = Cocoa;
+			sourceTree = "<group>";
+		};
+		49E0B70424599F32000B09E0 /* Binding */ = {
+			isa = PBXGroup;
+			children = (
+				492D82D924599C7B00DC1DA2 /* CombineBinding.swift */,
+			);
+			path = Binding;
 			sourceTree = "<group>";
 		};
 		49E3D54F2345F9D000861760 = {
