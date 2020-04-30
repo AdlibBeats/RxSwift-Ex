@@ -23,6 +23,6 @@ final class RxAboutInteractor: RxAboutInteractorProtocol {
     }
     
     var appVersion: Observable<AppVersion> {
-        entityService.fetchAppVersion() //.observeOn(MainScheduler.instance) //Realm accessed from incorrect thread.
+        entityService.fetchRXAppVersion() //.observeOn(MainScheduler.instance) //Realm accessed from incorrect thread.
     }
 }

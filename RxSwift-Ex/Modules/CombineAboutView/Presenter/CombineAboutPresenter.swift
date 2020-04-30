@@ -27,20 +27,17 @@ final class CombineAboutPresenter: CombineAboutPresenterProtocol {
     var interactor: Interactor!
     
     func transform(input: Input) -> Output {
-        model.appVersion.send(interactor.appVersion)
+        interactor.appVersion ~> model.appVersion ~
         input.userAgreementTapEvent
-            .flatMap { [model] _ in
-                model.userAgreementResource.combineLatest(model.webUserAgreementTitle)
-            }
+            .combineLatest([model].publisher)
+            .flatMap { $1.userAgreementResource.combineLatest($1.webUserAgreementTitle) }
             .map { .web($0, $1) }
             .merge(with: input.privacyPolicyTapEvent
-                .flatMap { [model] _ in
-                    model.privacyPolicyResource.combineLatest(model.webPrivacyPolicyTitle)
-                }
+                .combineLatest([model].publisher)
+                .flatMap { $1.privacyPolicyResource.combineLatest($1.webPrivacyPolicyTitle) }
                 .map { .web($0, $1) }
             )
-            .assign(to: \.push, on: router)
-            .store(in: &subscriptions)
+            .assign(to: \.push, on: router) ~ subscriptions
         
         return Output(
             navBarTitle: model.navBarTitle.eraseToAnyPublisher(),

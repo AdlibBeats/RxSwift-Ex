@@ -17,8 +17,20 @@ precedencegroup DisposePrecedence {
 infix operator ~> : DefaultPrecedence
 
 extension Publisher where Failure == Never {
-    static func ~> (publisher: Self, completion: ((Self.Output?) -> Void)? = nil)  -> AnyCancellable {
-        publisher.sink(receiveValue: { completion?($0) })
+    static func ~> (publisher: Self, binder: ((Self.Output) -> Void)?)  -> AnyCancellable {
+        publisher.sink(receiveValue: { binder?($0) })
+    }
+    
+    static func ~> (publisher: Self, binder: ((Self.Output?) -> Void)?)  -> AnyCancellable {
+        publisher.sink(receiveValue: { binder?($0) })
+    }
+    
+    static func ~> <S: Subject>(publisher: Self, subject: S) -> AnyCancellable where S.Output == Self.Output {
+        publisher.sink(receiveValue: { subject.send($0) })
+    }
+    
+    static func ~> <S: Subject>(publisher: Self, subject: S) -> AnyCancellable where S.Output == Self.Output? {
+        publisher.sink(receiveValue: { subject.send($0) })
     }
 }
 

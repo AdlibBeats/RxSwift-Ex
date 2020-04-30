@@ -7,9 +7,10 @@
 //
 
 import Swinject
+import Combine
 
 protocol CombineAboutInteractorProtocol: class {
-    var appVersion: AppVersion { get }
+    var appVersion: AnyPublisher<AppVersion, Never> { get }
 }
 
 final class CombineAboutInteractor: CombineAboutInteractorProtocol {
@@ -19,7 +20,7 @@ final class CombineAboutInteractor: CombineAboutInteractorProtocol {
         self.entityService = entityService
     }
     
-    var appVersion: AppVersion {
-        entityService.makeAppVersion() //.observeOn(MainScheduler.instance) //Realm accessed from incorrect thread.
+    var appVersion: AnyPublisher<AppVersion, Never> {
+        entityService.fetchCombineAppVersion()
     }
 }

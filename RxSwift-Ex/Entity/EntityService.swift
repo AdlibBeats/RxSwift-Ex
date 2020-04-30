@@ -11,13 +11,15 @@ import RxSwift
 import RxCocoa
 import RealmSwift
 import RxRealm
+import Combine
 
 enum EntityServiceError: Error {
     case invalidObjects
 }
 
 protocol EntityServiceProtocol: class {
-    func fetchAppVersion() -> Observable<AppVersion>
+    func fetchRXAppVersion() -> Observable<AppVersion>
+    func fetchCombineAppVersion() -> AnyPublisher<AppVersion, Never>
     
     func makeAppVersion() -> AppVersion
     func makeContacts() throws -> Contacts
@@ -35,7 +37,11 @@ final class EntityService: EntityServiceProtocol {
         }
     }
     
-    func fetchAppVersion() -> Observable<AppVersion> {
+    func fetchCombineAppVersion() -> AnyPublisher<AppVersion, Never> {
+        [makeAppVersion()].publisher.eraseToAnyPublisher()
+    }
+    
+    func fetchRXAppVersion() -> Observable<AppVersion> {
         Observable
             .create({ [realm] observer -> Disposable in
                 //TEST Realm
@@ -66,7 +72,7 @@ final class EntityService: EntityServiceProtocol {
     }
     
 //    TEST
-//    func fetchAppVersion() -> Observable<AppVersion> {
+//    func fetchRXAppVersion() -> Observable<AppVersion> {
 //        Observable.collection(from: realm.objects(AppVersion.self)).map({ [realm, disposedBag] in
 //            guard let appVersion = $0.last else {
 //                let appVersion = AppVersion().with { $0.version = "3.0.0" }
