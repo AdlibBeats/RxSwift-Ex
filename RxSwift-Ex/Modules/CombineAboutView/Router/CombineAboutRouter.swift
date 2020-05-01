@@ -11,8 +11,8 @@ import WebKit
 import Swinject
 
 protocol CombineAboutRouterProtocol: class {
-    var present: ((CombineAboutRouter.State?) -> Void) { get }
-    var push: ((CombineAboutRouter.State?) -> Void) { get }
+    var present: ((CombineAboutRouter.State) -> Void) { get }
+    var push: ((CombineAboutRouter.State) -> Void) { get }
 }
 
 final class CombineAboutRouter: CombineAboutRouterProtocol {
@@ -21,7 +21,7 @@ final class CombineAboutRouter: CombineAboutRouterProtocol {
         case web(WKWebView.Resource, String?)
     }
     
-    let present: ((CombineAboutRouter.State?) -> Void) = { state in
+    let present: ((CombineAboutRouter.State) -> Void) = { state in
         Container.shared.resolve(CombineAboutViewController.self).flatMap { nc in
             makeViewController(with: state).flatMap { vc in
                 nc.present(vc, animated: true)
@@ -29,7 +29,7 @@ final class CombineAboutRouter: CombineAboutRouterProtocol {
         }
     }
     
-    let push: ((CombineAboutRouter.State?) -> Void) = { state in
+    let push: ((CombineAboutRouter.State) -> Void) = { state in
         Container.shared.resolve(UINavigationController.self, name: "CombineAboutNavigationView").flatMap { nc in
             makeViewController(with: state).flatMap { vc in
                 nc.pushViewController(vc, animated: true)
@@ -38,13 +38,11 @@ final class CombineAboutRouter: CombineAboutRouterProtocol {
     }
 }
 
-private func makeViewController(with state: CombineAboutRouter.State!) -> UIViewController? {
-    state.flatMap {
-        switch $0 {
-        case .tips:
-            return nil /* TODO: create TipsViewController */
-        case .web(let resource, let title):
-            return WKWebViewController(with: resource, title: title)
-        }
+private func makeViewController(with state: CombineAboutRouter.State) -> UIViewController? {
+    switch state {
+    case .tips:
+        return nil /* TODO: create TipsViewController */
+    case .web(let resource, let title):
+        return WKWebViewController(with: resource, title: title)
     }
 }

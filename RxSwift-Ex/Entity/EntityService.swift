@@ -39,7 +39,8 @@ final class EntityService: EntityServiceProtocol {
     
     func fetchCombineAppVersion() -> AnyPublisher<AppVersion, Never> {
         Just(makeAppVersion())
-            .delay(for: .seconds(3), scheduler: DispatchQueue.main)
+            .delay(for: .seconds(3), scheduler: DispatchQueue.global(qos: .background))
+            .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
     

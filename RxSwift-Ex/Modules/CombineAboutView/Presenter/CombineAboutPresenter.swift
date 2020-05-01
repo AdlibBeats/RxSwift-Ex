@@ -31,7 +31,7 @@ final class CombineAboutPresenter: CombineAboutPresenterProtocol {
         input.tipsTapEvent
             .map { .tips }
             .throttle(for: .milliseconds(500), scheduler: DispatchQueue.main, latest: true) ~>
-            router.present ~
+            router?.present ~
         input.userAgreementTapEvent
             .combineLatest(model.userAgreementResource, model.webUserAgreementTitle)
             .map { .web($1, $2) }
