@@ -32,7 +32,8 @@ final class RxAboutPresenter: RxAboutPresenterProtocol {
         interactor.appVersion ~> model.appVersion ~
         input.tipsTapEvent
             .map { .tips }
-            .throttle(.milliseconds(500), scheduler: MainScheduler.asyncInstance) ~> router.present ~
+            .throttle(.milliseconds(500), scheduler: MainScheduler.asyncInstance) ~>
+            router.present ~
         Observable
             .merge(
                 input.userAgreementTapEvent.withLatestFrom(Observable.combineLatest(
