@@ -30,29 +30,34 @@ final class RxAboutPresenter: RxAboutPresenterProtocol {
     
     func transform(input: Input) -> Output {
         interactor.appVersion ~> model.appVersion ~
-        input.tipsTapEvent.map { .tips } ~> router.present ~
-        Observable.merge(
-            input.userAgreementTapEvent.withLatestFrom(Observable.combineLatest(
-                    model.userAgreementResource,
-                    model.webUserAgreementTitle
-                )
-            ).map { .web($0, $1) },
-            input.privacyPolicyTapEvent.withLatestFrom(Observable.combineLatest(
-                    model.privacyPolicyResource,
-                    model.webPrivacyPolicyTitle
-                )
-            ).map { .web($0, $1) }
-        ) ~> router.push ~ disposedBag
+        input.tipsTapEvent
+            .map { .tips }
+            .throttle(.milliseconds(500), scheduler: MainScheduler.asyncInstance) ~> router.present ~
+        Observable
+            .merge(
+                input.userAgreementTapEvent.withLatestFrom(Observable.combineLatest(
+                        model.userAgreementResource,
+                        model.webUserAgreementTitle
+                    )
+                ).map { .web($0, $1) },
+                input.privacyPolicyTapEvent.withLatestFrom(Observable.combineLatest(
+                        model.privacyPolicyResource,
+                        model.webPrivacyPolicyTitle
+                    )
+                ).map { .web($0, $1) }
+            )
+            .throttle(.milliseconds(500), scheduler: MainScheduler.asyncInstance) ~>
+            router.push ~ disposedBag
         
         return Output(
-            navBarTitle: model.navBarTitle.asDriver(),
-            title: model.title.asDriver(),
-            description: model.description.asDriver(),
-            tipsTitle: model.tipsTitle.asDriver(),
-            userAgreementTitle: model.userAgreementTitle.asDriver(),
-            privacyPolicyTitle: model.privacyPolicyTitle.asDriver(),
+            navBarTitle: model.navBarTitle.asDriver(onErrorJustReturn: ""),
+            title: model.title.asDriver(onErrorJustReturn: ""),
+            description: model.description.asDriver(onErrorJustReturn: ""),
+            tipsTitle: model.tipsTitle.asDriver(onErrorJustReturn: ""),
+            userAgreementTitle: model.userAgreementTitle.asDriver(onErrorJustReturn: ""),
+            privacyPolicyTitle: model.privacyPolicyTitle.asDriver(onErrorJustReturn: ""),
             appVersion: model.appVersion
-                .map({ "Версия \($0.version)" })
+                .map { "Версия \($0.version)" }
                 .asDriver(onErrorJustReturn: "")
         )
     }

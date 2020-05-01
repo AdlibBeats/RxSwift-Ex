@@ -28,16 +28,19 @@ final class CombineAboutPresenter: CombineAboutPresenterProtocol {
     
     func transform(input: Input) -> Output {
         interactor.appVersion ~> model.appVersion ~
+        input.tipsTapEvent
+            .map { .tips }
+            .throttle(for: .milliseconds(500), scheduler: DispatchQueue.main, latest: true) ~>
+            router.present ~
         input.userAgreementTapEvent
-            .combineLatest([model].publisher)
-            .flatMap { $1.userAgreementResource.combineLatest($1.webUserAgreementTitle) }
-            .map { .web($0, $1) }
+            .combineLatest(model.userAgreementResource, model.webUserAgreementTitle)
+            .map { .web($1, $2) }
             .merge(with: input.privacyPolicyTapEvent
-                .combineLatest([model].publisher)
-                .flatMap { $1.privacyPolicyResource.combineLatest($1.webPrivacyPolicyTitle) }
-                .map { .web($0, $1) }
+                .combineLatest(model.privacyPolicyResource, model.webPrivacyPolicyTitle)
+                .map { .web($1, $2) }
             )
-            .assign(to: \.push, on: router) ~ subscriptions
+            .throttle(for: .milliseconds(500), scheduler: DispatchQueue.main, latest: true) ~>
+            router.push ~ subscriptions
         
         return Output(
             navBarTitle: model.navBarTitle.eraseToAnyPublisher(),
@@ -46,7 +49,9 @@ final class CombineAboutPresenter: CombineAboutPresenterProtocol {
             tipsTitle: model.tipsTitle.eraseToAnyPublisher(),
             userAgreementTitle: model.userAgreementTitle.eraseToAnyPublisher(),
             privacyPolicyTitle: model.privacyPolicyTitle.eraseToAnyPublisher(),
-            appVersion: model.appVersion.map { "Версия \($0.version)" }.eraseToAnyPublisher()
+            appVersion: model.appVersion
+                .map { "Версия \($0.version)" }
+                .eraseToAnyPublisher()
         )
     }
 }

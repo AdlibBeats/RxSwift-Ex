@@ -11,34 +11,30 @@ import WebKit
 import Swinject
 
 protocol CombineAboutRouterProtocol: class {
-    var present: CombineAboutRouter.State! { get set }
-    var push: CombineAboutRouter.State! { get set }
+    var present: ((CombineAboutRouter.State?) -> Void) { get }
+    var push: ((CombineAboutRouter.State?) -> Void) { get }
 }
 
 final class CombineAboutRouter: CombineAboutRouterProtocol {
-    var present: State! {
-        willSet {
-            Container.shared.resolve(CombineAboutViewController.self).flatMap { nc in
-                makeViewController(with: newValue).flatMap { vc in
-                    nc.present(vc, animated: true)
-                }
-            }
-        }
-    }
-    
-    var push: State! {
-        willSet {
-            Container.shared.resolve(UINavigationController.self, name: "CombineAboutNavigationView").flatMap { nc in
-                makeViewController(with: newValue).flatMap { vc in
-                    nc.pushViewController(vc, animated: true)
-                }
-            }
-        }
-    }
-    
     enum State {
         case tips
         case web(WKWebView.Resource, String?)
+    }
+    
+    let present: ((CombineAboutRouter.State?) -> Void) = { state in
+        Container.shared.resolve(CombineAboutViewController.self).flatMap { nc in
+            makeViewController(with: state).flatMap { vc in
+                nc.present(vc, animated: true)
+            }
+        }
+    }
+    
+    let push: ((CombineAboutRouter.State?) -> Void) = { state in
+        Container.shared.resolve(UINavigationController.self, name: "CombineAboutNavigationView").flatMap { nc in
+            makeViewController(with: state).flatMap { vc in
+                nc.pushViewController(vc, animated: true)
+            }
+        }
     }
 }
 

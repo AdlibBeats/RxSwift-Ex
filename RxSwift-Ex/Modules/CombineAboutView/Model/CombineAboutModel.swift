@@ -11,14 +11,15 @@ import Combine
 
 struct CombineAboutModel {
     let appVersion = CurrentValueSubject<AppVersion, Never>(AppVersion().with { $0.version = "..." })
-    let userAgreementResource = CurrentValueSubject<WKWebView.Resource, Never>(.local("ABOUT_TOKENS_\("ru")"))
-    let privacyPolicyResource = CurrentValueSubject<WKWebView.Resource, Never>(.network("https://google.com/"))
-    let navBarTitle = CurrentValueSubject<String, Never>("О приложении")
-    let title = CurrentValueSubject<String, Never>("КАЛЕНДАРЬ БЕРЕМЕННОСТИ")
-    let description = CurrentValueSubject<String, Never>("Рекомендации профессиональных врачей для каждой недели беременности")
-    let tipsTitle = CurrentValueSubject<String, Never>("Подсказки")
-    let userAgreementTitle = CurrentValueSubject<String, Never>("Пользовательское соглашение")
-    let privacyPolicyTitle = CurrentValueSubject<String, Never>("Политика конфиденциальности")
-    let webUserAgreementTitle = CurrentValueSubject<String, Never>("Польз. соглашение")
-    let webPrivacyPolicyTitle = CurrentValueSubject<String, Never>("Полит. конфиденциальности")
+    
+    let userAgreementResource = Just(WKWebView.Resource.local("ABOUT_TOKENS_\("ru")"))
+    let privacyPolicyResource = Just(WKWebView.Resource.network("https://google.com/"))
+    let navBarTitle = Just("О приложении")
+    let title = Just("КАЛЕНДАРЬ БЕРЕМЕННОСТИ")
+    let description = Just("Рекомендации профессиональных врачей для каждой недели беременности")
+    let tipsTitle = Just("Подсказки")
+    let userAgreementTitle = Just("Пользовательское соглашение")
+    let privacyPolicyTitle = Just("Политика конфиденциальности")
+    let webUserAgreementTitle = Just("Польз. соглашение")
+    let webPrivacyPolicyTitle = Just("Полит. конфиденциальности")
 }

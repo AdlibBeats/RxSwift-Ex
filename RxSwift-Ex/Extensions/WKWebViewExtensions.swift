@@ -14,7 +14,24 @@ extension WKWebView {
         case invalidRequest
     }
     
-    enum Resource {
+    enum Resource: Equatable {
+        static func == (lhs: WKWebView.Resource, rhs: WKWebView.Resource) -> Bool {
+            if
+                case let WKWebView.Resource.local(lResource, lFileType) = lhs,
+                case let WKWebView.Resource.local(rResource, rFileType) = rhs,
+                lResource == rResource,
+                lFileType == rFileType {
+                return true
+            } else if
+                case let WKWebView.Resource.network(lResource, lAnchor, lHeaders) = lhs,
+                case let WKWebView.Resource.network(rResource, rAnchor, rHeaders) = rhs,
+                lResource == rResource,
+                lAnchor == rAnchor,
+                lHeaders.dictionary == rHeaders.dictionary {
+                return true
+            } else { return false }
+        }
+        
         case local(String, FileType = .html)
         case network(String, Anchor = "", HTTPHeaders = [:])
     }
