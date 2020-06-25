@@ -15,17 +15,15 @@ import RealmSwift
 import SVProgressHUD
 
 extension Reactive where Base : UIViewController {
-    var present: Binder<UIViewController?> {
+    func present(animated: Bool = true) -> Binder<UIViewController> {
         Binder(base) { viewController, value in
-            value.flatMap {
-                viewController.present($0, animated: true)
-            }
+            viewController.present(value, animated: true)
         }
     }
     
-    var push: Binder<UIViewController?> {
+    func push(animated: Bool = true) -> Binder<UIViewController> {
         Binder(base) { viewController, value in
-            viewController.navigationController?.rx.push.on(.next(value))
+            viewController.navigationController?.rx.push(animated: animated).on(.next(value))
         }
     }
     
@@ -37,11 +35,9 @@ extension Reactive where Base : UIViewController {
 }
 
 extension Reactive where Base : UINavigationController {
-    var push: Binder<UIViewController?> {
+    func push(animated: Bool = true) -> Binder<UIViewController> {
         Binder(base) { navigationController, value in
-            value.flatMap {
-                navigationController.pushViewController($0, animated: true)
-            }
+            navigationController.pushViewController(value, animated: animated)
         }
     }
 }
@@ -83,9 +79,9 @@ extension Reactive where Base : UIButton {
 }
 
 extension Reactive where Base : UIDatePicker {
-    var date: Binder<Date> {
+    func date(animated: Bool = true) -> Binder<Date> {
         Binder(base) { datePicker, date in
-            datePicker.setDate(date, animated: false)
+            datePicker.setDate(date, animated: animated)
         }
     }
     
@@ -103,9 +99,9 @@ extension Reactive where Base : UIDatePicker {
 }
 
 extension Reactive where Base : UIView {
-    var endEditing: Binder<Bool> {
-        Binder(base) { view, value in
-            view.endEditing(value)
+    func endEditing(force: Bool = true) -> Binder<Void> {
+        Binder(base) { view, _ in
+            view.endEditing(force)
         }
     }
 }

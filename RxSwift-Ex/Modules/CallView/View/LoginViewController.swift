@@ -66,8 +66,8 @@ final class LoginViewController: UIViewController {
                 passwordTextField.rx.becomeFirstResponder ~
                 passwordTextField.rx.controlEvent(.editingDidEndOnExit) ~>
                 passwordTextField.rx.resignFirstResponder ~
-                view.rx.tapGesture().when(.recognized).map { _ in true } ~>
-                view.rx.endEditing ~
+                view.rx.tapGesture().when(.recognized).map { _ in } ~>
+                view.rx.endEditing() ~
                 isLoginButtonEnabled.map { $0 ?
                     UIColor.kbrMainPinkColor :
                     UIColor.kbrMainPinkColor.withAlphaComponent(0.2)
@@ -114,7 +114,7 @@ final class LoginViewController: UIViewController {
                         $0.loginAction = { [weak self] in self?.login() }
                         
                         self?.title = "Logout"
-                        self?.rx.push.on(.next($0))
+                        self?.rx.push().on(.next($0))
                 }
             },
             failure: { [weak self] error in
