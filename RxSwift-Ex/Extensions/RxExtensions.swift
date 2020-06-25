@@ -114,6 +114,14 @@ extension Reactive where Base : UIViewController {
     }
 }
 
+extension Reactive where Base : UISwitch {
+    func setOn(animated: Bool = true) -> Binder<Bool> {
+        Binder(base) { switchControl, value in
+            switchControl.setOn(value, animated: animated)
+        }
+    }
+}
+
 extension Reactive where Base : WKWebView {
     var load: Binder<WKWebView.Resource> {
         Binder(base) { webView, value in
