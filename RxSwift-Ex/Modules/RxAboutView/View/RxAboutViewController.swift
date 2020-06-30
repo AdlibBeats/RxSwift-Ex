@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxKeyboard
 import RxBinding
 import RxSwift
 import RxCocoa
@@ -99,6 +100,19 @@ final class RxAboutViewController: UIViewController {
         $0.numberOfLines = 0
     }
     
+    private let testTextField = UITextField().then {
+        let testText = "Something text"
+        $0.returnKeyType = .done
+        $0.tintColor = .white
+        $0.textColor = .white
+        $0.text = testText
+        $0.placeholder = testText
+        $0.attributedPlaceholder = NSAttributedString(
+            string: testText,
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
+        )
+    }
+    
     private let menuButtonsStackView = UIStackView().then {
         $0.axis = .vertical
     }
@@ -162,6 +176,15 @@ final class RxAboutViewController: UIViewController {
                     $3.centerX.alignWithSuperview()
                     $3.width.set(295).priority = .init(999)
                 }
+                
+                rootView.addSubview(testTextField) {
+                    $0.edges(.left, .right).pinToSuperview(insets: .zero, relation: .greaterThanOrEqual)
+                    $0.centerX.alignWithSuperview()
+                }
+                
+                Constraints(for: descriptionLabel, testTextField) {
+                    $1.top.align(with: $0.bottom + 30)
+                }
             }
             
             func setStackViews() {
@@ -180,7 +203,7 @@ final class RxAboutViewController: UIViewController {
                     $1.height.set(1)
                 }
                 
-                Constraints(for: descriptionLabel, menuButtonsStackView) {
+                Constraints(for: testTextField, menuButtonsStackView) {
                     $1.top.align(with: $0.bottom + 30, relation: .greaterThanOrEqual)
                 }
             }
@@ -208,7 +231,22 @@ final class RxAboutViewController: UIViewController {
                 )
             )
             
-            output.navBarTitle ~> rx.title ~
+            
+            
+            RxKeyboard.instance
+                .willShowVisibleHeight
+                .map { "\($0)" }
+                .drive(onNext: {
+                    print("Time: \(DateFormatter().with { $0.dateFormat = "HH:mm:ss" }.string(from: Date())), visibleHeight \($0)")
+                }
+            ).disposed(by: disposeBag)
+            
+            
+            /* output.navBarTitle ~> rx.title ~ */
+            Observable.merge(
+                view.rx.tapGesture().when(.recognized).map { _ in },
+                testTextField.rx.controlEvent(.editingDidEndOnExit).map { _ in }
+            ) ~> view.rx.endEditing() ~
             output.title ~> titleLabel.rx.text ~
             output.description ~> descriptionLabel.rx.text ~
             output.tipsTitle ~> tipsButton.rx.text ~

@@ -31,6 +31,9 @@ PODS:
   - RxGesture (3.0.2):
     - RxCocoa (~> 5.1)
     - RxSwift (~> 5.1)
+  - RxKeyboard (1.0.0):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
   - RxLocalizer (1.5.0):
     - RxCocoa (~> 5.1.1)
     - RxSwift (~> 5.1.1)
@@ -67,6 +70,7 @@ DEPENDENCIES:
   - RxDataSources
   - RxFeedback
   - RxGesture
+  - RxKeyboard
   - RxLocalizer
   - RxReachability
   - RxRealm
@@ -92,6 +96,7 @@ SPEC REPOS:
     - RxDataSources
     - RxFeedback
     - RxGesture
+    - RxKeyboard
     - RxLocalizer
     - RxReachability
     - RxRealm
@@ -119,6 +124,7 @@ SPEC CHECKSUMS:
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxFeedback: 4260d8dad5bba28b182c0b9ff5bce68c260de183
   RxGesture: d6bd7447ca3a596c7a9702a6a2b6a2bb5d8bae54
+  RxKeyboard: 6683c4344304a00f943c158bd8a43ce5469c82a7
   RxLocalizer: 7db2f964848a885d996d36f47f0e88a477cd627a
   RxReachability: 21d3e96f39bc166a21c357e923f47dec148ca97b
   RxRealm: 900f5c7e6f0a2d6527b56eaf7283f3035ec1e8ba
@@ -132,6 +138,6 @@ SPEC CHECKSUMS:
   VoxImplantSDK: 5d52bdba51a8cff528f6ec71bf85aebe111c4bf1
   VoxImplantWebRTC: 0f59be5f7362ed7af3de6718c9ed50735691ee99
 
-PODFILE CHECKSUM: a913ff88875d911a4a64618c21106b58646390e5
+PODFILE CHECKSUM: 0ad5f3436f2cbd52b2c11b183ee313c04e29fed9
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3
