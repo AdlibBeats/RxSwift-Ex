@@ -27,7 +27,7 @@ protocol EntityServiceProtocol: class {
 
 final class EntityService: EntityServiceProtocol {
     private let realm: Realm
-    private let disposedBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     init() {
         do {

@@ -23,7 +23,7 @@ final class RxAboutPresenter: RxAboutPresenterProtocol {
     typealias Interactor = RxAboutInteractorProtocol
     
     private var model = RxAboutModel()
-    private let disposedBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     var router: Router!
     var interactor: Interactor!
@@ -48,7 +48,7 @@ final class RxAboutPresenter: RxAboutPresenterProtocol {
                 ).map { .web($0, $1) }
             )
             .throttle(.milliseconds(500), scheduler: MainScheduler.asyncInstance) ~>
-            router.push ~ disposedBag
+            router.push ~ disposeBag
         
         return Output(
             navBarTitle: model.navBarTitle.asDriver(onErrorJustReturn: ""),
