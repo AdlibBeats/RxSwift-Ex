@@ -231,8 +231,6 @@ final class RxAboutViewController: UIViewController {
                 )
             )
             
-            
-            
             RxKeyboard.instance
                 .willShowVisibleHeight
                 .map { "\($0)" }
@@ -241,12 +239,11 @@ final class RxAboutViewController: UIViewController {
                 }
             ).disposed(by: disposeBag)
             
-            
-            /* output.navBarTitle ~> rx.title ~ */
             Observable.merge(
                 view.rx.tapGesture().when(.recognized).map { _ in },
                 testTextField.rx.controlEvent(.editingDidEndOnExit).map { _ in }
             ) ~> view.rx.endEditing() ~
+            output.navBarTitle ~> rx.title ~
             output.title ~> titleLabel.rx.text ~
             output.description ~> descriptionLabel.rx.text ~
             output.tipsTitle ~> tipsButton.rx.text ~
