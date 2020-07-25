@@ -7,7 +7,9 @@
 //
 
 import Combine
+import CombineBinding
 import WebKit
+import Then
 
 protocol CombineAboutPresenterProtocol: class {
     typealias Input = CombineAboutPresenter.Input
@@ -55,6 +57,8 @@ final class CombineAboutPresenter: CombineAboutPresenterProtocol {
         )
     }
 }
+
+extension CombineAboutPresenter: Then { }
 
 extension CombineAboutPresenter {
     struct Input {

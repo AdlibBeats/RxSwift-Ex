@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol Module {
+protocol ModuleProtocol {
     associatedtype Input
     associatedtype Output
 
@@ -19,7 +19,7 @@ protocol Module {
     init(view: UIViewController, input: Input?, output: Output?)
 }
 
-class BaseModule<I, O>: Module {
+class BaseModule<I, O>: ModuleProtocol {
     typealias Input = I
     typealias Output = O
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import Combine
+import CombineBinding
 import Align
 
 final class CombineAboutViewController: UIViewController {
@@ -215,13 +216,13 @@ final class CombineAboutViewController: UIViewController {
                 )
             )
             
-            output.navBarTitle ~> titleBinder ~
-            output.title ~> titleLabel.textBinder ~
-            output.description ~> descriptionLabel.textBinder ~
-            output.tipsTitle ~> tipsButton.textBinder ~
-            output.userAgreementTitle ~> userAgreementButton.textBinder ~
-            output.privacyPolicyTitle ~> privacyPolicyButton.textBinder ~
-            output.appVersion ~> appVersionLabel.textBinder ~ subscriptions
+            output.navBarTitle ~> cb.title ~
+            output.title ~> titleLabel.cb.text ~
+            output.description ~> descriptionLabel.cb.text ~
+            output.tipsTitle ~> tipsButton.cb.text ~
+            output.userAgreementTitle ~> userAgreementButton.cb.text ~
+            output.privacyPolicyTitle ~> privacyPolicyButton.cb.text ~
+                output.appVersion ~> appVersionLabel.cb.text ~ subscriptions
         }
         
         setConstraints()
@@ -229,6 +230,6 @@ final class CombineAboutViewController: UIViewController {
     }
 }
 
-private extension CombineAboutViewController.MenuButton {
-    var textBinder: ((String?) -> Void) { { [weak self] in self?.text = $0 } }
+private extension Combine where Base: CombineAboutViewController.MenuButton {
+    var text: ((String?) -> Void) { { [weak base] in base?.text = $0 } }
 }

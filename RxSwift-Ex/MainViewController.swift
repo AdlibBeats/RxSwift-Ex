@@ -20,7 +20,7 @@ final class MainViewController: UITabBarController {
     private func appendAboutViewController(at viewControllers: inout [UIViewController]?) {
         Container.shared.resolve(RxAboutViewController.self).flatMap { vc in
             vc.tabBarItem = .init(tabBarSystemItem: .more, tag: 1)
-            Container.shared.resolve(UINavigationController.self, name: "RxAboutNavigationView").flatMap { nc in
+            Container.shared.resolveNavigationController(module: .rxAbout).flatMap { nc in
                 nc.setViewControllers([vc], animated: false)
                 viewControllers?.append(nc)
             }
@@ -28,7 +28,7 @@ final class MainViewController: UITabBarController {
         
         Container.shared.resolve(CombineAboutViewController.self).flatMap { vc in
             vc.tabBarItem = .init(tabBarSystemItem: .more, tag: 1)
-            Container.shared.resolve(UINavigationController.self, name: "CombineAboutNavigationView").flatMap { nc in
+            Container.shared.resolveNavigationController(module: .combineAbout).flatMap { nc in
                 nc.setViewControllers([vc], animated: false)
                 viewControllers?.append(nc)
             }

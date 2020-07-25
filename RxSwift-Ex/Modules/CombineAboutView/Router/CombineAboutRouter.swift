@@ -30,7 +30,7 @@ final class CombineAboutRouter: CombineAboutRouterProtocol {
     }
     
     let push: ((CombineAboutRouter.State) -> Void) = { state in
-        Container.shared.resolve(UINavigationController.self, name: "CombineAboutNavigationView").flatMap { nc in
+        Container.shared.resolveNavigationController(module: .combineAbout).flatMap { nc in
             makeViewController(with: state).flatMap { vc in
                 nc.pushViewController(vc, animated: true)
             }

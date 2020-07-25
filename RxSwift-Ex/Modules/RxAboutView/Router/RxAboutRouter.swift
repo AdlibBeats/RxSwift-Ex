@@ -37,7 +37,7 @@ extension RxAboutRouter: RxAboutRouterProtocol {
     
     var push: Binder<State> {
         Binder(self) { _, state in
-            Container.shared.resolve(UINavigationController.self, name: "RxAboutNavigationView").flatMap { nc in
+            Container.shared.resolveNavigationController(module: .rxAbout).flatMap { nc in
                 makeViewController(with: state).flatMap { vc in
                     nc.pushViewController(vc, animated: true)
                 }

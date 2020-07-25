@@ -8,26 +8,38 @@
 
 import Swinject
 import SwinjectStoryboard
+import Then
+
+enum ContainerError: Error {
+    case unwrapped
+}
 
 extension ObjectScope {
     static let servicesScope = ObjectScope(storageFactory: PermanentStorage.init)
-    static let viewControllersScope = ObjectScope(storageFactory: PermanentStorage.init)
+}
+
+// MARK: Then
+extension Container: Then { }
+
+enum Module: String {
+    case rxAbout
+    case combineAbout
+    case test
 }
 
 extension Container {
-    static let shared: Container = {
-        let container = Container()
+    static let shared = Container().with {
         
-        container
-            .register(EntityServiceProtocol.self, factory: { _ in EntityService() })
-            .inObjectScope(.servicesScope)
+        /* register services */
+        $0.register(EntityServiceProtocol.self, factory: { _ in EntityService() })
         
-        container
-            .register(UINavigationController.self, name: "RxAboutNavigationView", factory: { _ in UINavigationController() })
-            .inObjectScope(.viewControllersScope)
+        $0.register(TestViewModel.self, factory: { _ in TestViewModel(/* inject services */) })
+        $0.register(UIViewController.self, name: Module.test.rawValue, factory: { resolver in
+            TestViewController(viewModel: resolver.resolve(TestViewModel.self)!)
+        }).inObjectScope(.container)
         
-        container
-            .register(RxAboutViewController.self, factory: { r in
+        $0.register(UINavigationController.self, name: Module.rxAbout.rawValue, factory: { _ in UINavigationController() })
+        $0.register(RxAboutViewController.self, factory: { r in
                 let viewController = RxAboutViewController()
                 let presenter = RxAboutPresenter()
                 viewController.presenter = presenter
@@ -36,15 +48,10 @@ extension Container {
                 }
                 presenter.router = RxAboutRouter()
                 return viewController
-            })
-            .inObjectScope(.viewControllersScope)
+        }).inObjectScope(.container)
         
-        container
-            .register(UINavigationController.self, name: "CombineAboutNavigationView", factory: { _ in UINavigationController() })
-            .inObjectScope(.viewControllersScope)
-        
-        container
-            .register(CombineAboutViewController.self, factory: { r in
+        $0.register(UINavigationController.self, name: Module.combineAbout.rawValue, factory: { _ in UINavigationController() })
+        $0.register(CombineAboutViewController.self, factory: { r in
                 let viewController = CombineAboutViewController()
                 let presenter = CombineAboutPresenter()
                 viewController.presenter = presenter
@@ -53,9 +60,29 @@ extension Container {
                 }
                 presenter.router = CombineAboutRouter()
                 return viewController
-            })
-            .inObjectScope(.viewControllersScope)
-        
-        return container
-    }()
+        }).inObjectScope(.container)
+    }
+    
+    private func localResolve<Service>(_ serviceType: Service.Type) throws -> Service {
+        guard let resolver = resolve(serviceType) else { throw ContainerError.unwrapped }
+        return resolver
+    }
+    
+    private func localResolve<Service>(_ serviceType: Service.Type, name: String) throws -> Service {
+        guard let resolver = resolve(serviceType, name: name) else { throw ContainerError.unwrapped }
+        return resolver
+    }
+    
+    private func resolve<Service>(_ serviceType: Service.Type, module: Module) throws -> Service {
+        guard let resolver = resolve(serviceType, name: module.rawValue) else { throw ContainerError.unwrapped }
+        return resolver
+    }
+    
+    func resolveViewController(module: Module) -> UIViewController? {
+        try? resolve(UIViewController.self, module: module)
+    }
+    
+    func resolveNavigationController(module: Module) -> UINavigationController? {
+        try? resolve(UINavigationController.self, module: module)
+    }
 }

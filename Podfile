@@ -1,4 +1,4 @@
-platform :ios, '12.4'
+platform :ios, '13.0'
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 inhibit_all_warnings!
@@ -16,13 +16,15 @@ def shared_pods
   pod 'RxDataSources'
   pod 'RxFeedback'
   pod 'RxGesture'
-  pod 'RxRealm'
+  pod 'RxRealm', '2.0.0'
   pod 'RxReachability'
   pod 'RxLocalizer'
   pod 'RxUIAlert'
   
+  pod 'CombineBinding'
+  
   pod 'Then'
-  pod 'Align'
+  pod 'Align', '1.2.1'
   pod 'SVProgressHUD'
   
   pod 'VoxImplantSDK'

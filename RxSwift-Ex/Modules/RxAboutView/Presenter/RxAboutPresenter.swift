@@ -10,6 +10,7 @@ import RxBinding
 import RxSwift
 import RxCocoa
 import WebKit
+import Then
 
 protocol RxAboutPresenterProtocol: class {
     typealias Input = RxAboutPresenter.Input
@@ -63,6 +64,8 @@ final class RxAboutPresenter: RxAboutPresenterProtocol {
         )
     }
 }
+
+extension RxAboutPresenter: Then { }
 
 extension RxAboutPresenter {
     struct Input {

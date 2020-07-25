@@ -1,8 +1,9 @@
 PODS:
-  - Alamofire (5.1.0)
+  - Alamofire (5.2.2)
   - AlamofireImage (4.1.0):
     - Alamofire (~> 5.1)
   - Align (1.2.1)
+  - CombineBinding (0.3.0)
   - Differentiator (4.0.1)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
@@ -15,9 +16,9 @@ PODS:
   - Realm/Headers (4.4.1)
   - RealmSwift (4.4.1):
     - Realm (= 4.4.1)
-  - RxBinding (0.3.1):
-    - RxCocoa (~> 5)
-    - RxSwift (~> 5)
+  - RxBinding (0.4):
+    - RxCocoa (< 6.0.0, >= 5.0.0)
+    - RxSwift (< 6.0.0, >= 5.0.0)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -47,23 +48,24 @@ PODS:
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
-  - RxUIAlert (1.3.0):
+  - RxUIAlert (1.3.1):
     - RxCocoa
     - RxSwift
   - SVProgressHUD (2.2.5)
   - Swinject (2.6.0)
   - SwinjectStoryboard (2.2.0):
     - Swinject (~> 2.6)
-  - Then (2.6.0)
-  - VoxImplantSDK (2.30.0):
-    - VoxImplantSDK/Core (= 2.30.0)
-  - VoxImplantSDK/Core (2.30.0):
-    - VoxImplantWebRTC (= 78.2.0)
-  - VoxImplantWebRTC (78.2.0)
+  - Then (2.7.0)
+  - VoxImplantSDK (2.33.0):
+    - VoxImplantSDK/Core (= 2.33.0)
+  - VoxImplantSDK/Core (2.33.0):
+    - VoxImplantWebRTC (= 78.4.0)
+  - VoxImplantWebRTC (78.4.0)
 
 DEPENDENCIES:
   - AlamofireImage
-  - Align
+  - Align (= 1.2.1)
+  - CombineBinding
   - Moya/RxSwift
   - RxBinding
   - RxCocoa
@@ -73,7 +75,7 @@ DEPENDENCIES:
   - RxKeyboard
   - RxLocalizer
   - RxReachability
-  - RxRealm
+  - RxRealm (= 2.0.0)
   - RxUIAlert
   - SVProgressHUD
   - Swinject (= 2.6.0)
@@ -86,6 +88,7 @@ SPEC REPOS:
     - Alamofire
     - AlamofireImage
     - Align
+    - CombineBinding
     - Differentiator
     - Moya
     - ReachabilitySwift
@@ -111,15 +114,16 @@ SPEC REPOS:
     - VoxImplantWebRTC
 
 SPEC CHECKSUMS:
-  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   AlamofireImage: c4a2ba349885fb3064feb74d2e547bd42ce9be10
   Align: e52659c1eda1e52aa470e3a69e36ce5fbac7f475
+  CombineBinding: e8c996c450d1e69e63b2cb5713ee152a2cb240f7
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
   Realm: 4eb04d7487bd43c0581256f40b424eafb711deff
   RealmSwift: 3eb8924ff7100df5928c7602f71d0fec51e7c9c5
-  RxBinding: 58be2cf1311165489a66eacb4a3e33932d598a53
+  RxBinding: da433c012633802a72c2a5bec8775b86f4cddeb8
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxFeedback: 4260d8dad5bba28b182c0b9ff5bce68c260de183
@@ -130,14 +134,14 @@ SPEC CHECKSUMS:
   RxRealm: 900f5c7e6f0a2d6527b56eaf7283f3035ec1e8ba
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
-  RxUIAlert: b1c5319ab497704a5af3a9c1663634eceb3b9d89
+  RxUIAlert: 1f6df0b98b1a16143e2e377846fe01a70d561918
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
   SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
-  Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
-  VoxImplantSDK: 5d52bdba51a8cff528f6ec71bf85aebe111c4bf1
-  VoxImplantWebRTC: 0f59be5f7362ed7af3de6718c9ed50735691ee99
+  Then: acfe0be7e98221c6204e12f8161459606d5d822d
+  VoxImplantSDK: 4ab9acf9ee13dda8b3391c8943fef22a1b70aa80
+  VoxImplantWebRTC: ad3d5f239d3959c44dc10c44da977216076b772d
 
-PODFILE CHECKSUM: 0ad5f3436f2cbd52b2c11b183ee313c04e29fed9
+PODFILE CHECKSUM: 734e009dca425341096b11e1093829a51eed85d8
 
 COCOAPODS: 1.9.3
