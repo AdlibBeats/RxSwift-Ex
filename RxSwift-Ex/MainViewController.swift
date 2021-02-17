@@ -10,8 +10,6 @@ import UIKit
 import Swinject
 import SwinjectStoryboard
 
-//fixxxxsdfdsfdsfsdf
-
 final class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
