@@ -1198,7 +1198,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.proarttherapy.RxSwift-Ex";
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.proarttherapy.RxSwift-Ex-2";
 				PRODUCT_NAME = "RxSwift-Ex";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1219,7 +1219,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.proarttherapy.RxSwift-Ex";
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.proarttherapy.RxSwift-Ex-2";
 				PRODUCT_NAME = "RxSwift-Ex";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
