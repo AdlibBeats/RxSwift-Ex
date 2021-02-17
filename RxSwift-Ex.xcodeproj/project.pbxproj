@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4913AC1D24503BE600ECBEBE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4913AC1C24503BE600ECBEBE /* LoginViewController.swift */; };
-		4913AC2A245074C800ECBEBE /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4913AC29245074C800ECBEBE /* LoginView.storyboard */; };
-		4913AC2C24508A4500ECBEBE /* CallView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4913AC2B24508A4500ECBEBE /* CallView.storyboard */; };
-		4913AC2E24508A5300ECBEBE /* CallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4913AC2D24508A5300ECBEBE /* CallViewController.swift */; };
+		125D15C2969E462FDB03C5C9 /* Pods_RxSwift_Ex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC8D8CB1A03C8C8DC78C52C /* Pods_RxSwift_Ex.framework */; };
 		4913AC302450C88400ECBEBE /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4913AC2F2450C88400ECBEBE /* UIColorExtensions.swift */; };
 		49203822244C9AD6001FB093 /* ContactPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49203821244C9AD6001FB093 /* ContactPresenter.swift */; };
 		49203824244C9AEA001FB093 /* ContactInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49203823244C9AEA001FB093 /* ContactInteractor.swift */; };
@@ -67,12 +64,8 @@
 		4946DE802458DEE10098433F /* UIScrollView+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946DE742458DEE10098433F /* UIScrollView+Combine.swift */; };
 		4946DE812458DEE10098433F /* UIRefreshControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946DE752458DEE10098433F /* UIRefreshControl+Combine.swift */; };
 		4946DE822458DEE10098433F /* UIDatePicker+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946DE762458DEE10098433F /* UIDatePicker+Combine.swift */; };
-		4951CB332452F5370025E45C /* CXAudioFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951CB322452F5370025E45C /* CXAudioFile.swift */; };
-		4951CB352452F6A10025E45C /* CXExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951CB342452F6A10025E45C /* CXExtensions.swift */; };
 		4951CB392452F8BD0025E45C /* fennelliott-beeping.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4951CB372452F8BC0025E45C /* fennelliott-beeping.wav */; };
 		4951CB3A2452F8BD0025E45C /* noisecollector-beam.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 4951CB382452F8BC0025E45C /* noisecollector-beam.aiff */; };
-		4951CB3E245301730025E45C /* CallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951CB3D245301730025E45C /* CallManager.swift */; };
-		4951CB4A2453100B0025E45C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951CB492453100B0025E45C /* Settings.swift */; };
 		495CBDDF244C69AB005AEA7D /* ContactView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 495CBDDE244C69AB005AEA7D /* ContactView.storyboard */; };
 		495CBDE1244C6B9E005AEA7D /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CBDE0244C6B9E005AEA7D /* ContactViewController.swift */; };
 		49624C6324483CCC009660D3 /* RxAboutRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49624C6224483CCC009660D3 /* RxAboutRouter.swift */; };
@@ -126,16 +119,10 @@
 		49E3D5682345F9D100861760 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E3D5662345F9D100861760 /* LaunchScreen.storyboard */; };
 		49F0AEBF244731B900222DCF /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0AEBE244731B900222DCF /* AppVersion.swift */; };
 		49F0AEC224473A0600222DCF /* EntityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0AEC124473A0600222DCF /* EntityService.swift */; };
-		DA3B81F475650B9392E0FC9C /* Pods_RxSwift_Ex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EE19A776A296C27E4660280 /* Pods_RxSwift_Ex.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4753E5B33CB9E13A06238327 /* Pods-RxSwift-Ex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift-Ex.debug.xcconfig"; path = "Target Support Files/Pods-RxSwift-Ex/Pods-RxSwift-Ex.debug.xcconfig"; sourceTree = "<group>"; };
-		4913AC1C24503BE600ECBEBE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4913AC1E24503C0000ECBEBE /* RxSwift-Ex.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "RxSwift-Ex.entitlements"; sourceTree = "<group>"; };
-		4913AC29245074C800ECBEBE /* LoginView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginView.storyboard; sourceTree = "<group>"; };
-		4913AC2B24508A4500ECBEBE /* CallView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CallView.storyboard; sourceTree = "<group>"; };
-		4913AC2D24508A5300ECBEBE /* CallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallViewController.swift; sourceTree = "<group>"; };
 		4913AC2F2450C88400ECBEBE /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		49203821244C9AD6001FB093 /* ContactPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPresenter.swift; sourceTree = "<group>"; };
 		49203823244C9AEA001FB093 /* ContactInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInteractor.swift; sourceTree = "<group>"; };
@@ -192,12 +179,8 @@
 		4946DE742458DEE10098433F /* UIScrollView+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Combine.swift"; sourceTree = "<group>"; };
 		4946DE752458DEE10098433F /* UIRefreshControl+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+Combine.swift"; sourceTree = "<group>"; };
 		4946DE762458DEE10098433F /* UIDatePicker+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDatePicker+Combine.swift"; sourceTree = "<group>"; };
-		4951CB322452F5370025E45C /* CXAudioFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXAudioFile.swift; sourceTree = "<group>"; };
-		4951CB342452F6A10025E45C /* CXExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CXExtensions.swift; sourceTree = "<group>"; };
 		4951CB372452F8BC0025E45C /* fennelliott-beeping.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "fennelliott-beeping.wav"; sourceTree = "<group>"; };
 		4951CB382452F8BC0025E45C /* noisecollector-beam.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "noisecollector-beam.aiff"; sourceTree = "<group>"; };
-		4951CB3D245301730025E45C /* CallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallManager.swift; sourceTree = "<group>"; };
-		4951CB492453100B0025E45C /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		495CBDDE244C69AB005AEA7D /* ContactView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContactView.storyboard; sourceTree = "<group>"; };
 		495CBDE0244C6B9E005AEA7D /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		49624C6224483CCC009660D3 /* RxAboutRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAboutRouter.swift; sourceTree = "<group>"; };
@@ -253,8 +236,9 @@
 		49E3D5692345F9D100861760 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49F0AEBE244731B900222DCF /* AppVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
 		49F0AEC124473A0600222DCF /* EntityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityService.swift; sourceTree = "<group>"; };
-		8EE19A776A296C27E4660280 /* Pods_RxSwift_Ex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwift_Ex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A7D3DCF8F62A0815B6961676 /* Pods-RxSwift-Ex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift-Ex.release.xcconfig"; path = "Target Support Files/Pods-RxSwift-Ex/Pods-RxSwift-Ex.release.xcconfig"; sourceTree = "<group>"; };
+		9267D7A4A1518BBF053DAA9C /* Pods-RxSwift-Ex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift-Ex.debug.xcconfig"; path = "Target Support Files/Pods-RxSwift-Ex/Pods-RxSwift-Ex.debug.xcconfig"; sourceTree = "<group>"; };
+		9EC8D8CB1A03C8C8DC78C52C /* Pods_RxSwift_Ex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwift_Ex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C103989DFDB1B0F6326C206F /* Pods-RxSwift-Ex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift-Ex.release.xcconfig"; path = "Target Support Files/Pods-RxSwift-Ex/Pods-RxSwift-Ex.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,34 +246,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA3B81F475650B9392E0FC9C /* Pods_RxSwift_Ex.framework in Frameworks */,
+				125D15C2969E462FDB03C5C9 /* Pods_RxSwift_Ex.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4913AC182450393E00ECBEBE /* CallView */ = {
+		1F467E5CD16C9746AFBF3FF4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4913AC1924503BA300ECBEBE /* View */,
+				9EC8D8CB1A03C8C8DC78C52C /* Pods_RxSwift_Ex.framework */,
 			);
-			path = CallView;
-			sourceTree = "<group>";
-		};
-		4913AC1924503BA300ECBEBE /* View */ = {
-			isa = PBXGroup;
-			children = (
-				4913AC29245074C800ECBEBE /* LoginView.storyboard */,
-				4913AC1C24503BE600ECBEBE /* LoginViewController.swift */,
-				4913AC2B24508A4500ECBEBE /* CallView.storyboard */,
-				4913AC2D24508A5300ECBEBE /* CallViewController.swift */,
-				4951CB322452F5370025E45C /* CXAudioFile.swift */,
-				4951CB342452F6A10025E45C /* CXExtensions.swift */,
-				4951CB3D245301730025E45C /* CallManager.swift */,
-				4951CB492453100B0025E45C /* Settings.swift */,
-			);
-			path = View;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		49259CDE2447625E0001C15C /* Interactor */ = {
@@ -661,7 +630,6 @@
 				49CC3A9F24585BEA001F1F47 /* OthersViewController.swift */,
 				49D27E232459A5320071C298 /* FiltersListView */,
 				4946DE512458C0B00098433F /* CombineAboutView */,
-				4913AC182450393E00ECBEBE /* CallView */,
 				49624C68244876C7009660D3 /* ContactsListView */,
 				495CBDDD244C6944005AEA7D /* ContactView */,
 				494557652355CE0800942B4F /* RxAboutView */,
@@ -790,7 +758,7 @@
 				49E3D55A2345F9D000861760 /* RxSwift-Ex */,
 				49E3D5592345F9D000861760 /* Products */,
 				9315805DCEFB85BFD2A853BE /* Pods */,
-				A876C59127BF1B707A43F0C6 /* Frameworks */,
+				1F467E5CD16C9746AFBF3FF4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -842,18 +810,10 @@
 		9315805DCEFB85BFD2A853BE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4753E5B33CB9E13A06238327 /* Pods-RxSwift-Ex.debug.xcconfig */,
-				A7D3DCF8F62A0815B6961676 /* Pods-RxSwift-Ex.release.xcconfig */,
+				9267D7A4A1518BBF053DAA9C /* Pods-RxSwift-Ex.debug.xcconfig */,
+				C103989DFDB1B0F6326C206F /* Pods-RxSwift-Ex.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		A876C59127BF1B707A43F0C6 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8EE19A776A296C27E4660280 /* Pods_RxSwift_Ex.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -863,11 +823,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49E3D56C2345F9D100861760 /* Build configuration list for PBXNativeTarget "RxSwift-Ex" */;
 			buildPhases = (
-				79148C95B6CE7D00C6D93FAB /* [CP] Check Pods Manifest.lock */,
+				3329560A92BB945D4C93D17F /* [CP] Check Pods Manifest.lock */,
 				49E3D5542345F9D000861760 /* Sources */,
 				49E3D5552345F9D000861760 /* Frameworks */,
 				49E3D5562345F9D000861760 /* Resources */,
-				729F5165788B3DF44B4D4942 /* [CP] Embed Pods Frameworks */,
+				16A15DC24A0240D46FB677EA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -885,7 +845,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = ru.proarttherapy;
 				TargetAttributes = {
 					49E3D5572345F9D000861760 = {
@@ -923,14 +883,12 @@
 				492F997E244B48D500395A45 /* ContactsListTableViewCell.xib in Resources */,
 				49E3D5652345F9D100861760 /* Assets.xcassets in Resources */,
 				49E3D5632345F9D000861760 /* Main.storyboard in Resources */,
-				4913AC2C24508A4500ECBEBE /* CallView.storyboard in Resources */,
 				4951CB3A2452F8BD0025E45C /* noisecollector-beam.aiff in Resources */,
 				4965E28A234623EA0042E4B9 /* ABOUT_TOKENS_en.html in Resources */,
 				4965E28B234623EA0042E4B9 /* Style.css in Resources */,
 				493328BB24581EE900562F8D /* contacts.json in Resources */,
 				4965E28C234623EA0042E4B9 /* ABOUT_TOKENS_ru.html in Resources */,
 				495CBDDF244C69AB005AEA7D /* ContactView.storyboard in Resources */,
-				4913AC2A245074C800ECBEBE /* LoginView.storyboard in Resources */,
 				49D5531E2459E6B200D9A349 /* ContactPropertiesListHeaderView.xib in Resources */,
 				49D27E2C2459A6A30071C298 /* FiltersListView.storyboard in Resources */,
 				494557642355CE0400942B4F /* AboutView.storyboard in Resources */,
@@ -941,7 +899,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		729F5165788B3DF44B4D4942 /* [CP] Embed Pods Frameworks */ = {
+		16A15DC24A0240D46FB677EA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -958,7 +916,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxSwift-Ex/Pods-RxSwift-Ex-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		79148C95B6CE7D00C6D93FAB /* [CP] Check Pods Manifest.lock */ = {
+		3329560A92BB945D4C93D17F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -997,7 +955,6 @@
 				49F0AEC224473A0600222DCF /* EntityService.swift in Sources */,
 				4946DE7B2458DEE10098433F /* UISlider+Combine.swift in Sources */,
 				4946DE792458DEE10098433F /* UIPageControl+Combine.swift in Sources */,
-				4913AC1D24503BE600ECBEBE /* LoginViewController.swift in Sources */,
 				4920382A244C9F12001FB093 /* Assembly.swift in Sources */,
 				4946DE822458DEE10098433F /* UIDatePicker+Combine.swift in Sources */,
 				49BCF8472449F7FF0094363B /* AboutInteractorInput.swift in Sources */,
@@ -1019,10 +976,8 @@
 				49D27E382459AB710071C298 /* FiltersListRouterInput.swift in Sources */,
 				493328BD24581FD800562F8D /* Contacts.swift in Sources */,
 				492F9996244B7D9200395A45 /* ContactsListRouterInput.swift in Sources */,
-				4913AC2E24508A5300ECBEBE /* CallViewController.swift in Sources */,
 				49E3D55C2345F9D000861760 /* AppDelegate.swift in Sources */,
 				492F9994244B7D7C00395A45 /* ContactsListRouter.swift in Sources */,
-				4951CB352452F6A10025E45C /* CXExtensions.swift in Sources */,
 				49624C8C2448FE2F009660D3 /* Router.swift in Sources */,
 				49624C6324483CCC009660D3 /* RxAboutRouter.swift in Sources */,
 				49203836244CB6B0001FB093 /* BaseModule.swift in Sources */,
@@ -1051,19 +1006,16 @@
 				49D27E2A2459A5A00071C298 /* FiltersListViewController.swift in Sources */,
 				494557702355CF4C00942B4F /* RxAboutModel.swift in Sources */,
 				49D27E442459AE860071C298 /* FiltersListViewInput.swift in Sources */,
-				4951CB3E245301730025E45C /* CallManager.swift in Sources */,
 				495CBDE1244C6B9E005AEA7D /* ContactViewController.swift in Sources */,
 				49203822244C9AD6001FB093 /* ContactPresenter.swift in Sources */,
 				49203830244CB015001FB093 /* ContactViewOutput.swift in Sources */,
 				4946DE7F2458DEE10098433F /* UIBarButtonItem+Combine.swift in Sources */,
-				4951CB332452F5370025E45C /* CXAudioFile.swift in Sources */,
 				4946DE602458C1520098433F /* CombineAboutRouter.swift in Sources */,
 				49624C852448E25E009660D3 /* AboutInteractor.swift in Sources */,
 				49C675FD2446F41E002D8FF1 /* WKWebViewController.swift in Sources */,
 				492F9980244B494700395A45 /* ContactsListTableViewCell.swift in Sources */,
 				492F9990244B7B7C00395A45 /* ContactsListInteractorInput.swift in Sources */,
 				492F9982244B4DBE00395A45 /* ContactsListViewController.swift in Sources */,
-				4951CB4A2453100B0025E45C /* Settings.swift in Sources */,
 				4946DE772458DEE10098433F /* UIGestureRecognizer+Combine.swift in Sources */,
 				4913AC302450C88400ECBEBE /* UIColorExtensions.swift in Sources */,
 				49D27E362459A9AF0071C298 /* FiltersListInteractorOutput.swift in Sources */,
@@ -1138,6 +1090,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1200,6 +1153,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1232,12 +1186,12 @@
 		};
 		49E3D56D2345F9D100861760 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4753E5B33CB9E13A06238327 /* Pods-RxSwift-Ex.debug.xcconfig */;
+			baseConfigurationReference = 9267D7A4A1518BBF053DAA9C /* Pods-RxSwift-Ex.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "RxSwift-Ex/RxSwift-Ex.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W7AP9BD2P6;
+				DEVELOPMENT_TEAM = GKK9BFF346;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "RxSwift-Ex/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1253,12 +1207,12 @@
 		};
 		49E3D56E2345F9D100861760 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A7D3DCF8F62A0815B6961676 /* Pods-RxSwift-Ex.release.xcconfig */;
+			baseConfigurationReference = C103989DFDB1B0F6326C206F /* Pods-RxSwift-Ex.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "RxSwift-Ex/RxSwift-Ex.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W7AP9BD2P6;
+				DEVELOPMENT_TEAM = GKK9BFF346;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "RxSwift-Ex/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

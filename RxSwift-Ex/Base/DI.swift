@@ -7,7 +7,6 @@
 //
 
 import Swinject
-import SwinjectStoryboard
 import Then
 
 enum ContainerError: Error {
